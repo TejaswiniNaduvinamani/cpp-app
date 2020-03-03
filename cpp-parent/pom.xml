@@ -28,7 +28,7 @@
 		<tibco.version>7.0.0</tibco.version>
 		<commons.version>3.5</commons.version>
 		<spring.security.test>4.2.3.RELEASE</spring.security.test>
-		<spring.security.core>4.2.3.RELEASE</spring.security.core>
+		<spring.security.core>5.2.2.RELEASE</spring.security.core>
 		<commons-dbcp.version>1.4</commons-dbcp.version>
 		<springUtil.version>5.4.0</springUtil.version>
 		<xerces.version>2.11.0</xerces.version>
