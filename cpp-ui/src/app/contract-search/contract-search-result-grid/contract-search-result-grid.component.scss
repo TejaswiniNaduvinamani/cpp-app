@@ -1,0 +1,23 @@
+@import '../../../assets/scss/partials/global';
+@import '../../../assets/scss/partials/variables';
+
+.padding {
+  padding-top: 4%;
+}
+
+.open-cpp-contract {
+  box-sizing: border-box;
+  height: 10px;
+  font-family: $gfs-font-family;
+  font-size: $gfs-fontsize-14;
+  font-weight: unset;
+  letter-spacing: 1.2px;
+  text-align: center;
+  color: $gfs-lt-navy-blue;
+  border: none;
+  text-decoration: underline;
+  padding-top: 1px;
+  background-color: inherit;
+  cursor: pointer;
+}
+

@@ -1,0 +1,32 @@
+<article class="d-flex setup-header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="title">
+          {{'COMMON.ASSIGNMENT_SUB_HEADER'| translate }}</div>
+      </div>
+      <div class="col-md-2">
+          <div class="contract-info">
+            <div>{{'COMMON.CPP_ID' | translate }}: {{ contractPriceProfileId }}</div>
+            <div>{{'COMMON.CPP_VERSION' | translate }}: {{ versionNumber }}</div>
+            <div>{{'COMMON.CPP_STATUS' | translate }}: {{ cppStatus }}</div>
+          </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<app-contract-information [contractInfoInd]="contractInfoInd"></app-contract-information>
+<br>
+
+<div class="d-flex flex-row">
+  <div><a routerLinkActive="tab-selected" routerLink="customers" class="tabs">{{'ASSIGNMENT_LABELS.CUSTOMERS_TAB'| translate }}</a>
+  </div>
+  <div><a routerLinkActive="tab-selected" routerLink="items" class="tabs">{{'ASSIGNMENT_LABELS.ITEMS_TAB'| translate }}</a></div>
+</div>
+<div class="horizontal-separator"></div>
+
+<router-outlet></router-outlet>
+
+
+

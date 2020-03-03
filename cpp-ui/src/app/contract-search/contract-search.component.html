@@ -1,0 +1,60 @@
+<div [hidden]="!showSpinner">
+  <div class="spinner">
+  <div class="fa cpp-spinner-lg"></div>
+  <div class="align-center-left">{{'SPINNER_MESSAGE.PLEASE_WAIT'| translate }}</div>
+  <div class="align-center">{{'SPINNER_MESSAGE.LOADING_MESSAGE'| translate }}</div>
+  </div >
+</div>
+
+<form [formGroup]="customerSearchForm" class="shade">
+    <div class="row orient padding-radio-button">
+        <div class="gfs-radiobutton col-md-3">
+          <input [attr.disabled]="showSpinner? true:null" id="contractNameInput" name="searchCriteriaRadio" value="contractName" type="radio" class="radio" formControlName="searchCriteriaRadio" (change)="clearForm()">
+          <label class="radio-label-search" for="contractNameInput">{{ 'CUSTOMER_SEARCH_LABELS.CONTRACT_NAME' | translate }}</label>
+        </div>
+        <div class="gfs-radiobutton col-md-2">
+            <input [attr.disabled]="showSpinner? true:null" id="customerTypeInput" name="searchCriteriaRadio" value="customerType" type="radio" class="radio" formControlName="searchCriteriaRadio" (change)="clearForm()">
+            <label class="radio-label-search" for="customerTypeInput">{{ 'CUSTOMER_SEARCH_LABELS.CUSTOMER_TYPE' | translate }}</label>
+        </div>
+        <label class="col-md-2" [ngClass]="this.customerSearchForm.get('customerTypeSearch').value !== -1 ?'radio-label-search':'radio-label-disable'">{{ 'CUSTOMER_SEARCH_LABELS.CUSTOMER_ID' | translate }}</label>
+        <div class="gfs-radiobutton col-md-2">
+          <input [attr.disabled]="showSpinner? true:null" id="cppIDInput" name="searchCriteriaRadio" type="radio" formControlName="searchCriteriaRadio" value="cppId" class="radio" (change)="clearForm()">
+          <label class="radio-label-search" for="cppIDInput">{{ 'CUSTOMER_SEARCH_LABELS.CPP_ID' | translate }}</label>
+        </div>
+    </div>
+
+    <div class="row orient padding-text-field">
+        <div class="col-md-3">
+          <input [attr.disabled]="this.customerSearchForm.get('searchCriteriaRadio').value !== 'contractName' || showSpinner? true : null" id="contractNameInput" type="text"
+          class="form-control contract-name" formControlName="contractNameSearch" (keyup)="isFindDisabled($event, 'contractName')" (keyup.enter)="onFindContract()" (keydown.enter)="$event.preventDefault()">
+        </div>
+        <div class="col-md-2">
+            <select [attr.disabled]="this.customerSearchForm.get('searchCriteriaRadio').value !== 'customerType' || showSpinner? true : null" id="customerTypeInput" class="form-control customer-type" formControlName="customerTypeSearch">
+              <option value="-1" [selected]="true" hidden disabled="true">{{'CUSTOMER_SEARCH_LABELS.SELECT'| translate }}</option>
+              <option *ngFor="let customerType of customerTypes; let i = index" [ngValue]="customerType.customerTypeId">{{customerType.customerTypeValue}}</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <input [attr.disabled]="this.customerSearchForm.get('searchCriteriaRadio').value !== 'customerType' || this.customerSearchForm.get('customerTypeSearch').value === -1 || showSpinner? true : null" id="customerTypeInput"
+            type="text" class="form-control customer-type" formControlName="customerIDSearch" (keyup)="isFindDisabled($event, 'customerType')" (keyup.enter)="onFindContract()" (keydown.enter)="$event.preventDefault()">
+        </div>
+        <div class="col-md-2">
+          <input [attr.disabled]="this.customerSearchForm.get('searchCriteriaRadio').value !== 'cppId' || showSpinner? true : null" id="cppIDInput" formControlName="cppIDSearch" type="text" [maxlength]="18"
+          class="form-control cpp-id" (keyup)="isFindDisabled($event, 'cppId')" (keyup.enter)="onFindContract()" (keypress)="onCppIdKeyPress($event)" ondrop="return false">
+        </div>
+        <div class="offset-md-1"></div>
+        <div class="col-md-1">
+            <button class="clear-all" (click)="clearAll()">{{'CUSTOMER_SEARCH_LABELS.CLEAR'| translate }}</button>
+        </div>
+        <div class="col-md-1">
+            <button [disabled]="disableFind" class="btn btn-primary find-button" type="button" (click)="onFindContract()">{{ 'CUSTOMER_SEARCH_LABELS.FIND' | translate}} </button>
+        </div>
+    </div>
+</form>
+
+<app-contract-search-result-grid [contractSearchResults]="contractSearchResponse" [isViewOnlyUser]="isViewOnlyUser"></app-contract-search-result-grid>
+
+<div class="row display-message">
+  <label *ngIf="enterSearchIndicator" class="message-label">{{'CUSTOMER_SEARCH_LABELS.ENTER_SEARCH_TEXT' | translate }}</label>
+  <label *ngIf="noResultIndicator" class="message-label">{{'CUSTOMER_SEARCH_LABELS.NO_RESULTS_TEXT' | translate}}</label>
+</div>

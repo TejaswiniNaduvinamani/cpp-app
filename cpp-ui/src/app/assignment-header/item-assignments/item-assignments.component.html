@@ -1,0 +1,45 @@
+<div [hidden]="!showSpinner">
+  <div class="spinner">
+    <div class="fa cpp-spinner-lg"></div>
+  </div>
+</div>
+
+<div [hidden]="showSpinner">
+ <div id="futureItemAccordion" data-children=".item">
+    <div *ngFor="let futureItemAccordion of futureItemAccordions; let i = index">
+      <div class="item">
+        <div class="orient vertical-spacing">
+          <a data-toggle="collapse" (click)="toggleCollapse($event.target.parentNode)" data-parent="#futureItemAccordion" href="#futureItemStructure{{i}}"
+            role="button" [attr.aria-expanded]="i == 0 ? 'true' : 'false'" [ngClass]="{
+                current: futureItemAccordion.isCurrent,
+                completed: futureItemAccordion.isFutureItemSaved
+                }">
+            <span class="align-carat">
+              <em class="fa fa-angle-right" style="font-size:20px" aria-hidden="true"></em>
+            </span>
+            <span *ngIf="futureItemAccordion.isFutureItemSaved; then savedMarkup else unsavedMarkup"></span>
+            <ng-template #savedMarkup>
+              <img src="{{imageDir}}assets/images/complete.svg" class="circle" alt="saved-markup-icon" />
+            </ng-template>
+            <ng-template #unsavedMarkup>
+              <span class="circle">{{ i+1 }}</span>
+            </ng-template>
+            <span class="accordion-title">{{ futureItemAccordion.futureItemDesc }} </span>
+          </a>
+        </div>
+        <div class="collapse" role="tabpanel" id="futureItemStructure{{i}}">
+          <div class="orient">
+            <app-item-display [itemAssignmentDetails]="futureItemAccordion" [index]="i" [isViewMode]="isViewMode"></app-item-display>
+          </div>
+        </div>
+        <div class="horizontal-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+      <button *ngIf="isPowerUser && isFurtheranceMode" type="submit" class="btn btn-primary mb-3 pull-right" [disabled]="!isPriceProfileBtnEnabled" (click)="onActivatePricingForFurtherance()">{{'ASSIGNMENT_LABELS.ACTIVATE_PRICING'| translate }}</button>
+      <button type="submit" [ngClass]="!isFurtheranceMode ? 'align-right' : ''" class="btn mb-3 pull-right return-to-clm"  (click)="returnToCLM()">{{'COMMON.RETURN_TO_CONTRACT'| translate }}</button>
+  </div>
+  <app-footer></app-footer>
+</div>

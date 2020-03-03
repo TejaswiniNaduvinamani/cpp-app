@@ -1,0 +1,60 @@
+<div *ngFor="let markupValue of markupValues">
+  <table class="table mt-2">
+    <tbody>
+      <tr>
+        <td class="data item-description">{{ markupValue.productType }}</td>
+        <td *ngIf="markupValue.unit == '$'" class="data item-unit"> {{markupValue.unit}}{{markupValue.markup}}</td>
+        <td *ngIf="markupValue.unit == '%'" class="data item-unit"> {{markupValue.markup}}{{markupValue.unit}}</td>
+        <td *ngIf="markupValue.markupType == 1" class="data item-type">{{'DATATABLE_LABEL.SELL_UNIT' | translate }}</td>
+        <td *ngIf="markupValue.markupType == 2" class="data item-type">{{'DATATABLE_LABEL.PER_CASE' | translate }}</td>
+        <td *ngIf="markupValue.markupType == 3" class="data item-type">{{'DATATABLE_LABEL.PER_WEIGHT' | translate }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="subgroupValues">
+  <br>
+</div>
+
+<div *ngFor="let subgroupValue of subgroupValues">
+  <table class="table mt-2">
+    <tbody>
+      <tr>
+          <td class="data item-description">{{ subgroupValue.subgroupDesc }}</td>
+          <td *ngIf="subgroupValue.unit == '$'" class="data item-unit"> {{subgroupValue.unit}}{{subgroupValue.markup}}</td>
+          <td *ngIf="subgroupValue.unit == '%'" class="data item-unit"> {{subgroupValue.markup}}{{subgroupValue.unit}}</td>
+          <td *ngIf="subgroupValue.markupType == 1" class="data item-type">{{'DATATABLE_LABEL.SELL_UNIT' | translate }}</td>
+          <td *ngIf="subgroupValue.markupType == 2" class="data item-type">{{'DATATABLE_LABEL.PER_CASE' | translate }}</td>
+          <td *ngIf="subgroupValue.markupType == 3" class="data item-type">{{'DATATABLE_LABEL.PER_WEIGHT' | translate }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="itemMarkupValues">
+  <br>
+</div>
+
+<div *ngFor="let itemValue of itemMarkupValues">
+  <table class="table mt-2">
+    <tbody>
+      <tr>
+        <td class="data item-description">{{ itemValue.itemDesc }}</td>
+        <td *ngIf="itemValue.unit == '$'" class="data item-unit"> {{itemValue.unit}}{{itemValue.markup}}</td>
+        <td *ngIf="itemValue.unit == '%'" class="data item-unit"> {{itemValue.markup}}{{itemValue.unit}}</td>
+        <td *ngIf="itemValue.markupType == 1" class="data item-type">{{'DATATABLE_LABEL.SELL_UNIT' | translate }}</td>
+        <td *ngIf="itemValue.markupType == 2" class="data item-type">{{'DATATABLE_LABEL.PER_CASE' | translate }}</td>
+        <td *ngIf="itemValue.markupType == 3" class="data item-type">{{'DATATABLE_LABEL.PER_WEIGHT' | translate }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="expire-lower-spacing">
+  <strong>{{'ASSIGNMENT_LABELS.EXPIRE_LOWER'| translate }}</strong>
+</div>
+  <div *ngIf="expireLowerInd == 1">{{'ASSIGNMENT_LABELS.YES' | translate}}</div>
+  <div *ngIf="expireLowerInd == 0">{{'ASSIGNMENT_LABELS.NO' | translate}}</div>
+  <div *ngIf="expireLowerInd == null">{{'ASSIGNMENT_LABELS.NOTHING_SELECTED' | translate}}</div>
+

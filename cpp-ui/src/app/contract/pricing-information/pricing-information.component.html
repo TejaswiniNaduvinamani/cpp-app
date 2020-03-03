@@ -1,0 +1,164 @@
+<div [hidden]="!showSpinner">
+    <div class="spinner">
+    <div class="fa cpp-spinner-lg"></div>
+    <div class="align-center-left">{{'SPINNER_MESSAGE.PLEASE_WAIT'| translate }}</div>
+    <div class="align-center">{{'SPINNER_MESSAGE.LOADING_MESSAGE'| translate }}</div>
+    </div >
+</div>
+
+<div [hidden]="showSpinner">
+  <div>
+    <p class="orient pricing-information vertical-spacing">
+      <strong>{{'CUST_INFO_LABEL.PRICING_INFO'| translate }}</strong>
+    </p>
+    <form [formGroup]="custInfoForm">
+      <div class="row orient">
+        <div class="form-group col-md-2">
+          <label for="effectiveDate" [ngClass]="(displayViewMode)? 'view-mode-date' : ''">{{'CUST_INFO_LABEL.PRICING_EFFECTIVE_DATE'| translate }}</label>
+          <div class="input-group">
+            <input [attr.disabled]="displayViewMode ? true : null" [ngClass]="(displayViewMode)? 'view-date-text' : ''" class="form-control form-control-sm date-field date-text"
+            placeholder="{{'CUST_INFO_LABEL.DATE_PLACEHOLDER'| translate }}" name="dp" ngbDatepicker #effectiveDate="ngbDatepicker" id="effectiveDate" formControlName="effectiveDate" [(ngModel)]="pricingEffectiveDate">
+            <button [attr.disabled]="displayViewMode ? true : null" class="input-group-addon" [ngClass]="(displayViewMode)? 'view-mode-disable-calendar' : ''" (click)="effectiveDate.toggle()" type="button">
+              <img src="{{imageDir}}assets/images/calendar-icon.svg" alt="Calendar Img" />
+            </button>
+          </div>
+          <span class="text-danger help-block" *ngIf="!this.custInfoForm.get('effectiveDate').valid && custInfoForm.get('effectiveDate').touched">
+            <span *ngIf="this.custInfoForm.get('effectiveDate').errors['required']">{{'CUST_INFO_ERRORS.DATE_FORMAT_INVALID'| translate }}</span>
+            <span *ngIf="this.custInfoForm.get('effectiveDate').errors['invalidPricingEffectiveDate']">{{'CUST_INFO_ERRORS.PRICING_EFFECTIVE_DATE_ERROR'| translate }}</span>
+            <span *ngIf="this.custInfoForm.get('effectiveDate').errors['invalidDateFormat']">{{'CUST_INFO_ERRORS.DATE_FORMAT_INVALID'| translate }}</span>
+            <span *ngIf="this.custInfoForm.get('effectiveDate').errors['invalidPricingCurrentDate']">{{'CUST_INFO_ERRORS.PRICING_CURRENT_DATE_ERROR'| translate }}</span>
+          </span>
+      </div>
+      <div class="form-group col-md-2">
+          <label for="expirationDate">{{ 'CUST_INFO_LABEL.PRICING_EXPIRATION_DATE' | translate }}</label>
+          <div class="date-text"> {{ pricingExpirationDate |  date: 'MM/dd/yyyy' }} </div>
+        </div>
+      </div>
+
+      <div *ngIf="contractType !== contractTypeIFS">
+        <div class="orient">
+          <label class="schedule-cost">{{'CUST_INFO_LABEL.SCHEDULE_FOR_COST' | translate}}</label>
+          <img src="{{imageDir}}assets/images/info-icon.svg" alt="info-icon" class="info-icon"  [ngbTooltip]="'HOVER_INFO.SCHEDULE_COST' | translate"
+            data-placement="bottom">
+        </div>
+        <div [ngClass]="(displayViewMode)? 'view-radio' : ''" class="gfs-radiobutton orient">
+          <input [attr.disabled]="displayViewMode ? true : null" id="fiscalCalendar" name="calendar" type="radio" class="radio" formControlName="calendar" value="fiscal">
+          <label class="radio-label" [ngClass]="(displayViewMode)? 'view-radio-label' : ''" for="fiscalCalendar">{{ 'CUST_INFO_LABEL.FISCAL_CALENDAR' | translate }}</label>
+        </div>
+        <div [ngClass]="(displayViewMode)? 'view-radio' : ''" class="gfs-radiobutton orient">
+          <input [attr.disabled]="displayViewMode ? true : null" id="gregorianCalendar" name="calendar" type="radio" formControlName="calendar" value="gregorian" class="radio">
+          <label class="radio-label" [ngClass]="(displayViewMode)? 'view-radio-label' : ''" for="gregorianCalendar">{{ 'CUST_INFO_LABEL.GREGORIAN_CALENDAR' | translate }}</label>
+        </div>
+      </div>
+
+      <div class="seperator"></div>
+
+      <div class="orient">
+        <label class="question-toggle">{{'CUST_INFO_LABEL.PRICING_TOGGLE_QUESTION' | translate}}</label>
+      </div>
+      <div class="row orient">
+        <div [ngClass]="(displayViewMode)? 'view-radio' : ''" class="gfs-radiobutton col-sm-1 ">
+          <input [attr.disabled]="displayViewMode ? true : null" id="toggleQuestionNo" name="toggleQuestion" value="no" (change)="ontoggleQuestionNo()" type="radio" class="radio" formControlName="toggleQuestion">
+          <label class="radio-label" [ngClass]="(displayViewMode)? 'view-radio-label' : ''" for="toggleQuestionNo">{{ 'CUST_INFO_LABEL.NO' | translate }}</label>
+        </div>
+        <div [ngClass]="(displayViewMode)? 'view-radio' : ''" class="gfs-radiobutton col-sm-1">
+          <input [attr.disabled]="displayViewMode ? true : null" id="toggleQuestionYes" name="toggleQuestion" type="radio" formControlName="toggleQuestion" value="yes" class="radio">
+          <label class="radio-label" [ngClass]="(displayViewMode)? 'view-radio-label' : ''" for="toggleQuestionYes">{{ 'CUST_INFO_LABEL.YES' | translate }}</label>
+        </div>
+      </div>
+
+      <div *ngIf="this.custInfoForm.get('toggleQuestion').value === 'yes'">
+        <div class="horizontal-dash"></div>
+        <div class="d-flex flex-row orient">
+          <div class="p-1" [ngClass]="(displayViewMode)? 'view-mode-toggle' : '' ">
+            <app-toggle (selectedValue)="onPriceVerificationChange($event)" [toggelLabel]="priceVerificationLabel" [toggleDefaultState]="priceVerificationVal"
+              [toggleForm]="custInfoForm.controls.priceVerificationToggle"></app-toggle>
+          </div>
+          <img src="{{imageDir}}assets/images/info-icon.svg" alt="info icon" class="info-icon toggle-helper"  [ngbTooltip]="'HOVER_INFO.PRICE_VERIFICATION' | translate"
+            data-placement="top">
+        </div>
+
+        <div *ngIf="contractType !== contractTypeIFS">
+          <div class="d-flex flex-row orient">
+            <div class="p-1" [ngClass]="(displayViewMode)? 'view-mode-toggle' : '' ">
+              <app-toggle (selectedValue)="onPriceAuditChange($event)" [toggelLabel]="priceAuditLabel" [toggleDefaultState]="priceAuditVal"
+                [toggleForm]="custInfoForm.controls.priceAuditToggle"></app-toggle>
+            </div>
+            <img src="{{imageDir}}assets/images/info-icon.svg" alt="info icon" class="info-icon toggle-helper"  [ngbTooltip]="'HOVER_INFO.PRICE_AUDIT' | translate"
+              data-placement="top">
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="priceVerificationVal || priceAuditVal">
+        <div class="horizontal-line"></div>
+        <div class="orient">
+          <label class="cost-model">{{'CUST_INFO_LABEL.COST_MODEL' | translate}}</label>
+        </div>
+        <div class="d-flex flex-row orient">
+          <div class="p-1" [ngClass]="(displayViewMode)? 'view-mode-toggle' : ''" >
+            <app-toggle (selectedValue)="transferFeeVal = $event" [toggelLabel]="transferFeeLabel" [toggleDefaultState]="transferFeeVal"
+              [toggleForm]="custInfoForm.controls.transferFeeToggle"></app-toggle>
+          </div>
+          <img src="{{imageDir}}assets/images/info-icon.svg" alt="info icon" class="info-icon toggle-helper"  [ngbTooltip]="'HOVER_INFO.TRANSFER_FEE' | translate"
+            data-placement="top">
+        </div>
+        <div *ngIf="!transferFeeVal">
+          <img src="{{imageDir}}assets/images/warning.svg" class="warning-icon" alt="info icon">
+          <span class="warning-text">{{ 'CUST_INFO_ERRORS.TRANSFER_FEE_WARNING'| translate }}</span>
+        </div>
+
+        <div class="d-flex flex-row orient">
+          <div class="p-1" [ngClass]="(displayViewMode)? 'view-mode-toggle' : '' ">
+            <app-toggle (selectedValue)="assessmentFeeVal = $event" [toggelLabel]="assessmentFeeLabel" [toggleDefaultState]="assessmentFeeVal"
+              [toggleForm]="custInfoForm.controls.assessmentFeeToggle"></app-toggle>
+          </div>
+          <img src="{{imageDir}}assets/images/info-icon.svg" alt="info icon" class="info-icon toggle-helper"  [ngbTooltip]="'HOVER_INFO.ASSESSMENT_FEE' | translate"
+            data-placement="top">
+        </div>
+      </div>
+      <div *ngIf="isFurtheranceMode">
+        <div class="horizontal-line"></div>
+        <p class="orient pricing-information vertical-spacing">
+          <strong>{{'FURTHERANCE_LABELS.FURTHERANCE'| translate }}</strong></p>
+            <div class="row orient">
+              <div class="form-group col-md-2">
+                <label for="furtheranceEffectiveDate" [ngClass]="(canEditFurtherance)? '' : 'view-mode-date'">{{'FURTHERANCE_LABELS.FURTHERANCE_EFFECTIVE_DATE'| translate }}</label>
+                <div class="input-group">
+                  <input  [disabled]="!canEditFurtherance" [ngClass]="(canEditFurtherance)? '' : 'view-date-text'" class="form-control form-control-sm date-field date-text"
+                  placeholder="{{'CUST_INFO_LABEL.DATE_PLACEHOLDER'| translate }}" name="dp" ngbDatepicker #effectiveDate="ngbDatepicker" id="furtheranceEffectiveDate" formControlName="furtheranceEffectiveDate" [(ngModel)]="furtheranceEffectiveDate">
+                  <button [attr.disabled]="canEditFurtherance ? null : true" [ngClass]="(canEditFurtherance)? '' : 'view-mode-disable-calendar'" class="input-group-addon" (click)="effectiveDate.toggle()" type="button">
+                    <img src="{{imageDir}}assets/images/calendar-icon.svg" alt="Calendar Img" />
+                  </button>
+                </div>
+                <span class="text-danger help-block" *ngIf="!this.custInfoForm.get('furtheranceEffectiveDate').valid && custInfoForm.get('furtheranceEffectiveDate').touched">
+                  <span *ngIf="this.custInfoForm.get('furtheranceEffectiveDate').errors['required']">{{'CUST_INFO_ERRORS.DATE_FORMAT_INVALID'| translate }}</span>
+                  <span *ngIf="this.custInfoForm.get('furtheranceEffectiveDate').errors['invalidFurtheranceContractDate']">{{'CUST_INFO_ERRORS.FURTHERANCE_CONTRACT_DATE_ERROR'| translate }}</span>
+                  <span *ngIf="this.custInfoForm.get('furtheranceEffectiveDate').errors['invalidDateFormat']">{{'CUST_INFO_ERRORS.DATE_FORMAT_INVALID'| translate }}</span>
+                  <span *ngIf="this.custInfoForm.get('furtheranceEffectiveDate').errors['invalidFurtheranceCurrentDate']">{{'CUST_INFO_ERRORS.FURTHERANCE_CURRENT_DATE_ERROR'| translate }}</span>
+                  <span *ngIf="this.custInfoForm.get('furtheranceEffectiveDate').errors['invalidFurtheranceContractStartDate']">{{'CUST_INFO_ERRORS.FURTHERANCE_CONTRACT_START_DATE_ERROR'| translate }}</span>
+                  <span *ngIf="this.custInfoForm.get('furtheranceEffectiveDate').errors['invalidFurtheranceAmendmentStartDate']">{{'CUST_INFO_ERRORS.FURTHERANCE_AMENDMENT_START_DATE_ERROR'| translate }}</span>
+                </span>
+
+                <label for="reason" [ngClass]="(canEditFurtherance)? '' : 'view-mode-date'" class="label-pad">{{'FURTHERANCE_LABELS.REASON'| translate }}</label>
+                <textarea [attr.disabled]="(canEditFurtherance)? null : 'true'" [ngClass]="(canEditFurtherance)? '' : 'view-mode-textbox'" rows="4" cols="60" maxlength="200" formControlName="reasonForChange" placeholder="{{'FURTHERANCE_LABELS.REASON_FOR_CHANGE_PLACEHOLDER'| translate }}"></textarea>
+
+                <label for="reference" [ngClass]="(canEditFurtherance)? '' : 'view-mode-date'" class="label-pad">{{'FURTHERANCE_LABELS.CONTRACT_REFERENCE'| translate }}</label>
+                <textarea [attr.disabled]="(canEditFurtherance)? null : 'true'" [ngClass]="(canEditFurtherance)? '' : 'view-mode-textbox'" rows="1" maxlength="1500" cols="60" formControlName="contractReference" placeholder="{{'FURTHERANCE_LABELS.CONTRACT_REFERENCE_PLACEHOLDER'| translate }}"></textarea>
+              </div>
+            </div>
+      </div>
+    </form>
+
+      <div class="horizontal-bottom-line"></div>
+      <div class="bottom-bar" *ngIf="!displayViewMode || canEditFurtherance">
+        <button type="button" *ngIf="!isFurtheranceMode" class="btn btn-primary pull-right" (click)="checkAttachedExhibit()">{{'COMMON.BTN_DISTRIBUTION'| translate }}</button>
+        <button type="button" *ngIf="isFurtheranceMode" [disabled]="this.custInfoForm.get('furtheranceEffectiveDate').invalid || this.custInfoForm.get('reasonForChange').invalid ||
+         this.custInfoForm.get('contractReference').invalid" class="btn btn-primary pull-right" (click)="saveFurtherance()">{{'COMMON.BTN_MARKUP'| translate }}</button>
+      </div>
+
+  </div>
+  <app-footer></app-footer>
+
+<app-delete-exhibit (isExhibitDeleted)="onExhibitDeletion($event)"></app-delete-exhibit>
+</div>

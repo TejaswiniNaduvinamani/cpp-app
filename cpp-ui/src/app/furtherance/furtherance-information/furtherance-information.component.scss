@@ -1,0 +1,61 @@
+@import '../../../assets/scss/partials/global';
+@import '../../../assets/scss/partials/mixins';
+@import '../../../assets/scss/partials/variables';
+
+.fade {
+  background-color: rgba(0, 0, 0, .35);
+}
+
+.modal-dialog {
+  max-width: 640px;
+  border-radius: 2px;
+  margin: 140px auto;
+}
+
+.modal-content {
+  background-color: $gfs-white-2;
+}
+
+.modal-header {
+  padding: 20px;
+  border-bottom: unset;
+  padding-bottom: 10px;
+}
+
+.modal-title-text {
+  box-sizing: border-box;
+  width: 535px;
+  padding: 0 20px 15px;
+  font-family: $gfs-font-family;
+  font-size: $gfs-fontsize-16;
+  line-height: 1.5;
+  text-align: left;
+  color: $gfs-label-black;
+  border-bottom: unset;
+}
+
+.modal-title {
+  width: 95%;
+  height: auto;
+  font-family: $gfs-font-family;
+  font-size: $gfs-fontsize-18;
+  font-weight: 500;
+  text-align: left;
+  color: $gfs-stepper-black;
+  overflow-wrap: break-word;
+}
+
+.modal-body {
+  border-top: 1px solid $gfs-gray-4;
+}
+
+.modal-footer {
+  box-sizing: border-box;
+  height: 56px;
+  border-top: 1px solid $gfs-gray-4;
+}
+
+.cancel {
+  width: 140px;
+  margin-right: 10px;
+}

@@ -1,0 +1,85 @@
+@import '../../assets/scss/partials/global';
+@import '../../assets/scss/partials/radio-buttons';
+@import '../../assets/scss/partials/variables';
+@import '../../assets/scss/partials/mixins';
+
+.shade {
+  background-color: $gfs-gray-1;
+  margin-top: 30px;
+}
+
+.padding-radio-button {
+  padding-top: 20px;
+}
+
+.padding-text-field {
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+
+.radio-label-search {
+  font-weight: bold;
+}
+
+.radio-label-disable {
+  @extend .radio-label-search;
+  opacity: .5;
+}
+
+.contract-name {
+  width: 100%;
+}
+
+.cpp-id {
+ width: 60%;
+}
+
+.form-control:disabled {
+  background-color: $gfs-white;
+  opacity: .7;
+}
+
+.clear-all {
+  box-sizing: border-box;
+  width: 110px;
+  height: 30px;
+  font-family: $gfs-font-family;
+  font-size: $gfs-fontsize-16;
+  font-weight: unset;
+  line-height: 2.5;
+  letter-spacing: 1.2px;
+  text-align: center;
+  color: $gfs-lt-navy-blue;
+  background-color: $gfs-gray-1;
+  border: none;
+  text-decoration: underline;
+  padding-right: 25px;
+  cursor: pointer;
+}
+
+.find-button {
+  margin-top: -3px;
+  width: 100%;
+  font-size: $gfs-fontsize-18;
+}
+
+.display-message {
+  padding-left: 45%;
+  padding-top: 5%;
+}
+
+.message-label {
+  font-family: $gfs-font-family;
+  font-size: $gfs-fontsize-16;
+  font-weight: unset;
+  cursor: default;
+  color: $gfs-gray-5;
+}
+
+.align-center-left {
+  margin-left: -7px;
+}
+
+.align-center {
+  margin-left: -67px;
+}

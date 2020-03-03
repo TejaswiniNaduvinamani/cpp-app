@@ -1,0 +1,54 @@
+<div class="row">
+  <div [ngClass]="onItemLevelMarkup? 'col-md-3' : 'col-md-2'">
+    <input [disabled]="(isViewMode  && !onItemLevelMarkup) || itemData.isItemSaved" type="text" name="itemID" id="itemId" value="{{itemData.itemId}}"
+      [ngClass]="itemData.isItemSaved?'saved-item-id mt-2' :'item-id mt-2'" ondrop="return false;" (keypress)="onItemKeyPress($event)"
+      (blur)="onBlurItemId($event)" (keyup)="onKeyupItemId($event)" placeholder="12345">
+  </div>
+  <div *ngIf="!isViewMode || onItemLevelMarkup" [ngClass]="onItemLevelMarkup? 'col-md-2' : 'col-md-1'">
+    <button [disabled]="itemData.isItemSaved" class="btn btn-primary mt-2" [ngClass]="{'find-item' : itemData.isItemSaved == false, 'grayed-out' : (isFindItemGrayOut() || itemData.isItemSaved) == true}"
+      (click)="findItemDescription()">{{'ASSIGNMENT_ITEM_LABELS.FIND'| translate }}</button>
+  </div>
+  <div  [ngClass]="onItemLevelMarkup? 'col-md-6' : 'col-md-5'">
+    <div *ngIf="itemData.itemDescription">
+      <div class="item-name" [ngClass]="onItemLevelMarkup? 'align-left' : ''">{{'ASSIGNMENT_ITEM_LABELS.ITEM_NAME'| translate }} </div>
+      <div class="item-value" [ngClass]="onItemLevelMarkup? 'align-left' : ''">{{itemData.itemDescription}}</div>
+    </div>
+  </div>
+  <div *ngIf="showHideTrashIcon()">
+    <img src="{{imageDir}}assets/images/trash-icon.png" alt="thrash icon" class="mt-3 trash-icon" (click)="itemAssignmentDeleteModal()">
+  </div>
+  <div *ngIf="showHideClearIcon()" class="col-md-1">
+    <img src="{{imageDir}}assets/images/clear.png" alt="clear icon" class="delete mt-2" (click)="deleteSearchField()">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-3">
+    <div *ngIf="itemData.invalidItem" class="item-error" [ngClass]="onItemLevelMarkup? 'item-error-on-popup' : ''">{{'MARKUP_ERRORS.INVALID_ITEM_CODE'| translate }}</div>
+    <div *ngIf="itemData.itemExists" class="item-error" [ngClass]="onItemLevelMarkup? 'item-error-on-popup' : ''">{{'ASSIGNMENT_ITEM_LABELS.ITEM_EXISTS'| translate }}</div>
+  </div>
+</div>
+
+<div class="modal fade" id="itemAssignmentDeleteModal{{index}}" tabindex="-1" role="dialog" aria-labelledby="itemAssignmentDeleteModal"
+  aria-hidden="true">
+  <div class="modal-dialog mx-auto" role="document">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <div class="modal-title" id="itemAssignmentDeleteLabel">{{'ASSIGNMENT_LABELS.DELETE'| translate }}
+          <q>{{itemData.itemDescription}}</q>?</div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {{'ASSIGNMENT_LABELS.ITEM_ASSIGNMENT_DELETE_POP_UP'| translate }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="cancel" data-dismiss="modal">
+          <u>{{'COMMON.BTN_CANCEL'| translate }}</u>
+        </button>
+        <button type="submit" #deleteItemAssignmentBtn class="btn delete-item" data-dismiss="modal" (click)="onDeleteItemAssignment()">{{'COMMON.BTN_DELETE'| translate }}</button>
+      </div>
+    </div>
+  </div>
+</div>

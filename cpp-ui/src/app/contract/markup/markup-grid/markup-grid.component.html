@@ -1,0 +1,275 @@
+<div *ngIf="determineFurtheranceMode" class="pt-3">
+  <ngx-datatable class="bootstrap" [headerHeight]="54" [columnMode]="'flex'" [rowHeight]="32" [rows]="rows" [selected]="selected"
+    [selectionType]="'single'">
+
+    <ngx-datatable-column name="Product Type" prop='productType' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+      [draggable]="false" [flexGrow]="0.45">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <div class="pt-1"> {{value | titlecase}}</div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Markup" prop='markup' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+      [flexGrow]="0.25">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <input class="markup" autofocus type="text" [value]="value" (blur)="onblurMarkup($event, row)" (keyup)="onMarkupKeyUp($event, row)"
+          ondrop="return false;">
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="" prop='unit' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+      [flexGrow]="0.15">
+      <ng-template ngx-datatable-header-template let-column="column"></ng-template>
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+        <div id="radio-group" [ngClass]="(isFurtheranceMode)? 'view-mode-radio' : '' ">
+          <label>
+            <input class="form-check-input" value="$" type="radio" id="{{rowIndex}}-unit" [checked]="value == '$'" (change)="onUnitChange($event, row)" [disabled]=" isFurtheranceMode ? true : null">
+            <span>{{ 'DATATABLE_LABEL.DOLLAR'| translate }}</span>
+          </label>
+          <label>
+            <input class="form-check-input" value="%" type="radio" id="{{rowIndex}}-unit" [checked]="value == '%'" (change)="onUnitChange($event, row)" [disabled]=" isFurtheranceMode ? true : null">
+            <span>{{ 'DATATABLE_LABEL.PERCENT'| translate }}</span>
+          </label>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Markup Type" prop='markupType' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+      [draggable]="false" [flexGrow]="0.30">
+      <ng-template ngx-datatable-header-template let-column="column">
+        {{ column.name }}
+
+        <img src="{{imageDir}}assets/images/info-modal.png" alt="info icon" class="info-icon"  (click)="onMarkupTipContent()" data-placement="bottom">
+      </ng-template>
+
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+        <select class="markup-type" [value]="value" (change)="onMarkupTypeChange($event, row)" [disabled]="(row.unit == '%' || isFurtheranceMode) ? true : null">
+          <option value="1">{{ 'DATATABLE_LABEL.SELL_UNIT' | translate}}</option>
+          <option value="2">{{ 'DATATABLE_LABEL.PER_CASE' | translate}}</option>
+          <option value="3">{{ 'DATATABLE_LABEL.PER_WEIGHT' | translate}}</option>
+        </select>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Effective Date" prop='effectiveDate' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+      [draggable]="false" [flexGrow]="0.23">
+      <ng-template ngx-datatable-cell-template let-value="value">
+        <div class="pt-1"> {{value | date: 'MM/dd/yyyy' }} </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Expiration Date" prop='expirationDate' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+      [draggable]="false" [flexGrow]="0.24">
+      <ng-template ngx-datatable-cell-template let-value="value">
+        <div class="pt-1"> {{value | date: 'MM/dd/yyyy'}} </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false" [flexGrow]="1">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+        <div class="pt-1">
+          <span *ngIf="validateData(row)">
+            <span class="warning-text">{{ 'CUST_INFO_ERRORS.MARKUP_MIN_MAX_ERROR' | translate}}</span>
+          </span>
+          <span *ngIf="rowIndex == 0">
+            <button *ngIf="!isFurtheranceMode" type="button" class="btn btn-primary copy-design pull-right" (click)="copyRow($event, row)">{{ 'COMMON.BTN_COPY_DOWN' | translate}}</button>
+          </span>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+</div>
+
+<div *ngIf="!displayViewMode" class="horizontal-line"></div>
+
+<div *ngIf="!determineFurtheranceMode" class="pt-3">
+  <ngx-datatable class="bootstrap" [headerHeight]="54" [columnMode]="'flex'" [rowHeight]="32" [rows]="rows" [selected]="selected">
+    <ngx-datatable-column name="Product Type" prop='productType' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+      [draggable]="false" [flexGrow]="0.45">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <div class="pt-1"> {{value | titlecase}}</div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Markup" prop='markup' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+      [flexGrow]="0.25">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <div class="pt-1"> {{value}}</div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Markup Type" prop='markupType' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+      [draggable]="false" [flexGrow]="0.30">
+      <ng-template ngx-datatable-header-template let-column="column">
+          {{ column.name }}
+      <img src="{{imageDir}}assets/images/info-modal.png" alt="info icon" class="info-icon"  (click)="onMarkupTipContent()" data-placement="bottom"
+        container="body">
+      </ng-template>
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+        <div *ngIf="value == 1" class="pt-1">{{ 'DATATABLE_LABEL.SELL_UNIT' | translate}}</div>
+        <div *ngIf="value == 2" class="pt-1">{{ 'DATATABLE_LABEL.PER_CASE' | translate}}</div>
+        <div *ngIf="value == 3" class="pt-1">{{ 'DATATABLE_LABEL.PER_WEIGHT' | translate}}</div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Effective Date" prop='effectiveDate' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+      [draggable]="false" [flexGrow]="0.23">
+      <ng-template ngx-datatable-cell-template let-value="value">
+        <div class="pt-1"> {{value | date: 'MM/dd/yyyy'}} </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Expiration Date" prop='expirationDate' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+      [draggable]="false" [flexGrow]="0.24">
+      <ng-template ngx-datatable-cell-template let-value="value">
+        <div class="pt-1"> {{value | date: 'MM/dd/yyyy'}} </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false" [flexGrow]="1">
+    </ngx-datatable-column>
+  </ngx-datatable>
+</div>
+
+<div class="vertical-spacing orient">
+  <div class="item-level-title">
+    {{'MARKUP_LABELS.SUBGROUP_MARKUP'| translate }}
+  </div>
+  <div class="item-level-desc">
+    {{'MARKUP_LABELS.SUBGROUP_DESC'| translate }}
+  </div>
+</div>
+
+<div *ngIf="subgroupMarkupList.length != 0">
+  <app-subgroup-markup id="{{markupGridDetails.markupName}}-subgroup-markup" [displayViewMode]="displayViewMode" [isFurtheranceMode] ="isFurtheranceMode" [determineFurtheranceMode]="determineFurtheranceMode"
+    [markupGridDetails]="markupGridDetails" [subgroupMarkup]="subgroupMarkupList" [contractPriceProfileId]="contractPriceProfileId" (subgroupMarkupDeleteInfo)="onSubgroupDeleteInfo($event)"
+    (editSubgroupGrid)="onEditSubgroupGrid($event)" (onSubgroupUnitChangeVal)="onSubgroupUnitChange($event)" (subgroupDescriptionStatus)="checkMarkupValidations()"></app-subgroup-markup>
+</div>
+
+<div *ngIf="subgroupMarkupList.length == 0 && !determineFurtheranceMode">
+  <div class="vertical-spacing orient warning-text-item-level">{{'MARKUP_LABELS.NO_SUBGROUPS_EXIST'| translate }} </div>
+</div>
+
+<div *ngIf="!displayViewMode && !isFurtheranceMode" class="pt-2">
+  <button type="button" [disabled]="isAddSubgroupDisabled ? true : null" class="btn btn-subgroup" (click)="onAddSubgroupMarkup()">{{'COMMON.BTN_ADD_SUBGROUP'| translate }}</button>
+  <span *ngIf="subgroupIdValidError" class="error-message">
+    <img src="{{imageDir}}assets/images/danger-icon.png" alt="danger icon" class="danger-icon">{{'MARKUP_ERRORS.INVALID_SUBGROUP_ID'| translate }}</span>
+  <span *ngIf="subgroupIdDuplicateError" class="error-message">
+    <img src="{{imageDir}}assets/images/danger-icon.png" alt="danger icon" class="danger-icon">{{'MARKUP_ERRORS.DUPLICATE_SUBGROUP_CODE'| translate }}</span>
+  </div>
+
+<div class="vertical-spacing orient">
+  <div class="item-level-title">
+    {{'MARKUP_LABELS.ITEM_LEVEL_MARKUP'| translate }}
+  </div>
+  <div class="item-level-desc">
+    {{'MARKUP_LABELS.ITEM_LEVEL_DESC'| translate }}
+  </div>
+</div>
+
+<div *ngIf="itemLevelMarkupList.length != 0">
+  <app-item-level-markup id="{{markupGridDetails.markupName}}-item-level-markup" (editItemLevelGrid)="onEditItemLevelGrid($event)" [isFurtheranceMode]="isFurtheranceMode"
+    (itemDescriptionStatus)="checkMarkupValidations()" (onItemLevelUnitChangeVal)="onItemLevelUnitChange($event)" (itemLevelDeleteInfo)="onItemLevelDeleteInfo($event)"
+    [markupGridDetails]="markupGridDetails" [itemLevelMarkupList]="itemLevelMarkupList" [contractPriceProfileId]="contractPriceProfileId" [exceptionIndex]="exceptionIndex"
+    [displayViewMode]="displayViewMode" [isMarkupUnitDisabled]="isMarkupUnitDisabled" [markupOnSellVal]="markupOnSellVal" [determineFurtheranceMode]="determineFurtheranceMode"></app-item-level-markup>
+</div>
+
+<div *ngIf="itemLevelMarkupList.length == 0 && !determineFurtheranceMode">
+  <div class="vertical-spacing orient warning-text-item-level">{{'MARKUP_LABELS.NO_ITEM_LEVEL_EXIST'| translate }} </div>
+</div>
+
+<div *ngIf="determineFurtheranceMode" class="pt-2">
+  <button type="button" [disabled]="isAddItemDisabled ? true : null" class="btn btn-item-level" (click)="onAddItemLevelMarkup()">{{'COMMON.BTN_ADD_ITEM_LEVEL'| translate }}</button>
+  <span *ngIf="itemIdValidError" class="error-message">
+    <img src="{{imageDir}}assets/images/danger-icon.png" alt="danger icon" class="danger-icon">{{'MARKUP_ERRORS.INVALID_ITEM_CODE'| translate }}</span>
+  <span *ngIf="itemIdActiveError" class="error-message">
+    <img src="{{imageDir}}assets/images/danger-icon.png" alt="danger icon" class="danger-icon">{{'MARKUP_ERRORS.INACTIVE_ITEM_CODE'| translate }}</span>
+  <span *ngIf="itemIdDuplicateError" class="error-message">
+    <img src="{{imageDir}}assets/images/danger-icon.png" alt="danger icon" class="danger-icon">{{'MARKUP_ERRORS.DUPLICATE_ITEM_CODE'| translate }}</span>
+  <span *ngIf="itemExitsInDBError " class="error-message">
+    <img src="{{imageDir}}assets/images/danger-icon.png" alt="danger icon" class="danger-icon">{{'ASSIGNMENT_ITEM_LABELS.ITEM_EXISTS'| translate }}</span>
+  <div class="horizontal-line mt-3"></div>
+</div>
+
+<div [formGroup]="markupGridForm">
+  <div class="d-flex flex-row orient">
+    <div class="align-save">
+      <span *ngIf="markupGridDetails.isMarkupSaved; then savedMarkup else unsavedMarkup"></span>
+      <ng-template #savedMarkup>
+        <button *ngIf="determineFurtheranceMode" class="pt-3" type="button" [disabled]="true" class="pull-right btn btn-primary save-markup"
+          (click)="onSubmit($event)"> {{ 'DATATABLE_LABEL.MARKUP_SAVED' | translate}} </button>
+      </ng-template>
+      <ng-template #unsavedMarkup>
+        <button *ngIf="determineFurtheranceMode" type="button" [ngClass]="isSaveGrayedOut() ? 'grayed-out' : ''" class="pull-right btn btn-primary save-markup"
+          (click)="onSubmit($event)">{{ 'DATATABLE_LABEL.SAVE_MARKUP' | translate}} </button>
+        <span *ngIf="markupRequiredError && determineFurtheranceMode" class="error-message">
+          <img src="{{imageDir}}assets/images/danger-icon.png" alt="danger icon" class="danger-icon">{{'MARKUP_ERRORS.MARKUP_REQUIRED'| translate }}</span>
+        <span *ngIf="markupFormatValidError && determineFurtheranceMode" class="error-message">
+          <img src="{{imageDir}}assets/images/danger-icon.png" alt="danger icon" class="danger-icon">{{'MARKUP_ERRORS.INVALID_MARKUP_FORMAT'| translate }}</span>
+        <span *ngIf="markupInvalidError && determineFurtheranceMode" class="error-message">
+          <img src="{{imageDir}}assets/images/danger-icon.png" alt="danger icon" class="danger-icon">{{'MARKUP_ERRORS.INVALID_MARKUP_VALUE'| translate }}</span>
+        <span *ngIf="itemIdRequiredError && determineFurtheranceMode" class="error-message">
+          <img src="{{imageDir}}assets/images/danger-icon.png" alt="danger icon" class="danger-icon">{{'MARKUP_ERRORS.ITEM_ID_REQUIRED'| translate }}</span>
+        <span *ngIf="subgroupIdRequiredError && determineFurtheranceMode" class="error-message">
+          <img src="{{imageDir}}assets/images/danger-icon.png" alt="danger icon" class="danger-icon">{{'MARKUP_ERRORS.SUBGROUP_ID_REQUIRED'| translate }}</span>
+        <span *ngIf="itemDescRequiredError && determineFurtheranceMode" class="error-message">
+          <img src="{{imageDir}}assets/images/danger-icon.png" alt="danger icon" class="danger-icon">{{'MARKUP_ERRORS.ITEM_DESC_REQUIRED'| translate }}</span>
+      </ng-template>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="markuptipContent" tabindex="-1" role="dialog" aria-labelledby="tipContentLabel" aria-hidden="true">
+  <div class="modal-dialog mx-auto" role="document">
+    <div class="modal-content modal-content-markup-type">
+      <div class="modal-header modal-header-unset-bottom">
+        <div class="modal-title" #tipContentTitle id="tipContentLabel">Markup Types</div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body modal-body-unset-top">
+        <div class="tooltip-label">
+          {{ 'HOVER_INFO.PER_CASE_TITLE'| translate }}
+        </div>
+        <div>
+          {{ 'HOVER_INFO.PER_CASE_BODY'| translate }}
+        </div>
+        <br/>
+        <div class="modal-body-unset-top example-per-case-and-sell-unit">
+          {{ 'HOVER_INFO.PER_CASE_EXAMPLE'| translate }}
+        </div>
+        <hr/>
+        <div class="tooltip-label">
+          {{ 'HOVER_INFO.PER_SELL_TITLE'| translate }}
+        </div>
+        <div>
+          {{ 'HOVER_INFO.PER_SELL_BODY'| translate }}
+        </div>
+        <br/>
+        <div class="modal-body-unset-top example-per-case-and-sell-unit">
+          {{ 'HOVER_INFO.PER_SELL_EXAMPLE'| translate }}
+        </div>
+        <hr/>
+        <div class="tooltip-label">
+          {{ 'HOVER_INFO.PER_WEIGHT_TITLE'| translate }}
+        </div>
+        <div>
+          {{ 'HOVER_INFO.PER_WEIGHT_BODY_1'| translate }}
+        </div>
+        <br/>
+        <div class="modal-body-unset-top example-per-weight">
+          {{ 'HOVER_INFO.PER_WEIGHT_EXAMPLE_1'| translate }}
+        </div>
+        <br/>
+        <div>
+          {{ 'HOVER_INFO.PER_WEIGHT_BODY_2'| translate }}
+        </div>
+        <br/>
+        <div class="modal-body-unset-top example-per-weight">
+          {{ 'HOVER_INFO.PER_WEIGHT_EXAMPLE_2'| translate }}
+        </div>
+    </div>
+  </div>
+</div>
+</div>

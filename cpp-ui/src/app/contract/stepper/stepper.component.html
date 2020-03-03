@@ -1,0 +1,61 @@
+<div class="scrollable-content">
+  <section>
+    <article class="d-flex setup-header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-10">
+            <div *ngIf="isFurtheranceMode && displayViewMode" class="title">
+              {{'COMMON.FURTHERANCE_SUB_HEADER'| translate }}
+            </div>
+            <div *ngIf="!displayViewMode && !isAmendment" class="title">
+              {{'COMMON.SUB_HEADER'| translate }}</div>
+            <div *ngIf="displayViewMode && !isFurtheranceMode" class="title">
+              {{'COMMON.VIEW_MODE_SUB_HEADER'| translate }}
+            </div>
+            <div *ngIf="isAmendment && !displayViewMode" class="title">
+              {{'COMMON.AMENDMENT_SUB_HEADER'| translate }}
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="contract-info">
+              <div>{{'COMMON.CPP_ID' | translate }}: {{ contractPriceProfileId }}</div>
+              <div>{{'COMMON.CPP_VERSION' | translate }}: {{ versionNumber }}</div>
+              <div>{{'COMMON.CPP_STATUS' | translate }}: {{ cppStatus }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <article class="stepper-container">
+    <div class="d-flex stepper">
+      <div *ngFor='let step of stepper; let i = index; let l = last' class="d-flex">
+        <div class="d-flex flex-column step-container">
+          <div class="step">
+            <a class="current" routerLink="{{step.stepUrl}}" [ngClass]="{
+                          current: step.isCurrent,
+                          completed: step.isCompleted,
+                          disabled: step.isDisabled
+                          }">
+              <span *ngIf="step.isCompleted; then completedStep else incompleteStep"></span>
+              <ng-template #completedStep>
+                <img src="{{imageDir}}assets/images/complete.svg" class="circle" alt="step-circle" />
+              </ng-template>
+              <ng-template #incompleteStep>
+                <span class="circle">{{ i+1 }}</span>
+              </ng-template>
+              <span class="label">{{ step.stepName }}</span>
+            </a>
+          </div>
+        </div>
+        <div *ngIf="l" class="align-self-center flex-column last-divider"></div>
+        <div *ngIf="!l" class="align-self-center flex-column horizontal-divider" [ngClass]="{'last-divider': step.isLastStep}"></div>
+      </div>
+    </div>
+  </article>
+
+  <app-contract-information></app-contract-information>
+
+  <router-outlet></router-outlet>
+</div>

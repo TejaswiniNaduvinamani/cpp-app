@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-md-8">
+    <div class="mt-3">
+      <div class="row">
+        <div [ngClass]="(assignmentData.isAssignmentSaved || isViewMode)?'col-md-3 saved-search-headers':'col-md-3'">
+          <strong>{{'ASSIGNMENT_LABELS.CUSTOMER_TYPE'| translate }}</strong>
+        </div>
+        <div [ngClass]="(assignmentData.isAssignmentSaved || isViewMode)?'col-md-2 saved-search-headers':'col-md-2'">
+          <strong>{{'ASSIGNMENT_LABELS.CUSTOMER_ID'| translate }}</strong>
+        </div>
+      </div>
+    </div>
+
+    <div *ngFor="let gridMapKey of gridMapKeyList; let i = index">
+      <app-real-customer-search [gridMapKey]="gridMapKey" [realCustomerData]="gridMap.get(gridMapKey)" [realCustomerFields]="realCustomerListLength" [isViewMode]="isViewMode"
+       (deleteField)="onDelete($event)" [realCustomerTypes]="customerTypeList" [index]="createIndex(i)" (customerExistCheckEmitter) = "validateForDuplicates($event)"
+       [assignmentDetails]="assignmentData" (defaultAssignmentDelete)="detectDefaultAssignmentDelete($event)"
+       [contractPriceProfileSeq]="contractPriceProfileSeq" (enableActivatePricing)="emitPricingActivateState($event)"></app-real-customer-search>
+
+    </div>
+    <div *ngIf="!assignmentData.isDefault && !isViewMode" class="mt-2">
+      <button type="button" class="btn add-real-customer" (click)="addAnother()">{{'ASSIGNMENT_LABELS.ADD_CUSTOMER'| translate }}</button>
+    </div>
+
+  </div>
+  <div class="col-md-4">
+    <div class="markup-header">{{assignmentData.markupName}}</div>
+    <app-markup-display [markupValues]="assignmentData.markupList" [subgroupValues]="assignmentData.subgroupList" [itemMarkupValues]="assignmentData.itemList" [expireLowerInd]="assignmentData.expireLowerInd"></app-markup-display>
+  </div>
+</div>
+<div *ngIf="!isViewMode">
+        <button class="btn btn-primary mt-3" [disabled]="disableSaveInd" (click)="onSaveClick()">{{'ASSIGNMENT_LABELS.SAVE_ASSIGNMENTS'| translate }}</button>
+        <span *ngIf="duplicateCustomerInd" class="customer-error"><img src="{{imageDir}}assets/images/danger-icon.png" alt="danger icon" class="danger-icon">{{validationMsg}}{{duplicateList}}</span>
+        <span *ngIf="validationErrorInd" class="customer-error"><img src="{{imageDir}}assets/images/danger-icon.png" alt="danger icon" class="danger-icon">{{validationMsg}}{{memberHierarchyErrorMessage}}</span>
+      </div>
+
+<div class="modal fade" id="saveAssignmentModal{{index}}" tabindex="-1" role="dialog" aria-labelledby="saveAssignmentModalLabel" aria-hidden="true">
+  <div class="modal-dialog mx-auto" role="document">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <div class="modal-title" id="assignmentModalLabel">{{'ASSIGNMENT_LABELS.ASSIGNMENT_SAVE_POP_MSG'| translate }}</div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="cancel" data-dismiss="modal">
+          <u>{{'COMMON.BTN_CANCEL'| translate }}</u>
+        </button>
+        <button type="submit" #saveCustomerAssignmentBtn class="btn save" data-dismiss="modal" (click)="saveAssignments()">{{'COMMON.BTN_SAVE'| translate }}</button>
+      </div>
+    </div>
+  </div>
+</div>

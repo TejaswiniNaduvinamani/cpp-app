@@ -1,0 +1,47 @@
+@import '../../assets/scss/partials/global';
+@import '../../assets/scss/partials/variables';
+@import '../../assets/scss/partials/mixins';
+
+.title {
+  @include subheader-title(35%);
+}
+
+.contract-info {
+  padding-top: 10px;
+  color: $gfs-stepper-gray;
+  font-weight: 300;
+  text-align: right;
+  font-size: $gfs-fontsize-14;
+}
+
+.copy-design{
+  width: 96px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: $gfs-lt-navy-blue;
+  font-size: $gfs-fontsize-14;
+  text-align: center;
+  line-height: .29;
+  position: relative;
+  margin-right: 50px;
+}
+
+.cost-model-type {
+  box-sizing: border-box;
+  width: 250px;
+  height: 30px;
+  border-radius: 2px;
+  background-color: $gfs-white;
+  border: solid 1px $gfs-gray-3;
+  outline-style: none;
+}
+
+.bottom-bar-cost-model {
+  margin-top: 15px;
+  height: 60px;
+  margin-right: 20px;
+}
+
+.align-right {
+  margin-right: unset;
+}

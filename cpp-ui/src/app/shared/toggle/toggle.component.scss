@@ -1,0 +1,75 @@
+@import '../../../assets/scss/partials/_variables.scss';
+@import '../../../assets/scss/partials/_mixins.scss';
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 14px;
+
+}
+
+.switch input {display:none;}
+/* Slider Track CSS Properties when switched off */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top:10px;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  background-color:$gfs-track-off;  /* slider background when off */
+  transition: .4s;
+
+}
+
+/* Slider knob when off */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: -3px;
+  top: -3px;
+  background-color:$gfs-knob-color-off;  /* round switch color */
+  transition: .4s;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.24), 0 0 1px 0 rgba(0, 0, 0, 0.12);
+  border-style: solid;
+  border-width: 0.5px;
+  border-image-source: linear-gradient(to bottom, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06) 20%, rgba(255, 255, 255, 0));
+  border-image-slice: 1;
+}
+
+/* Slider Track when switched on */
+input:checked + .slider {
+  background-color: $gfs-track-on;   /* backround slider color when switched on */
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #648DB0;
+}
+
+/* Slider Knob when switched on */
+input:checked + .slider:before {
+  -webkit-transform: translateX(30px);
+  -ms-transform: translateX(30px);
+  transform: translateX(20px);
+  background-color:$gfs-knob-color-on;
+}
+
+/* Rounded sliders - Track curve effect */
+.slider.round {
+  border-radius: 34px;
+}
+
+/* Knob-round shape */
+.slider.round:before  {
+  border-radius: 100%;
+}
+
+.text {
+  @include gfs-label-style;
+  color:$gfs-label-black;
+  margin-left: 10px;
+}
+

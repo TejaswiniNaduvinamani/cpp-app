@@ -1,0 +1,125 @@
+@import '../../../../../assets/scss/partials/global';
+@import '../../../../../assets/scss/partials/_variables.scss';
+
+.drop-down {
+  box-sizing: border-box;
+  border-radius: 2px;
+  background-color: $gfs-white;
+  border: solid 1px $gfs-gray-3;
+  height: 36px;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.saved-drop-down {
+  @extend .drop-down;
+  color: $gfs-stepper-gray;
+}
+
+.customer-id {
+  box-sizing: border-box;
+  border-radius: 2px;
+  background-color: $gfs-white;
+  border: solid 1px $gfs-gray-3;
+  height: 36px;
+  width: 110%;
+  padding: 10px;
+}
+
+.saved-customer-id {
+  @extend .customer-id;
+  color: $gfs-stepper-gray;
+}
+
+.invalid {
+  color: $gfs-red;
+  font-size: $gfs-fontsize-14;
+  font-weight: bold;
+  font-style: italic;
+  text-align: left;
+}
+
+.find-customer {
+  height: 38px;
+}
+
+.saved-find-customer {
+  @extend .find-customer;
+  opacity: .6;
+}
+
+.customer-name {
+  font-size: $gfs-fontsize-14;
+  text-align: left;
+  color: $gfs-stepper-gray;
+  height: 19px;
+}
+
+.customer-name-value {
+  font-size: $gfs-fontsize-16;
+  text-align: left;
+  color: $gfs-label-black;
+}
+
+.delete {
+  cursor: pointer;
+  background-image: url('../../../../../assets/images/clear.png');
+}
+
+.invalid-customer-warning {
+  font-size: $gfs-fontsize-14;
+  font-weight: bold;
+  font-style: italic;
+  text-align: left;
+  color: $gfs-red;
+}
+
+.trash-icon {
+  position: relative;
+  left: 14px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.fade {
+  background-color: rgba(0, 0, 0, .35);
+}
+
+.modal-dialog {
+  max-width: 640px;
+  border-radius: 2px;
+  margin: 140px auto;
+}
+
+.modal-content {
+  background-color: $gfs-white-2;
+}
+
+.modal-header {
+  padding: 20px;
+  border-bottom: unset;
+  padding-bottom: 10px;
+}
+
+.modal-title {
+  width: 95%;
+  height: auto;
+  font-family: $gfs-font-family;
+  font-size: $gfs-fontsize-18;
+  font-weight: 500;
+  text-align: left;
+  color: $gfs-stepper-black;
+  overflow-wrap: break-word;
+}
+
+.modal-footer {
+  box-sizing: border-box;
+  height: 56px;
+  border-top: 1px solid $gfs-gray-4;
+}
+
+.delete-customer {
+  @extend .modal-btn;
+  background-color: $gfs-red;
+}

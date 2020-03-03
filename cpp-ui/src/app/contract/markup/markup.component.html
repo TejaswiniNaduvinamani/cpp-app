@@ -1,0 +1,248 @@
+<div [hidden]="!showSpinner">
+  <div class="spinner">
+    <div class="fa cpp-spinner-lg"></div>
+  </div>
+</div>
+
+<div [hidden]="showSpinner">
+  <div class="vertical-spacing orient">
+    <div class="markup-title">
+      {{'MARKUP_LABELS.MARKUP_TITLE'| translate }}
+    </div>
+  </div>
+
+  <div id="markupAccordion" data-children=".item">
+    <div *ngFor="let markupAccordion of markupAccordions; let i = index">
+      <div class="item">
+        <div class="orient vertical-spacing">
+          <a data-toggle="collapse" (click)="toggleCollapse($event.target.parentNode)" data-parent="#markupAccordion" href="#markupStructure{{i}}"
+            role="button" [attr.aria-expanded]="i == 0 ? 'true' : 'false'" [ngClass]="{
+                current: markupAccordion.isCurrent,
+                completed: markupAccordion.isMarkupSaved,
+                disabled: markupAccordion.isError
+                }">
+            <span class="align-carat">
+              <em [ngClass]="i == 0 ? 'fa fa-angle-down' : 'fa fa-angle-right'" style="font-size:20px" aria-hidden="true"></em>
+            </span>
+            <span *ngIf="markupAccordion.isMarkupSaved; then savedMarkup else unsavedMarkup"></span>
+            <ng-template #savedMarkup>
+              <img src="{{imageDir}}assets/images/complete.svg" class="circle" alt="saved-markup-icon" />
+            </ng-template>
+            <ng-template #unsavedMarkup>
+              <span class="circle">{{ i+1 }}</span>
+            </ng-template>
+            <span class="accordion-title">{{ markupAccordion.markupName }} </span>
+          </a>
+          <span *ngIf="!displayViewMode && !isFurtheranceMode">
+            <span *ngIf="i != 0" class="pull-right edit">
+              <a href="#" role="button" [attr.markupName]="markupAccordion.markupName" [attr.gfsCustomerId]="markupAccordion.gfsCustomerId"
+                (click)="onEdit($event.target)" data-toggle="modal" data-target="#editmarkupModal">{{'MARKUP_LABELS.EDIT'| translate }}</a>
+            </span>
+          </span>
+        </div>
+        <div class="collapse" [class.show]="i == 0" role="tabpanel" id="markupStructure{{i}}">
+          <div *ngIf="!displayViewMode && !isFurtheranceMode">
+            <div *ngIf = "i != 0" class="orient vertical-spacing">
+                <label class="copy-label" for="copyDropdown"> {{'MARKUP_LABELS.COPY_MARKUP'| translate }}</label>
+                <img src="{{imageDir}}assets/images/info-icon.svg" alt="info icon" class="info-icon"  [ngbTooltip]="'HOVER_INFO.COPY_MARKUPS' | translate"
+                data-placement="bottom">
+                <div>
+                  <select class="copy-dropdown" #copy id="copyDropdown{{i}}" [attr.copyIndex]="i" (change)="onCopyFrom($event.target)">
+                    <option value="" [selected]="true" disabled="true"> {{'COMMON.SELECT'| translate }} </option>
+                    <option *ngFor="let markup of copyMarkups" [hidden]="markup.gfsCustomerId == markupAccordion.gfsCustomerId" [value]="markup.gfsCustomerId">{{ markup.markupName }}</option>
+                  </select>
+              </div>
+            </div>
+        </div>
+        <app-markup-grid (editMarkupGrid)="onEditMarkupGrid($event)" (saveMarkupGridDetails)="onSaveMarkupGridDetails($event, 'SaveMarkup')" (onUnitChangeVal)="setMarkupOnSell($event)" [isMarkupUnitDisabled]="isMarkupUnitDisabled"
+          [rows]="markupAccordion.productMarkupList" [markupGridDetails]="markupAccordion" [itemLevelMarkupList]="markupAccordion.itemLevelMarkupList" [subgroupMarkupList]="markupAccordion.subgroupMarkupList" [showMarkupOnSell]="showMarkupOnSell"
+          [exceptionIndex]="i" [contractPriceProfileId]="contractPriceProfileId" [effectiveDate]="effectiveDate" [expirationDate]="expirationDate" [displayViewMode]="displayViewMode" [isFurtheranceMode]="isFurtheranceMode"
+          (itemLevelDeleteInfo)="onItemLevelDeleteInfo($event)" (subgroupDeleteInfo)="onSubgroupDeleteInfo($event)" [markupOnSellVal]="markupOnSellVal" [determineFurtheranceMode]="determineFurtheranceMode"></app-markup-grid>
+      </div>
+      <div class="horizontal-line"></div>
+    </div>
+  </div>
+  </div>
+
+  <div *ngIf="!displayViewMode && !isFurtheranceMode">
+    <button type="button" [disabled]="disableAddException" [ngClass]="disableAddException ? 'grayed-out' : ''" class="btn btn-primary add-exception" data-toggle="modal" data-target="#markupModal">{{'COMMON.BTN_ADD_EXCEPTION'| translate }}</button>
+  </div>
+
+  <div [formGroup]="markupForm">
+    <div class="orient">
+      <label class="question-expire-lower spacing">{{'MARKUP_LABELS.EXPIRE_LOWER_RADIO' | translate}}</label>
+    </div>
+    <div class="row orient lower-spacing">
+      <div [ngClass]="(displayViewMode)? 'view-radio' : ''" class="gfs-radiobutton col-sm-1 ">
+        <input [attr.disabled]="(displayViewMode || isFurtheranceMode) ? true : null" id="expireLowerYes" name="expireLowerQuestion" [value]="true" type="radio" (click)="onClickExpireLower()" class="radio" formControlName="expireLowerQuestion">
+        <label class="radio-label" [ngClass]="(displayViewMode || isFurtheranceMode)? 'view-radio-label' : ''" for="expireLowerYes">{{ 'MARKUP_LABELS.YES' | translate }}</label>
+      </div>
+      <div [ngClass]="(displayViewMode)? 'view-radio' : ''" class="gfs-radiobutton col-sm-1">
+        <input [attr.disabled]="(displayViewMode || isFurtheranceMode) ? true : null" id="expireLowerNo" name="expireLowerQuestion" type="radio" (click)="onClickExpireLower()" formControlName="expireLowerQuestion" [value]="false" class="radio">
+        <label class="radio-label" [ngClass]="(displayViewMode || isFurtheranceMode)? 'view-radio-label' : ''" for="expireLowerNo">{{ 'MARKUP_LABELS.NO' | translate }}</label>
+      </div>
+    </div>
+
+    <div *ngIf="showMarkupOnSell">
+      <div class="d-flex flex-row orient mb-3">
+        <div class="p-1" [ngClass]="(displayViewMode || isFurtheranceMode)? 'view-mode-toggle' : '' ">
+          <app-toggle (selectedValue)="toggleMarkupOnSell($event)" [toggelLabel]="markupOnSellLabel" [toggleDefaultState]="markupOnSellVal"
+            [toggleForm]="markupForm.controls.markupOnSellToggle"></app-toggle>
+        </div>
+        <img src="{{imageDir}}assets/images/info-icon.svg" alt="info icon" class="info-icon toggle-helper"  [ngbTooltip]="'HOVER_INFO.MARKUP_ON_SELL' | translate"
+          data-placement="top">
+        <div class="align-warning" *ngIf="!markupOnSellVal">
+          <span class="warning-text">{{ 'CUST_INFO_ERRORS.MARKUP_ON_SELL_WARNING'| translate }}</span>
+        </div>
+      </div>
+    </div>
+</div>
+
+  <div class="horizontal-line"></div>
+  <div class="bottom-bar" *ngIf="determineFurtheranceMode">
+    <div *ngIf="selectedContractType !== contractTypeIFS && selectedContractType !== contractTypeIFSAmendement">
+      <button type="submit"  class="pull-right btn btn-primary" [disabled]="isNextDisabled || isSubmitDisabled" (click)="onSubmit('Submit')"><span *ngIf="!isFurtheranceMode">{{'COMMON.BTN_SPLITCASE'| translate }}</span>
+        <span *ngIf="isFurtheranceMode">{{'COMMON.BTN_SPLITCASE_FURTHERANCE'| translate }}</span></button>
+    </div>
+    <div *ngIf="selectedContractType === contractTypeIFS || selectedContractType === contractTypeIFSAmendement">
+      <button type="submit"  class="pull-right btn btn-primary" [disabled]="isNextDisabled || isSubmitDisabled" (click)="onSubmit('Submit')"><span *ngIf="!isFurtheranceMode">{{'COMMON.BTN_REVIEW'| translate }}</span>
+        <span *ngIf="isFurtheranceMode">{{'COMMON.BTN_REVIEW_FURTHERANCE'| translate }}</span></button>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>
+
+<div class="modal fade" id="markupModal" tabindex="-1" role="dialog" aria-labelledby="markupModalLabel" aria-hidden="true">
+  <div class="modal-dialog mx-auto" role="document">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <div class="modal-title" id="markupModalLabel">{{'MARKUP_LABELS.MODAL_TITLE'| translate }}</div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onCancelException()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-title-text">{{'MARKUP_LABELS.ADD_EXCEPTION_HEADER'| translate }}</div>
+      <form [formGroup]="markupModalForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="markup-name" class="col-form-label">{{'MARKUP_LABELS.MODAL_BODY'| translate }}</label>
+            <input type="text" autofocus [maxlength]="30" class="form-control markup-input" formControlName="markupStructure" id="markup-name"
+              ondrag="return false;" ondrop="return false;">
+            <span class="text-danger help-block" *ngIf="!markupModalForm.valid && markupModalForm.get('markupStructure').touched">
+              <span *ngIf="markupModalForm.get('markupStructure').errors['duplicateMarkupName']">{{'CUST_INFO_ERRORS.MARKUP_NAME_ERROR'| translate }}</span>
+            </span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="cancel" data-dismiss="modal" (click)="onCancelException()">
+            <u>{{'COMMON.BTN_CANCEL'| translate }}</u>
+          </button>
+          <button type="submit" [disabled]="!markupModalForm.valid" class="btn btn-primary add" data-dismiss="modal" (click)="onAddException('AddException')">{{'COMMON.BTN_ADD'| translate }}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="editmarkupModal" tabindex="-1" role="dialog" aria-labelledby="editMarkupModalLabel" aria-hidden="true">
+  <div class="modal-dialog mx-auto" role="document">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <div class="modal-title" #editModalTitle id="editMarkupModalLabel"></div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onCancelException()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-title-text">{{'MARKUP_LABELS.EDIT_EXCEPTION_HEADER'| translate }}</div>
+      <form [formGroup]="editmarkupModalForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="edit-markup" class="col-form-label">{{'MARKUP_LABELS.MODAL_BODY'| translate }}</label>
+            <input type="text" #editModalInput autofocus [maxlength]="30" class="form-control markup-input" formControlName="editMarkupStructure"
+              id="edit-markup" ondrag="return false;" ondrop="return false;" value="">
+            <span class="text-danger help-block" *ngIf="!editmarkupModalForm.valid && editmarkupModalForm.get('editMarkupStructure').touched">
+              <span *ngIf="editmarkupModalForm.get('editMarkupStructure').errors['duplicateMarkupName']">{{'CUST_INFO_ERRORS.MARKUP_NAME_ERROR'| translate }}</span>
+            </span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <fieldset class="w-100">
+            <div class="float-left ">
+              <button type="button" class="delete" (click)="onDeleteClick()" data-toggle="modal" data-target="#deleteModal">
+                <u>{{'MARKUP_LABELS.DELETE'| translate }}</u>
+              </button>
+            </div>
+            <div class="float-right">
+              <button type="button" class="cancel" data-dismiss="modal" (click)="onCancelException()">
+                <u>{{'COMMON.BTN_CANCEL'| translate }}</u>
+              </button>
+              <button type="submit" [disabled]="!editmarkupModalForm.valid" class="btn btn-primary add" data-dismiss="modal" (click)="onRenameMarkupException('RenameExceptionMarkup')">{{'COMMON.BTN_SAVE'| translate }}</button>
+            </div>
+          </fieldset>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog mx-auto" role="document">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <div class="modal-title" #deleteModalTitle id="deleteModalLabel">{{'MARKUP_LABELS.MODAL_TITLE'| translate }}</div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onCancelException()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-title-text modal-delete">{{'MARKUP_LABELS.DELETE_EXCEPTION_HEADER'| translate }}</div>
+      <div class="modal-footer">
+        <button type="button" class="cancel" data-dismiss="modal" (click)="onCancelException()">
+          <u>{{'COMMON.BTN_CANCEL'| translate }}</u>
+        </button>
+        <button type="submit" #deleteExceptionBtn class="btn btn-delete" data-dismiss="modal" (click)="onDeleteException('ExceptionDeletion')">{{'COMMON.BTN_DELETE'| translate }}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="itemDeleteModal" tabindex="-1" role="dialog" aria-labelledby="itemDeleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog mx-auto" role="document">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <div class="modal-title" #deleteItemModalTitle id="deleteModalLabel"></div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-title-text modal-delete">{{'MARKUP_LABELS.ITEM_LEVEL_MARKUP_DELETE_HEADER'| translate }} </div>
+      <div class="modal-footer">
+        <button type="button" class="cancel" data-dismiss="modal">
+          <u>{{'COMMON.BTN_CANCEL'| translate }}</u>
+        </button>
+        <button type="submit" #deleteItemBtn class="btn btn-delete" data-dismiss="modal" (click)="deleteItemMarkup('ItemMarkupDeletion')">{{'COMMON.BTN_DELETE'| translate }}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="subgroupDeleteModal" tabindex="-1" role="dialog" aria-labelledby="subgroupDeleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog mx-auto" role="document">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <div class="modal-title" #deleteSubgroupModalTitle id="deleteModalLabel"></div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-title-text modal-delete">{{'MARKUP_LABELS.SUBGROUP_MARKUP_DELETE_HEADER'| translate }} </div>
+      <div class="modal-footer">
+        <button type="button" class="cancel" data-dismiss="modal">
+          <u>{{'COMMON.BTN_CANCEL'| translate }}</u>
+        </button>
+        <button type="submit" #deleteSubgroupBtn class="btn btn-delete" data-dismiss="modal" (click)="deleteSubgroupMarkup('SubgroupMarkupDeletion')">{{'COMMON.BTN_DELETE'| translate }}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-delete-exhibit (isExhibitDeleted)="onExhibitDeletion($event)"></app-delete-exhibit>

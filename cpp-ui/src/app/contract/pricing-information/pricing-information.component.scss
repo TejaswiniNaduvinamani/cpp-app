@@ -1,0 +1,212 @@
+@import '../../../assets/scss/partials/global';
+@import '../../../assets/scss/partials/radio-buttons';
+@import '../../../assets/scss/partials/variables';
+@import '../../../assets/scss/partials/mixins';
+
+.form-check-inline {
+  display: inline-flex;
+}
+
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+  border: 1px solid $gfs-warning;
+}
+
+.pricing-information {
+  @include gfs-sub-headers(200px);
+  margin-top: 20px;
+}
+
+.text {
+  width: 27px;
+  height: 30px;
+  font-family: $gfs-font-family;
+  font-size: $gfs-fontsize-14;
+  line-height: 2.14;
+  text-align: left;
+  color: $gfs-label-black;
+}
+
+.fa-info-circle:before {
+  color: $gfs-gray-2;
+}
+
+.toggle-helper {
+  position: relative;
+  top: 13px;
+}
+
+.label-helper {
+  position: relative;
+  color: $gfs-gray-2;
+  top: -3px;
+  right: 185px;
+}
+
+.vertical-spacing {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.text-box-space {
+  margin-bottom: 20px;
+}
+
+.label-space {
+  margin-bottom: 0;
+}
+
+button img {
+  cursor: pointer;
+}
+
+.date-text {
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-top: 5px;
+  width: 31px;
+  height: 36px;
+  font-family: $gfs-font-family;
+  font-size: $gfs-fontsize-16;
+  line-height: 1.5;
+  text-align: left;
+  color: $gfs-label-black;
+}
+
+.gfs-label {
+  height: 18px;
+  font-family: $gfs-font-family;
+  font-size: $gfs-fontsize-14;
+  font-weight: bold;
+  line-height: 1.29;
+  text-align: left;
+  color: $gfs-label-black;
+  margin-bottom: 12px;
+}
+
+.schedule-cost {
+  @extend .gfs-label;
+  width: 285px;
+}
+
+.question-toggle {
+  @extend .gfs-label;
+  width: 512px;
+}
+
+.cost-model {
+  @extend .gfs-label;
+  width: 72px;
+}
+
+.info-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.horizontal-dash {
+  @include horizontal-separator(326px);
+}
+
+.seperator {
+  @include horizontal-separator(500px);
+  box-sizing: border-box;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.horizontal-line {
+  @include horizontal-separator(100%);
+  box-sizing: border-box;
+  margin-left: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.horizontal-bottom-line {
+  @include horizontal-separator(100%);
+  box-sizing: border-box;
+  margin-left: 0;
+  margin-top: 65px;
+  margin-bottom: 25px;
+}
+
+.warning-icon {
+  margin-left: 69px;
+  width: 24px;
+  height: 24px;
+}
+
+.warning-text {
+  height: 16px;
+  font-size: $gfs-fontsize-14;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 1.14;
+  text-align: left;
+  color: $gfs-orange;
+}
+
+.view-date-text {
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-top: 5px;
+  width: 31px;
+  height: 36px;
+  font-family: $gfs-font-family;
+  font-size: $gfs-fontsize-16;
+  line-height: 1.5;
+  text-align: left;
+  color: $gfs-label-black;
+  opacity: .4;
+  cursor: default;
+}
+
+.view-mode-date {
+  color: $gfs-gray-3;
+}
+
+.view-mode-disable-calendar {
+  @extend .input-group-addon;
+  opacity: .4;
+}
+
+.view-mode-radio-button {
+  @extend .gfs-radiobutton;
+  background-color: $gfs-gray-3;
+}
+
+.view-mode-toggle {
+  opacity: .6;
+  pointer-events: none;
+}
+
+.view-radio-label {
+  @extend .radio-label;
+  opacity: .6;
+ }
+
+textarea {
+  padding: 10px;
+}
+
+.label-pad {
+  margin-top: 15px;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.align-center {
+  margin-left: -67px;
+}
+
+.align-center-left {
+  margin-left: -7px;
+}
+
+.view-mode-textbox {
+  opacity: .4;
+  background-color: $gfs-white;
+}

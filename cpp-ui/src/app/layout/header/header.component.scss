@@ -1,0 +1,64 @@
+@import '../../../assets/scss/partials/variables';
+
+.gfsLogo {
+  background-repeat: no-repeat;
+  background-image: url("../../../assets/images/logo.png");
+  display: inline-block;
+  vertical-align: top;
+  width: 60px;
+  height: 60px;
+}
+
+.app-label {
+  font-size: $gfs-fontsize-16;
+  font-weight: 500;
+  margin-left: 15px;
+  margin-top: 10px;
+  color: $gfs-label-black;
+}
+
+.header-background {
+  position: relative;
+  z-index: 1;
+  height: 60px;
+  box-shadow: 0 2px 4px 0 $gfs-header-boxshadow;
+  width: 100%;
+}
+
+.shade-height {
+  height: 36px;
+  background: $gfs-gray-1;
+}
+
+.tabs {
+  margin-left: 15px;
+  margin-top: 2px;
+  margin-right: 35px;
+  text-align: left;
+  color: $gfs-label-black;
+  font-size: $gfs-fontsize-14;
+  text-decoration: none;
+  &:hover {
+    border-bottom-style: solid;
+    border-bottom-color: $gfs-label-black;
+    cursor: pointer;
+  }
+  &:active {
+    border-bottom-style: solid;
+    border-bottom-color: $gfs-label-black;
+}
+}
+
+.tab-selected {
+  border-bottom-style: solid;
+  border-bottom-color: $gfs-label-black;
+}
+
+.vertical-align {
+  margin-top: 20px;
+}
+
+.disable-logo {
+  pointer-events: none;
+  cursor: default;
+}

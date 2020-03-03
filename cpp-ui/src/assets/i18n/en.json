@@ -1,0 +1,363 @@
+{
+  "COMMON": {
+    "TITLE": "Customer Price Profile",
+    "TITLE_SEARCH": "Customer Price Profile Search",
+    "SUB_HEADER": "Create Price Profile for New Contract",
+    "VIEW_MODE_SUB_HEADER": "View Price Profile",
+    "AMENDMENT_SUB_HEADER": "Amend Pricing Profile",
+    "FURTHERANCE_SUB_HEADER": "Edit Price Profile (Furtherance)",
+    "ASSIGNMENT_SUB_HEADER": "Assignments",
+	"COST_MODEL": "Cost Model",
+    "CPP_ID": "CPP ID",
+    "CPP_VERSION": "CPP Version",
+    "CPP_STATUS": "Status",
+    "PRICE_PROFILE":"Price Profile",
+    "BTN_DISTRIBUTION": "Save & Continue to: Distribution Centers",
+    "BTN_MARKUP": "Save & Continue to: Markup",
+    "BTN_SPLITCASE": "Save & Continue to: Split Case Fee",
+    "BTN_SPLITCASE_FURTHERANCE": "Continue to: Split Case Fee",
+    "BTN_REVIEW_FURTHERANCE": "Continue to: Review",
+    "BTN_REVIEW": "Save & Continue to: Review",
+    "BTN_COMMIT_CPP": "Commit Price Profile and Return to Contract",
+    "BTN_SUBMIT": "Submit",
+    "BTN_COPY_DOWN": "Copy To All",
+    "BTN_COMMIT_PRICE_PROFILE": "Commit Price Profile and Return to Contract",
+    "RETURN_TO_CONTRACT": "Return to Contract",
+    "BTN_ADD": "Add",
+    "BTN_SAVE": "Save",
+    "BTN_DELETE": "Delete",
+    "BTN_CANCEL": "Cancel",
+    "BTN_CLOSE": "Close",
+    "BTN_CONTINUE": "Continue",
+    "BTN_ADD_EXCEPTION": "Add Exception Markup Structures",
+    "BTN_ADD_ITEM_LEVEL": "Add Item-Level Markup",
+    "BTN_ADD_SUBGROUP": "Add Subgroup Markup",
+    "HEADER_TITLE": "Customer Price Profile",
+    "ERROR":"Error: ",
+    "UNEXPECTED_EXCEPTION":"Unexpected exception occured",
+    "CONTACT_SUPPORT": "Please try again, or contact the IT Helpdesk.",
+    "COPYRIGHT": "Copyright © {{ year }} Gordon Food Service",
+    "VERSION": "Version",
+    "SELECT": "Select",
+    "LOADING": "Loading...",
+    "BTN_SAVE_CHANGES": "Save Changes",
+    "BTN_COMMIT_FURTHERANCE": "Commit Furtherance and Return to Contract"
+  },
+
+  "LAUNCH_SCREEN": {
+    "LAUNCH_TITLE": "Launch Screen",
+    "CONTRACT_NAME": "Contract Name*",
+    "CONTRACT_TYPE": "Contract Type*",
+    "CONTRACT_START_DATE": "Contract Start Date*",
+    "CONTRACT_END_DATE": "Contract End Date*",
+    "CPP_ID": "CPP-ID",
+    "MODE": "Mode",
+    "VIEW": "View Mode",
+    "PRICE_PROFILE_EDIT": "Price Profile Edit Mode",
+    "ASSIGNMENT_EDIT_MODE": "Assignment Edit Mode",
+    "CPP_ID_PLACHOLDER": "CPP-ID",
+    "TITLE_PLACHOLDER": "Contract Name",
+    "DATE_FORMAT": "MM/DD/YYYY"
+  },
+
+  "CUST_INFO_LABEL": {
+    "PRICING_INFO": "Pricing Information",
+    "PRICING_EXPIRATION_DATE": "Pricing Expiration Date",
+    "PRICING_EFFECTIVE_DATE": "Pricing Effective Date*",
+    "DATE_PLACEHOLDER": "mm/dd/yyyy",
+    "FISCAL_CALENDAR" : "GFS Fiscal Calendar",
+    "GREGORIAN_CALENDAR" : "Gregorian Calendar (first of every month)",
+    "SCHEDULE_FOR_COST": "Schedule for Cost Changes (Non-Contracted)",
+    "COST_MODEL": "Cost Model",
+    "PRICING_TOGGLE_QUESTION": "Will your customer have price verification and/or formal price audit privileges?",
+    "NO": "No",
+    "YES": "Yes",
+    "PRICE_VERIFICATION_LABEL": "Price Verification Privileges",
+    "PRICE_AUDIT_LABEL": "Formal Price Audit Privileges",
+    "TRANSFER_FEE_LABEL": "Include Transfer Fees (includes SMR and Planned Transfer fees)",
+    "ASSESSMENT_FEE_LABEL": "Include GFS Label Assessment Fee",
+    "SAVE": "Are you sure you want to save?",
+    "DELETE_PRICING_EXHIBIT_POP_MSG" : "Saving any changes will clear the pricing exhibit from the contract. You will need to commit pricing again from the Review Stepper."
+  },
+
+  "HOVER_INFO": {
+    "SCHEDULE_COST" : "What schedule should the non-contracted item cost changes follow?",
+    "PRICE_AUDIT":
+      "This selection will allow for the Price Audit Analyst to conduct price validation showing the customer manufacturer invoices.",
+    "PRICE_VERIFICATION": "This selection will allow for the customer to receive a report to validate pricing without manufacturer invoices.",
+    "TRANSFER_FEE": "This fee covers the costs of purchasing a product into one Distribution Center and transferring to another Distribution Center.",
+    "ASSESSMENT_FEE": "This fee covers the Marketing costs of the Gordon Food Sevice Label and/or Gordon Food Service Branded items.",
+    "MARKUP_ON_SELL": "If markup is based on sell, for example: Cost = $10.00;  Markup = 10%;  Markup based on sell = $10.00 / 0.90 = $11.11. If markup is based on cost, for example: Cost = $10.00;  Markup = 10%;  Markup based on cost = $10 X 1.10 = $11.00",
+    "PER_CASE_TITLE": "$ Per Case Markup",
+    "PER_CASE_BODY": "The markup will be divided by the net weight of the catchweight item to determine the actual markup. E.g. a catchweight item that has a net weight of 20 pounds:",
+    "PER_CASE_EXAMPLE":"$2.50 per case markup calculates to: $2.50/20 lbs. = $0.125 markup",
+    "PER_SELL_TITLE": "$ Per Sell Unit Markup",
+    "PER_SELL_BODY": "The markup will be the same as what is entered. For example:",
+    "PER_SELL_EXAMPLE":"$2.50 per unit markup calculates to: $2.50 markup per unit",
+    "PER_WEIGHT_TITLE":"$ Per Weight Markup",
+    "PER_WEIGHT_BODY_1":"The markup for a NON-catchweight item will be marked up based on its weight. E.g., a Non-catchweight item like 6-10 canned tomatoes that has a net weight of 20 pounds:",
+    "PER_WEIGHT_EXAMPLE_1":"$.10 per weight markup calculates to: $.10*20 lbs. = $2.00 markup",
+    "PER_WEIGHT_BODY_2":"The Markup for a Catchweight item will use the per weight markup entered as its markup.",
+    "PER_WEIGHT_EXAMPLE_2":"$.10 per weight markup calculates to: $.10 = $.10 markup",
+    "EXPIRE_LOWER": "All Product Type Markups will be expired at a lower customer level (family or unit if applicable) that is a customer part of this Concept or MDA",
+    "COPY_MARKUPS": "Product Type Markups will be copied from a saved markup structure of your choice."
+  },
+
+  "CUST_INFO_ERRORS": {
+    "PRICING_EFFECTIVE_DATE_ERROR": "Pricing effective date to be less than or equal to contract end date",
+    "PRICING_CURRENT_DATE_ERROR": "Pricing cannot be made effective for dates earlier than today",
+    "DATE_FORMAT_INVALID": "Please enter a valid date in the format 'mm/dd/yyyy'",
+    "TRANSFER_FEE_WARNING" : "This contract will require an extra level of approval as Transfer Fees is not included.",
+    "MARKUP_ON_SELL_WARNING": "This contract will require an extra level of approval as markup is not selected to be based on sell.",
+    "MARKUP_MIN_MAX_ERROR": "Markups are typically between 5% to 45% or $0.05 to $5",
+    "MARKUP_NAME_ERROR": "The markup structure name you are trying to enter is already in use. Please enter a new name",
+    "FURTHERANCE_CONTRACT_DATE_ERROR": "Furtherance effective date cannot be greater than the contract end date",
+    "FURTHERANCE_CURRENT_DATE_ERROR": "Furtherance effective date cannot be less than the current date",
+    "FURTHERANCE_CONTRACT_START_DATE_ERROR": "Furtherance effective date cannot be less than the contract start date",
+    "FURTHERANCE_AMENDMENT_START_DATE_ERROR": "Furtherance effective date cannot be less than the Amendment start date"
+  },
+
+  "DISTRIBUTION_CENTERS" : {
+    "DISTRIBUTION_TITLE": "Distribution Centers",
+    "SELECT_ALL": "SELECT ALL",
+    "CLEAR": "CLEAR",
+    "DISTRIBUTION_SUBHEADER": "Please select atleast one Distribution Center to continue.",
+    "DISTRIBUTION_SUBHEADER_WARN": "Select your Distribution Centers to continue."
+  },
+
+  "DISTRIBUTION_CENTERS_ERRORS" : {
+    "INVALID_DISTRIBUTION_CENTER_LIST": "At least one distribution center must be selected for a customer on the contract."
+  },
+
+
+  "CONTRCT_INFO_VIEW_LABEL": {
+    "CONTRACT_INFORMATION": "Contract Information",
+    "CONTRACT_NAME": "Contract Name",
+    "CONTRACT_TYPE": "Contract Type",
+    "CONTRACT_START_DATE": "Contract Start Date",
+    "CONTRACT_END_DATE": "Contract End Date",
+    "PRICING_START_DATE": "Pricing Effective Date",
+    "PRICING_END_DATE": "Pricing Expiration Date",
+    "AMENDMENT_START_DATE": "Amendment Effective Date",
+    "FURTHERANCE_EFFECTIVE_DATE": "Furtherance Effective Date"
+  },
+
+  "DATATABLE_LABEL" : {
+    "SELL_UNIT": "Sell Unit",
+    "PER_CASE": "Per Case",
+    "PER_WEIGHT": "Per Weight",
+    "DOLLAR": "$",
+    "PERCENT": "%",
+    "SAVE_MARKUP": "Save Markup",
+    "MARKUP_SAVED": "Markup Saved"
+  },
+
+  "SPLIT_CASE_FEE_LABEL": {
+    "SPLIT_CASE_FEE": "Split Case Fee",
+    "UNIT_DOLLAR": "$",
+    "UNIT_PERCENT": "%",
+    "FEE_TYPE": "Fee Type",
+    "PRICE_PER_PACK": "Price per pack",
+    "COST_PER_PACK": "Cost per pack",
+    "PRICE_DIVIDED_BY_PACK_TITLE": "Price Divided by Pack",
+    "COST_DIVIDED_BY_PACK_TITLE": "Cost Divided by Pack",
+    "PRICE_DIVIDED_BY_PACK_CONTENT": "4-1Gal. Case with Sell Price of $20.00 using 5% split case fee. $20.00 divided by 4 = $5.00 x 1.05 = $5.25 per split",
+    "COST_DIVIDED_BY_PACK_CONTENT": "4-1Gal. Case with Cost of $10.00 using 5% split case fee. $10.00 divided by 4 = $2.50 x 1.05= $2.63 per split"
+  },
+
+  "SPLIT_CASE_FEE_ERRORS" : {
+    "GREATER_THAN_5$_OR_49%": "Recommended values for split case fees are typically below 49% or $5.",
+    "ZERO_SPLIT_CASE_FEE": "This contract will require an extra level of approval as no split case fees is included.",
+    "SPLITCASE_NONNUMERIC_ERROR": "One or more Split Case Fee values are not a valid entry.",
+    "SPLITCASE_INVALID_ERROR": "Split Case Fee must be between 0.00 to 99.99. Please adjust to save."
+  },
+
+  "REVIEW_LABEL" : {
+    "LANGUAGE": "Language Dictated by the Following Selections",
+    "CONTRACT_PRICING_INFORMATION": "1. Contract Pricing Information",
+    "DURATION_OF_GFS_COST": "A. Duration of GFS Cost",
+    "PRICE_AUDIT": ". Price Audit",
+    "COST_OF_PRODUCTS": ". Cost of Products",
+    "DISTRIBUTION_CENTERS": "2. Distribution Centers",
+    "MARKUPS": "3. Markups",
+    "MARKUPS_2": "2. Markups",
+    "SELL_PRICE": "A. Sell Price",
+    "MARKUP_STRUCTURES": "B. Markup Structures",
+    "FORMAL_PRICE_AUDIT_PRIVELEGES": "Formal Price Audit Priveleges",
+    "PRICE_VERIFICATION_PRIVELEGES": "Price Verification Priveleges",
+    "GFS_TRANSFER_FEES": "Include GFS Transfer Fees",
+    "GFS_LABEL_ASSESSMENT_FEE": "Include GFS Label Assessment Fee",
+    "MARKUP_BASED_ON_SELL": "Markup Based on Sell",
+    "SPLIT_CASE_FEE": "4. Split Case Fee",
+    "EDIT": "Edit",
+    "CONTRACT": "Contract"
+  },
+
+  "REVIEW_CONTENT" : {
+    "DURATION_OF_GFS_COST": "GFS Cost will be established with the following frequencies: (a) weekly for commodity Products which includes, but is not limited to, Products which reflect declines and advances in Cost on a regular basis (including most protein Products) beginning on Monday morning and ending the following Sunday; and (b) monthly for non-commodity products or any Products with a fairly stable market base, beginning on the first Monday of the calendar month and ending on the first Sunday of the following the month.",
+    "PRICE_AUDIT": "Upon 30 days advance notice, Customer may audit the price of inventoried Products that are based on Cost and include the Mark-Up once per calendar year (each, an â€œAuditâ€�). Each Audit must be conducted at GFSâ€™ corporate office or one of its satellite offices, as reasonably determined by GFS. Customer may review up to 20 individual Products (by GTIN) for all distribution centers in one GFS pricing period per Audit, but in no case exceeding six months from the date of the Audit. The list of individual Products to be included in the Audit must be provided to GFS along with the written notice of the Audit. The Audit will consist of reviewing the accumulated Cost and GFSâ€™s calculation of the sell price. GFS will provide a spreadsheet showing the Cost used to determine the sell price, as well as the Mark-Up and final Sell Price. GFS will provide in hard copy form, evidence of Cost from the supplier by either mail or by electronic delivery (810 EDI transactions) via itradenetworktm  (a business to business electronic transaction service provider) for all Products that are not subject to a Vendor Contract. For Products subject to a Vendor Contract, GFS will provide a copy of the Vendor Contract used to determine the Contract Cost. All information provided by GFS in connection with an Audit may not be removed from GFSâ€™ premises, including, but not limited to, any summaries, copies, or reproductions. If Customer requests a third party be present during an Audit, the third party must sign a confidentiality agreement in form and substance acceptable to GFS.  Due to the extensive time and complexity associated with an Audit, computer generated price matching or electronic price audits are not permitted.",
+    "COST_OF_PRODUCTS": "The â€œCostâ€� of Products is the invoiced price from the vendor to GFS for the Products, plus common or contract carrier charges by the vendor or a third party (including [GFS or] a subsidiary or affiliate of GFS), fuel surcharges, unloading and restacking charges, container charges, air freight charges, redistribution charges, and other similar charges not included in the vendorâ€™s invoice that are required to bring Products into inventory at a distribution center. Cross-Dock Fees and Transfers Fees between GFS distribution centers may be included in the Cost of certain Products. Cost may also include fees assessed by GFS for brand labeling of up to 1% on Products that are branded to GFS or a trade name used exclusively by GFS, and other fees for vendor nonâ€�compliance with GFS's standard payment program. Cost is not reduced by cash discounts for prompt payment that GFS may receive. Cost is also not reduced for payments, such as performance-based incentives, or fees, or allowances GFS receives for marketing, freight management, warehousing, distribution, or quality assurance that it provides for vendors.",
+    "SELL_PRICE_FIRST": "Except as otherwise set forth in Section 6 of the Agreement the price for the Products will be Cost on the date of the order plus the applicable category mark-up set forth in below (the â€œMark-Upâ€�). If a Location requires a Product to be sold in less than full case quantities and such Product can be split into individual units, the split case fee referenced in Schedule 4 below will be included in the sell price.",
+    "SELL_PRICE_SECOND": "If Customer has negotiated a specific allowance with a vendor on one or more Products, then such allowance will be deducted from the sell price of the Product, after the Mark-Up has been applied.",
+    "REVIEW_DATA_LOAD": " Review Data Loading...This may take few minutes"
+  },
+
+    "MARKUP_LABELS" : {
+      "MARKUP_TITLE": "Markup",
+      "COPY_MARKUP": "Copy Markup from",
+      "MODAL_TITLE": "Add Exception Markup Structures",
+      "ADD_EXCEPTION_HEADER": "Assign names to the Exception Markup Structures you create",
+      "MODAL_BODY": "Exception Markup Structure Name",
+      "EDIT_EXCEPTION_HEADER": "Rename or delete this Exception Markup Structure",
+      "EDIT": "Edit",
+      "DELETE": "Delete",
+      "DELETE_EXCEPTION_HEADER": "Are you sure you would like to delete this Exception Markup Structure?",
+      "ITEM_LEVEL_MARKUP": "Item-Level Markup",
+      "SUBGROUP_MARKUP": "Subgroup Markup",
+      "ITEM_LEVEL_DESC": "Contract Item level Markups Will Override Subgroup and Product Type Markups",
+      "SUBGROUP_DESC": "Subgroup Markups Will Override Product Type Markups",
+      "MARKUP_ON_SELL": "Markup based on Sell",
+      "EXPIRE_LOWER": "Expire Lower",
+      "ITEM_LEVEL_MARKUP_DELETE_HEADER": "Are you sure you would like to delete this item level markup?",
+      "SUBGROUP_MARKUP_DELETE_HEADER": "Are you sure you would like to delete this subgroup markup?",
+      "NO_ITEM_LEVEL_EXIST": "No Item-Level Markups exist for this markup",
+      "NO_SUBGROUPS_EXIST": "No Subgroup Markups exist for this markup",
+      "YES": "Yes",
+      "NO": "No",
+      "EXPIRE_LOWER_RADIO": "Expire All Current Pricing that Exists at a Lower Customer Level",
+      "FUTURE_ITEM_ASSIGNMENT_MODAL_TITLE": "Assignments"
+  },
+
+  "MARKUP_ERRORS" : {
+    "INVALID_ITEM_CODE": "Please enter a valid item code",
+    "INACTIVE_ITEM_CODE": "Please enter an active item code",
+    "DUPLICATE_ITEM_CODE": "This item has already been added",
+    "MARKUP_REQUIRED": "A markup amount is required to save the markup.",
+    "INVALID_SUBGROUP_ID": "Please enter a valid Subgroup ID",
+    "DUPLICATE_SUBGROUP_CODE": "This subgroup has already been added",
+    "INVALID_MARKUP_FORMAT": "One or more markup values are not a valid entry.",
+    "INVALID_MARKUP_VALUE": "Markups must be between 0.01 to 99.99. Please adjust to save.",
+    "ITEM_ID_REQUIRED": "Item ID is required to save the markup.",
+    "SUBGROUP_ID_REQUIRED": "Subgroup ID is required to save the markup.",
+    "ITEM_DESC_REQUIRED": "Item Description is required to save the markup for items without ID's."
+  },
+
+    "TOASTER_MESSAGES" : {
+        "DELETE_SUCCESS": " has been deleted.",
+        "ITEM_LEVEL_MARKUP": "Item-Level Markup",
+        "SUBGROUP_MARKUP": "Subgroup Markup",
+        "ASSIGNMENT_SAVE_SUCCESS": "All customer assignments were successfully saved.",
+        "ITEM_ASSIGNMENT_SAVE_SUCCESS": "All item assignments were successfully saved.",
+        "ASSIGNMENT_DELETE_SUCCESS": "The customer was successfully deleted from the concept.",
+        "ITEM_ASSIGNMENT_DELETE_SUCCESS": "Item assignment has been successfully deleted.",
+        "PRICING_ACTIVATION_SUCCESS": "All pricing for the contract was activated successfully.",
+        "DELETE_PRICING_EXHIBIT_SUCCESS_MSG": "Changes have been made to pricing. Please review and commit pricing again.",
+        "ASSIGNMENT_DEFAULT_DELETE_SUCCESS": "All customer assignments on the contract have been deleted.",
+        "COST_MODEL_UPDATE_SUCCESS":"Cost models updated successfully."
+    },
+
+  "ASSIGNMENT_LABELS" : {
+    "CUSTOMER_TYPE": "Customer Type",
+    "CUSTOMER_ID": "Customer ID",
+    "FIND": "Find",
+    "SAVE_ASSIGNMENTS": "Save Assignments",
+    "ADD_CUSTOMER": "Add Customer",
+    "ADD_ITEM": "Add Item",
+    "CUSTOMERS_TAB": "Customers",
+    "ITEMS_TAB": "Items",
+    "ASSIGNMENT_SAVE_POP_MSG": "Are you sure you would like to save assignments?",
+    "DELETE": "Delete ",
+    "ASSIGNMENT_DELETE_POP_MSG": "Are you sure you would like to delete the assignment?",
+    "ACTIVATE_PRICING":"Activate Price Profile",
+    "ITEM_ASSIGNMENT_DELETE_POP_UP": "Are you sure you would like to delete this item assignment?",
+    "DUPLICATE_LIST": "Duplicate items found. Please fix and try again. ",
+    "EXPIRE_LOWER": "Expire All Current Pricing that Exists at a Lower Customer Level",
+    "YES": "Yes",
+    "NO": "No",
+    "NOTHING_SELECTED": "Nothing Selected",
+    "ASSIGNMENT_DEFAULT_CONCEPT_DELETE_POP_MSG": "Please note that deleting the customer assignment at the contract level will delete all customer assignments on the contract. Are you sure you want to delete?"
+  },
+
+  "REAL_CUSTOMER_LABELS" : {
+    "CUSTOMER_NAME": "Customer Name",
+    "FIND": "Find",
+    "SELECT": "Select"
+  },
+
+   "ASSIGNMENT_ITEM_LABELS" : {
+    "ITEM_ID": "Item ID",
+    "ITEM_NAME": "Item Name",
+    "FIND": "Find",
+    "ASSIGNED": "Assigned To",
+    "ITEM_EXISTS": "This item code already exists on the concept."
+
+  },
+
+   "ERROR_PAGE_LABELS" : {
+    "PROFILE_NOT_FOUND_TITLE": "Customer Price Profile Not Found",
+    "PROFILE_NOT_FOUND_MESSAGE": "The customer price profile you requested could not be found. Please go back and try again. If this issue persists, please contact support.",
+    "MULTIPLE_AMENDMENTS_OPEN_TITLE": "Multiple Amendments Open",
+    "MULTIPLE_AMENDMENTS_MESSAGE": "A previous amendment was created and is currently in Draft status. Please cancel or complete the previous amendment before setting up price for new amendment.",
+    "NOT_VALID_CLM_STATUS_FOR_NEW_CONTRACT_TITLE": "Pricing Can't Be Created For This Contract",
+    "NOT_VALID_CLM_STATUS_FOR_NEW_CONTRACT_MESSAGE": "Pricing can't be created when the contract is not in Draft status. Please change the contract status to Draft to continue. If the issue persists, please contact support.",
+    "EXPIRED_CONTRACT_TITLE": "Pricing can't be created for an Expired Contract",
+    "EXPIRED_CONTRACT_MESSAGE": "Pricing can't be created when the contract is in Expired status. Please create a new contract in order to create a price profile.",
+    "CANNOT_CREATE_FURTHERANCE_TITLE": "Furtherance Can't Be Created for this Contract",
+    "CANNOT_CREATE_FURTHERANCE_MESSAGE": "A furtherance can only be created when the contract has been executed, pricing activated and an existing furtherance has not been started. In addition, please confirm that you have proper access to create a furtherance.",
+  	"IN_PROGRESS_FURTHERANCE_FOUND_TITLE": "Amendment Can't Be Created for this Contract",
+    "IN_PROGRESS_FURTHERANCE_FOUND_MESSAGE": "A furtherance on this contract is still being worked on. Please resolve that before creating a new amendment.",
+    "INVALID_AMENDMENT_EFFECTIVE_DATE_TITLE": "Amendment Can't Be Created for this Contract",
+    "INVALID_AMENDMENT_EFFECTIVE_DATE_MESSAGE": "Amendment Effective Date is greater than Contract End Date. Please change Amendment Effective Date in CLM to be less than Contract End Date.",
+    "RETURN_TO_CLM_TITLE": "Return to CLM to continue process",
+    "RETURN_TO_CLM_MESSAGE": "Please close the browser and access your contract from CLM."
+  },
+
+  "VALIDATION_CODE": {
+    "112": "This customer has already been assigned to {{concept}} concept (CPP ID: {{cppId}}).",
+    "112_DUPLICATE_ON_SAVE": "Duplicate customers found. Please fix and try again. ",
+    "113": "Multiple customer assignments are not allowed on the default/contract level concept.",
+    "114": "This customer has already been assigned to {{concept}} concept (CPP ID: {{cppId}}).",
+    "114_DUPLICATE_ON_SAVE": "Duplicate customers found. Please fix and try again. ",
+    "116": "Please enter customers that belong to the membership hierarchy. ",
+    "117": "Invalid ID Entered.",
+    "119": "Invalid ID Entered.",
+    "121": "Please assign a customer to the contract level concept.",
+    "122": "Customer assignments at contract level concept is a unit. Hence, Exception level customer assignments are not allowed.",
+    "200": ""
+  },
+
+  "FURTHERANCE_LABELS" : {
+    "MODAL_TITLE": "Are you sure you'd like to create a furtherance ?",
+    "MODAL_HEADER": "Once created, a furtherance cannot be canceled. To return the contract to it's previous state, you will need to revert any changes and complete the furtherance.",
+    "CANCEL_AND_GO_BACK": "Cancel & Go Back",
+    "FURTHERANCE": "Furtherance",
+    "FURTHERANCE_EFFECTIVE_DATE": "Furtherance Effective Date",
+    "REASON": "Reason for Change",
+    "CONTRACT_REFERENCE": "Contract Reference",
+    "REASON_FOR_CHANGE_PLACEHOLDER": "Note the reason for this change",
+    "CONTRACT_REFERENCE_PLACEHOLDER": "Section of contract relating to this change"
+  },
+
+   "COST_MODEL" : {
+    "BTN_COPY": "Copy Down",
+    "BTN_SAVE_COST_MODEL": "Save Cost Model",
+    "BTN_RETURN_TO_CONTRACT": "Return to Contract"
+   },
+
+  "SPINNER_MESSAGE" : {
+    "PLEASE_WAIT": "Please wait...",
+    "LOADING_MESSAGE": "This may take a few moments."
+  },
+
+  "CUSTOMER_SEARCH_LABELS" : {
+    "CONTRACT_NAME": "Contract Name",
+    "CUSTOMER_TYPE": "Customer Type",
+    "CUSTOMER_ID": "Customer ID",
+    "CPP_ID": "CPP ID",
+    "CLEAR": "Clear All",
+    "FIND": "Find",
+    "ENTER_SEARCH_TEXT": "Enter a search above to begin.",
+    "NO_RESULTS_TEXT": "No results found",
+    "SELECT": "Select"
+  }
+}

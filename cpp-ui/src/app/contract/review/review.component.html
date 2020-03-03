@@ -1,0 +1,372 @@
+<div [hidden]="!showSpinner">
+  <div class="spinner">
+    <div class="fa cpp-spinner-lg"></div>
+  </div>
+</div>
+
+<div [hidden]="showSpinner">
+  <div class="orient">
+
+    <div class="row mt-3">
+      <div class="col-md-11 label">
+        {{'REVIEW_LABEL.CONTRACT_PRICING_INFORMATION'| translate }}
+      </div>
+      <div *ngIf="!displayViewMode" class="col-md-1 edit" (click)="navigateToContractPricing()">
+        <u> {{'REVIEW_LABEL.EDIT'| translate }} </u>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-5 sub-label">
+        {{'REVIEW_LABEL.DURATION_OF_GFS_COST'| translate }}
+      </div>
+      <div class="col-md-1">
+
+      </div>
+      <div class="col-md-4 language">
+        {{'REVIEW_LABEL.LANGUAGE'| translate }}
+      </div>
+    </div>
+
+
+    <div class="row mt-4">
+      <div class="col-md-5">
+        {{ reviewData?.contractPricingReviewDTO?.scheduleForCostContractLanguage }}
+      </div>
+      <div class="col-md-1">
+
+      </div>
+      <div class="col-md-4 variable-header">
+        <div class="variable-header">
+          {{'CUST_INFO_LABEL.SCHEDULE_FOR_COST'| translate }}
+        </div>
+        <div class="variable">
+          {{reviewData?.contractPricingReviewDTO?.scheduleForCost}}
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-10">
+        <hr>
+      </div>
+    </div>
+
+    <div *ngIf="reviewData?.contractPricingReviewDTO?.formalPriceAuditContractLanguage || reviewData?.contractPricingReviewDTO?.priceVerificationContractLanguage">
+      <div class="row">
+        <div class="col-md-5 sub-label">
+          {{alphabetSet}}{{'REVIEW_LABEL.PRICE_AUDIT'| translate }}
+        </div>
+        <div class="col-md-1">
+
+        </div>
+        <div class="col-md-4 language">
+          {{'REVIEW_LABEL.LANGUAGE'| translate }}
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-md-5">
+          <div>
+            {{reviewData?.contractPricingReviewDTO?.formalPriceAuditContractLanguage}}
+          </div>
+          <div class="mt-4" *ngIf="reviewData?.contractPricingReviewDTO?.formalPriceAudit == labelYes">
+            {{reviewData?.contractPricingReviewDTO?.priceVerificationContractLanguage}}
+          </div>
+          <div *ngIf="reviewData?.contractPricingReviewDTO?.formalPriceAudit == labelNo">
+            {{reviewData?.contractPricingReviewDTO?.priceVerificationContractLanguage}}
+          </div>
+        </div>
+
+        <div class="col-md-1">
+
+        </div>
+        <div class="col-md-4">
+          <div class="variable-header">
+            {{'REVIEW_LABEL.FORMAL_PRICE_AUDIT_PRIVELEGES'| translate }}
+          </div>
+          <div class="variable">
+            {{reviewData?.contractPricingReviewDTO?.formalPriceAudit}}
+          </div>
+          <div class="variable-header mt-3">
+            {{'REVIEW_LABEL.PRICE_VERIFICATION_PRIVELEGES'| translate }}
+          </div>
+          <div class="variable">
+            {{reviewData?.contractPricingReviewDTO?.priceVerification}}
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-10 expand-bottom" *ngIf="(reviewData?.contractPricingReviewDTO?.formalPriceAuditContractLanguage == null) && (reviewData?.contractPricingReviewDTO?.priceVerificationContractLanguage == null)">
+        </div>
+        <div class="col-md-10" *ngIf="(reviewData?.contractPricingReviewDTO?.formalPriceAuditContractLanguage | json) == ({} | json) && (reviewData?.contractPricingReviewDTO?.priceVerificationContractLanguage | json) == ({} | json)">
+          <hr>
+        </div>
+        <div class="col-md-10" *ngIf="(reviewData?.contractPricingReviewDTO?.formalPriceAuditContractLanguage | json) !== ({} | json) && (reviewData?.contractPricingReviewDTO?.priceVerificationContractLanguage | json) !== ({} | json)">
+          <hr>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5 sub-label">
+        {{next_val}}{{'REVIEW_LABEL.COST_OF_PRODUCTS'| translate }}
+      </div>
+      <div class="col-md-1">
+
+      </div>
+      <div class="col-md-4 language">
+        {{'REVIEW_LABEL.LANGUAGE'| translate }}
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-5">
+        {{reviewData?.contractPricingReviewDTO?.costOfProductsContractLanguage}}
+      </div>
+      <div class="col-md-1">
+
+      </div>
+      <div class="col-md-4 variable-header">
+        <div class="variable-header">
+          {{'REVIEW_LABEL.GFS_TRANSFER_FEES'| translate }}
+        </div>
+        <div class="variable">
+          {{reviewData?.contractPricingReviewDTO?.gfsTransferFee}}
+        </div>
+        <div class="variable-header mt-3">
+          {{'REVIEW_LABEL.GFS_LABEL_ASSESSMENT_FEE'| translate }}
+        </div>
+        <div class="variable">
+          {{reviewData?.contractPricingReviewDTO?.gfsLabelAssesmentFee}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="orient">
+    <div class="row mt-1">
+      <div class="col-md-11 label">
+        {{'REVIEW_LABEL.DISTRIBUTION_CENTERS'| translate }}
+      </div>
+      <div *ngIf="!displayViewMode" class="col-md-1 edit" (click)="navigateToDistributionCenter()">
+        <u>{{'REVIEW_LABEL.EDIT'| translate }}</u>
+      </div>
+    </div>
+
+    <div class="mt-3 language">
+      {{'REVIEW_LABEL.LANGUAGE'| translate }}
+    </div>
+
+    <div *ngFor="let distributionCenterName of dcList">
+      <div class="data mt-3">
+        {{distributionCenterName}}
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="orient">
+    <div class="row mt-1">
+      <div class="col-md-11 label">
+        {{'REVIEW_LABEL.MARKUPS'| translate }}
+      </div>
+      <div *ngIf="!displayViewMode" class="col-md-1 edit" (click)="navigateToMarkup()">
+        <u>{{'REVIEW_LABEL.EDIT'| translate }}</u>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-5 sub-label">
+        {{'REVIEW_LABEL.SELL_PRICE'| translate }}
+      </div>
+      <div class="col-md-1">
+
+      </div>
+      <div class="col-md-4 language">
+        {{'REVIEW_LABEL.LANGUAGE'| translate }}
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-5">
+        <div class="mb-3">
+           {{ reviewData?.markupReviewDTO.markupBasedOnSellContractLanguage1 }} {{reviewData?.splitCaseReviewDTO.feeTypeContractLanguage}}
+        </div>
+        <div class="mb-3" *ngIf="reviewData?.markupReviewDTO?.markupTypeDefinitionSellUnitLanguage">
+          {{reviewData?.markupReviewDTO.markupTypeDefinitionSellUnitLanguage}}
+        </div>
+        <div class="mb-3" *ngIf="reviewData?.markupReviewDTO?.markupTypeDefinitionPerCaseLanguage">
+          {{reviewData?.markupReviewDTO.markupTypeDefinitionPerCaseLanguage}}
+        </div>
+        <div class="mb-3" *ngIf="reviewData?.markupReviewDTO?.markupTypeDefinitionPerWeightLanguage">
+          {{reviewData?.markupReviewDTO.markupTypeDefinitionPerWeightLanguage}}
+        </div>
+        {{ reviewData?.markupReviewDTO.markupBasedOnSellContractLanguage2 }}
+      </div>
+      <div class="col-md-1">
+
+      </div>
+      <div class="col-md-4 variable-header">
+        <div class="variable-header">
+          {{'REVIEW_LABEL.MARKUP_BASED_ON_SELL'| translate }}
+        </div>
+        <div class="variable">
+          {{reviewData?.markupReviewDTO.markupBasedOnSell}}
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-10">
+        <hr>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-5 sub-label">
+        {{'REVIEW_LABEL.MARKUP_STRUCTURES'| translate }}
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class=" col-md-12 mt-3 language">
+        {{'REVIEW_LABEL.LANGUAGE'| translate }}
+      </div>
+    </div>
+
+    <div *ngFor="let markupGrid of markupGridData; let i = index; let l = last">
+      <div class="row">
+        <div class="sub-label mb-3 mt-3 col-md-12">
+          {{markupGrid.markupName}}
+        </div>
+      </div>
+
+      <div *ngFor="let gridvalues of markupGrid.productTypeMarkups; let i = index">
+        <div class="row">
+          <div class="col-md-5 grid-margin">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td class="data item-description mt-2">{{ gridvalues.productType }}</td>
+                  <td *ngIf="gridvalues.unit == '$'" class="data item-unit mt-2"> {{gridvalues.unit}}{{gridvalues.markup}}</td>
+                  <td *ngIf="gridvalues.unit == '%'" class="data item-unit mt-2"> {{gridvalues.markup}}{{gridvalues.unit}}</td>
+                  <td *ngIf="gridvalues.markupType == 1" class="data item-type mt-2">{{'DATATABLE_LABEL.SELL_UNIT' | translate }}</td>
+                  <td *ngIf="gridvalues.markupType == 2" class="data item-type mt-2">{{'DATATABLE_LABEL.PER_CASE' | translate }}</td>
+                  <td *ngIf="gridvalues.markupType == 3" class="data item-type mt-2">{{'DATATABLE_LABEL.PER_WEIGHT' | translate }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="markupGrid.subgroupMarkups.length > 0">
+        <br>
+      </div>
+      <div *ngFor="let gridvalues of markupGrid.subgroupMarkups; let i = index">
+          <div class="row">
+            <div class="col-md-5 grid-margin">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td class="data item-description mt-2">{{ gridvalues.subgroupDesc }}</td>
+                    <td *ngIf="gridvalues.unit == '$'" class="data item-unit mt-2"> {{gridvalues.unit}}{{gridvalues.markup}}</td>
+                    <td *ngIf="gridvalues.unit == '%'" class="data item-unit mt-2"> {{gridvalues.markup}}{{gridvalues.unit}}</td>
+                    <td *ngIf="gridvalues.markupType == 1" class="data item-type mt-2">{{'DATATABLE_LABEL.SELL_UNIT' | translate }}</td>
+                    <td *ngIf="gridvalues.markupType == 2" class="data item-type mt-2">{{'DATATABLE_LABEL.PER_CASE' | translate }}</td>
+                    <td *ngIf="gridvalues.markupType == 3" class="data item-type mt-2">{{'DATATABLE_LABEL.PER_WEIGHT' | translate }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      <div *ngIf="markupGrid.itemMarkups.length > 0">
+        <br>
+      </div>
+      <div *ngFor="let gridvalues of markupGrid.itemMarkups; let i = index">
+        <div class="row">
+          <div class="col-md-5 grid-margin">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td class="data item-description">{{ gridvalues.itemDesc }}</td>
+                  <td *ngIf="gridvalues.unit == '$'" class="data item-unit"> {{gridvalues.unit}}{{gridvalues.markup}}</td>
+                  <td *ngIf="gridvalues.unit == '%'" class="data item-unit"> {{gridvalues.markup}}{{gridvalues.unit}}</td>
+                  <td *ngIf="gridvalues.markupType == 1" class="data item-type">{{'DATATABLE_LABEL.SELL_UNIT' | translate }}</td>
+                  <td *ngIf="gridvalues.markupType == 2" class="data item-type">{{'DATATABLE_LABEL.PER_CASE' | translate }}</td>
+                  <td *ngIf="gridvalues.markupType == 3" class="data item-type">{{'DATATABLE_LABEL.PER_WEIGHT' | translate }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="row">
+          <div class="col-md-4">
+            <div *ngIf="!l">
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <div *ngIf="contractType !== contractType_IFS && contractType !== contractType_IFS_AMENDEMENT" class="orient">
+    <div class="row mt-1">
+      <div class="col-md-11 label">
+        {{'REVIEW_LABEL.SPLIT_CASE_FEE'| translate }}
+      </div>
+      <div *ngIf="!displayViewMode" class="col-md-1 edit" (click)="navigateToSplitCase()">
+        <u>{{'REVIEW_LABEL.EDIT'| translate }}</u>
+      </div>
+    </div>
+
+    <div class="mt-3 language">
+      {{'REVIEW_LABEL.LANGUAGE'| translate }}
+    </div>
+
+    <div class="mt-3 mb-3 sub-label">
+      {{markupGridData[0]?.markupName}}
+    </div>
+
+    <div class="mt-2" *ngFor="let data of reviewData?.splitCaseReviewDTO?.splitCaseFeeValues">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="row">
+            <div class="col-md-5 data">
+              {{data.productType}}
+            </div>
+            <div class="col-md-2 data">
+              <div *ngIf="data.unit == '$'">
+                {{data.unit}}{{data.splitCaseFee}}
+              </div>
+              <div *ngIf="data.unit == '%'">
+                {{data.splitCaseFee}}{{data.unit}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+  </div>
+
+  <div class="bottom-bar">
+    <button *ngIf="!displayViewMode" type="submit" class="pull-right btn btn-primary mt-1" (click)="savePricingExhibit()"> {{'COMMON.BTN_COMMIT_CPP'| translate }} </button>
+    <button *ngIf="canEditFurtherance" type="submit" class="pull-right btn btn-primary mt-1" (click)="saveFurtherancePricingDocument()"> {{'COMMON.BTN_COMMIT_FURTHERANCE'| translate }} </button>
+    <button type="submit" class="pull-right btn return-to-clm mt-1" (click)="returnToCLM()">{{'COMMON.RETURN_TO_CONTRACT'| translate }}</button>
+    <a *ngIf="!displayViewMode || canEditFurtherance" class="pull-right btn download mt-1" href="{{downloadExhibitDoc()}}"><em class="fa fa-download" aria-hidden="true"></em></a>
+  </div>
+  <app-footer></app-footer>
+</div>

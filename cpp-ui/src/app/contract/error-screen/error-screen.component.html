@@ -1,0 +1,25 @@
+<div class="rectangle">
+  <div class="error-title">
+    <div *ngIf="errorType == 'ACCESS_DENIED'"> {{ 'ERROR_PAGE_LABELS.PROFILE_NOT_FOUND_TITLE' | translate }} </div>
+    <div *ngIf="errorType == 'CLM_STATUS_NOT_DRAFT'"> {{ 'ERROR_PAGE_LABELS.MULTIPLE_AMENDMENTS_OPEN_TITLE' | translate }} </div>
+    <div *ngIf="errorType == 'NEW_CONTRACT_INVALID_STATUS'"> {{ 'ERROR_PAGE_LABELS.NOT_VALID_CLM_STATUS_FOR_NEW_CONTRACT_TITLE' | translate }} </div>
+    <div *ngIf="errorType == 'EXPIRED_CONTRACT'"> {{ 'ERROR_PAGE_LABELS.EXPIRED_CONTRACT_TITLE' | translate }} </div>
+    <div *ngIf="errorType == 'CANNOT_CREATE_FURTHERANCE'"> {{ 'ERROR_PAGE_LABELS.CANNOT_CREATE_FURTHERANCE_TITLE' | translate }} </div>
+    <div *ngIf="errorType == 'IN_PROGRESS_FURTHERANCE_FOUND'"> {{ 'ERROR_PAGE_LABELS.IN_PROGRESS_FURTHERANCE_FOUND_TITLE' | translate }} </div>
+    <div *ngIf="errorType == 'INVALID_AMENDMENT_EFFECTIVE_DATE'"> {{ 'ERROR_PAGE_LABELS.INVALID_AMENDMENT_EFFECTIVE_DATE_TITLE' | translate }} </div>
+    <div *ngIf="errorType == 'RETURN_TO_CLM'"> {{ 'ERROR_PAGE_LABELS.RETURN_TO_CLM_TITLE' | translate }} </div>
+  </div>
+  <div class="error-block">
+    <div *ngIf="errorType == 'ACCESS_DENIED'">{{ 'ERROR_PAGE_LABELS.PROFILE_NOT_FOUND_MESSAGE' | translate }}</div>
+    <div *ngIf="errorType == 'CLM_STATUS_NOT_DRAFT'">{{ 'ERROR_PAGE_LABELS.MULTIPLE_AMENDMENTS_MESSAGE' | translate }}</div>
+    <div *ngIf="errorType == 'NEW_CONTRACT_INVALID_STATUS'"> {{ 'ERROR_PAGE_LABELS.NOT_VALID_CLM_STATUS_FOR_NEW_CONTRACT_MESSAGE' | translate }} </div>
+    <div *ngIf="errorType == 'EXPIRED_CONTRACT'"> {{ 'ERROR_PAGE_LABELS.EXPIRED_CONTRACT_MESSAGE' | translate }} </div>
+    <div *ngIf="errorType == 'CANNOT_CREATE_FURTHERANCE'"> {{ 'ERROR_PAGE_LABELS.CANNOT_CREATE_FURTHERANCE_MESSAGE' | translate }} </div>
+    <div *ngIf="errorType == 'IN_PROGRESS_FURTHERANCE_FOUND'"> {{ 'ERROR_PAGE_LABELS.IN_PROGRESS_FURTHERANCE_FOUND_MESSAGE' | translate }} </div>
+    <div *ngIf="errorType == 'INVALID_AMENDMENT_EFFECTIVE_DATE'"> {{ 'ERROR_PAGE_LABELS.INVALID_AMENDMENT_EFFECTIVE_DATE_MESSAGE' | translate }} </div>
+    <div *ngIf="errorType == 'RETURN_TO_CLM'"> {{ 'ERROR_PAGE_LABELS.RETURN_TO_CLM_MESSAGE' | translate }} </div>
+  </div>
+</div>
+<div class="mt-3">
+  <app-footer></app-footer>
+</div>

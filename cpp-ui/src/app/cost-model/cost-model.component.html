@@ -1,0 +1,90 @@
+<article class="d-flex setup-header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="title">
+          {{'COMMON.COST_MODEL'| translate }}</div>
+      </div>
+      <div class="col-md-2">
+        <div class="contract-info">
+          <div>{{'COMMON.CPP_ID' | translate }}: {{ contractPriceProfileId }}</div>
+          <div>{{'COMMON.CPP_VERSION' | translate }}: {{ versionNumber }}</div>
+          <div>{{'COMMON.CPP_STATUS' | translate }}: {{ cppStatus }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<app-contract-information [contractInfoInd]="contractInfoInd"></app-contract-information>
+<br>
+
+<div [hidden]="!showSpinner">
+  <div class="spinner">
+    <div class="fa cpp-spinner-lg"></div>
+  </div>
+</div>
+
+<div [hidden]="showSpinner">
+  <div *ngIf="!displayViewMode" class="pt-3">
+    <ngx-datatable class="bootstrap" [headerHeight]="54" [columnMode]="'flex'" [rowHeight]="32" [rows]="costModelGridDetails"
+      [selected]="selected" [selectionType]="'single'">
+
+      <ngx-datatable-column name="Group" prop='groupType' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+        [flexGrow]="0.45">
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+          <div class="pt-1"> {{value | titlecase}}</div>
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column name="Cost Model" prop='costModelId' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+        [draggable]="false" [flexGrow]="0.50">
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+          <select class="cost-model-type" [(ngModel)]="row.costModelId">
+            <option [ngValue]="costModel.costModelId" *ngFor="let costModel of costModelList; let i = index">
+              {{costModel.costModelId}} - {{costModel.costModelTypeValue}}</option>
+          </select>
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false" [flexGrow]="1.5">
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+          <div class="pt-1">
+            <span *ngIf="rowIndex == 0">
+              <button type="button" class="btn btn-primary copy-design pull-right" (click)="copyRow(row)">{{ 'COST_MODEL.BTN_COPY' | translate}}</button>
+            </span>
+          </div>
+        </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable>
+  </div>
+
+  <div *ngIf="displayViewMode" class="pt-3">
+    <ngx-datatable class="bootstrap" [headerHeight]="54" [columnMode]="'flex'" [rowHeight]="32" [rows]="costModelGridDetails"
+      [selected]="selected" [selectionType]="'single'">
+
+      <ngx-datatable-column name="Group" prop='groupType' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+        [flexGrow]="0.15">
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+          <div class="pt-1"> {{value | titlecase}}</div>
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column name="Cost Model" prop='costModelTypeValue' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+        [draggable]="false" [flexGrow]="0.50">
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+          <div class="pt-1"> {{ row.costModelId }} - {{ value }}</div>
+        </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable>
+  </div>
+
+  <div class="horizontal-line"></div>
+
+  <div class="bottom-bar-cost-model">
+    <button *ngIf="!displayViewMode" type="submit" class="pull-right btn btn-primary mt-1" (click)="saveCostModel()"> {{'COST_MODEL.BTN_SAVE_COST_MODEL'| translate }} </button>
+    <button type="submit" [ngClass]="displayViewMode ? 'align-right' : ''" class="pull-right btn return-to-clm mt-1" (click)="returnToCLM()">{{'COST_MODEL.BTN_RETURN_TO_CONTRACT'| translate }}</button>
+  </div>
+
+  <app-footer></app-footer>
+</div>

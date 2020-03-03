@@ -1,0 +1,9 @@
+<div [formGroup]="toggleForm">
+  <label class="switch">
+    <input type="checkbox" name="state" (change)="checkState($event)" [checked]="toggleDefaultState ? true : null"
+      formControlName="selectedValue">
+    <span class="slider round"></span>
+  </label>
+  <span class="text">{{ toggelLabel }} </span>
+  <br/>
+</div>

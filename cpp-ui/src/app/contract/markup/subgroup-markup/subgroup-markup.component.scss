@@ -1,0 +1,12 @@
+@import './../../../../assets/scss/partials/variables';
+@import './../../../../assets/scss/partials/global';
+@import './../../../../assets/scss/partials/mixins';
+@import './../item-level-markup/item-level-markup.component.scss';
+
+.subgroup-id-error{
+  border: $gfs-red solid 1px;
+}
+
+.subgroup-markup-error{
+    border: $gfs-red solid 1px;
+  }

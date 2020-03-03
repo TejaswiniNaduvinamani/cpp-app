@@ -1,0 +1,56 @@
+@import '../../../assets/scss/partials/variables';
+@import '../../../assets/scss/partials/global';
+
+.fade {
+  background-color: rgba(0, 0, 0, .35);
+}
+
+.modal-dialog {
+  max-width: 640px;
+  border-radius: 2px;
+  margin: 140px auto;
+}
+
+.modal-content {
+  background-color: $gfs-white-2;
+}
+
+.modal-header {
+  padding: 20px;
+  border-bottom: unset;
+  padding-bottom: 10px;
+}
+
+.modal-title {
+  width: 95%;
+  height: auto;
+  font-family: $gfs-font-family;
+  font-size: $gfs-fontsize-18;
+  font-weight: 500;
+  text-align: left;
+  color: $gfs-stepper-black;
+  overflow-wrap: break-word;
+}
+
+.modal-footer {
+  box-sizing: border-box;
+  height: 56px;
+  border-top: 1px solid $gfs-gray-4;
+}
+
+.cancel {
+  width: 50px;
+  height: 19px;
+  font-family: $gfs-font-family;
+  font-size: $gfs-fontsize-16;
+  color: $gfs-lt-navy-blue;
+  background-color: $gfs-white-2;
+  border: none;
+  padding: 0;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 0 53px 20px 20px;
+}

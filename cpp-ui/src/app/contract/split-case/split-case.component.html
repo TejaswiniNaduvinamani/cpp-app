@@ -1,0 +1,172 @@
+<div [hidden]="!showSpinner">
+  <div class="spinner">
+    <div class="fa cpp-spinner-lg"></div>
+  </div>
+</div>
+
+<div [hidden]="showSpinner">
+  <div class="orient">
+    <div class="split-case-fee">
+      <strong> {{'SPLIT_CASE_FEE_LABEL.SPLIT_CASE_FEE'| translate }} </strong>
+    </div>
+    <div class="mt-3" [ngClass]="displayViewMode?'fee-type-view-mode':'fee-type'">
+          <strong>{{'SPLIT_CASE_FEE_LABEL.FEE_TYPE'| translate}}</strong>
+          <ng-template #feeTipContent>
+              <div class="fee-type-tooltip-box">
+                  <div class="tooltip-label">
+                      {{'SPLIT_CASE_FEE_LABEL.PRICE_DIVIDED_BY_PACK_TITLE'| translate }}
+                    </div>
+                    <div class="tooltip-body">
+                      {{'SPLIT_CASE_FEE_LABEL.PRICE_DIVIDED_BY_PACK_CONTENT'| translate }}
+                    </div>
+                    <div class="tooltip-label">
+                      {{'SPLIT_CASE_FEE_LABEL.COST_DIVIDED_BY_PACK_TITLE'| translate }}
+                    </div>
+                    <div class="tooltip-body">
+                      {{'SPLIT_CASE_FEE_LABEL.COST_DIVIDED_BY_PACK_CONTENT'| translate }}
+                    </div>
+                </div>
+          </ng-template>
+          <img src="{{imageDir}}assets/images/info-icon.svg" alt="info icon" class="info-icon" [ngbTooltip]="feeTipContent" data-placement="right"
+          container="body">
+      </div>
+      <div>
+        <select class="mt-2 mb-3" [ngClass]="displayViewMode?'drop-down-view-mode':'drop-down'" [disabled]="displayViewMode" [(ngModel)]="feeTypeValue">
+          <option value="2">{{'SPLIT_CASE_FEE_LABEL.PRICE_PER_PACK'| translate}}</option>
+          <option value="3">{{'SPLIT_CASE_FEE_LABEL.COST_PER_PACK'| translate}}</option>
+        </select>
+      </div>
+  </div>
+
+  <div *ngIf="!displayViewMode || canEditFurtherance" class="pt-3">
+    <ngx-datatable class="bootstrap" [headerHeight]="54" [columnMode]="'flex'" [rowHeight]="32" [rows]="rows" [selected]="selected"
+      [selectionType]="'single'">
+      <ngx-datatable-column name="Product Type" prop='productType' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+        [draggable]="false" [flexGrow]="0.45">
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+          <div class="pt-1"> {{value | titlecase }} </div>
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column name="Split Case Fee" prop='splitCaseFee' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+        [draggable]="false" [flexGrow]="0.20">
+        <ng-template ngx-datatable-header-template let-column="column">
+          {{ column.name }}
+        </ng-template>
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+          <input class="splitcase" autofocus type="text" [value]="value" ondrop="return false;" (focusout)="onblurSplitcase($event, row)"
+          />
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column name="" prop='unit' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+        [flexGrow]="0.15">
+        <ng-template ngx-datatable-header-template let-column="column"></ng-template>
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+          <div id="radio-group" [ngClass]="(canEditFurtherance)? 'view-mode-radio' : '' ">
+            <label>
+              <input class="form-check-input" value="$" type="radio" name="{{rowIndex}}-unit" id="{{rowIndex}}-unit" [checked]="value == '$'"
+                (click)="onUnitClick($event, row)">
+              <span> {{'SPLIT_CASE_FEE_LABEL.UNIT_DOLLAR'| translate }}</span>
+            </label>
+            <label>
+              <input class="form-check-input" value="%" type="radio" name="{{rowIndex}}-unit" id="{{rowIndex}}-unit" [checked]="value == '%'"
+                (click)="onUnitClick($event, row)">
+              <span>{{'SPLIT_CASE_FEE_LABEL.UNIT_PERCENT'| translate }}</span>
+            </label>
+          </div>
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column name="Effective Date" prop='effectiveDate' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+        [draggable]="false" [flexGrow]="0.23">
+        <ng-template ngx-datatable-cell-template let-value="value">
+          <div class="pt-1"> {{value | date: 'MM/dd/yyyy'}} </div>
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column name="Expiration Date" prop='expirationDate' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+        [draggable]="false" [flexGrow]="0.24">
+        <ng-template ngx-datatable-cell-template let-value="value">
+          <div class="pt-1"> {{value | date: 'MM/dd/yyyy'}} </div>
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false" [flexGrow]="1">
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+          <div class="p-1">
+            <span class="splitcase-warning" *ngIf="validateData(row)">
+              {{'SPLIT_CASE_FEE_ERRORS.GREATER_THAN_5$_OR_49%'| translate }}
+            </span>
+            <span class="splitcase-warning" *ngIf="row.splitCaseFee == 0.00">
+              {{'SPLIT_CASE_FEE_ERRORS.ZERO_SPLIT_CASE_FEE'| translate }}
+            </span>
+            <span *ngIf="rowIndex == 0 && !canEditFurtherance">
+              <button type="button" class="btn btn-primary pull-right copy-design" (click)="copyRow($event, row)">{{'COMMON.BTN_COPY_DOWN'| translate }}</button>
+            </span>
+          </div>
+        </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable>
+  </div>
+
+  <div *ngIf="displayViewMode && !canEditFurtherance" class="pt-3">
+    <ngx-datatable class="bootstrap" [headerHeight]="54" [columnMode]="'flex'" [rowHeight]="32" [rows]="viewSplitcCaseRow" [selected]="selected">
+      <ngx-datatable-column name="Product Type" prop='productType' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+        [draggable]="false" [flexGrow]="0.25">
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+          <div class="pt-1"> {{value | titlecase }} </div>
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column name="Split Case Fee" prop='splitCaseFee' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+        [draggable]="false" [flexGrow]="0.20">
+        <ng-template ngx-datatable-header-template let-column="column">
+          {{ column.name }}
+        </ng-template>
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+          <div class="pt-1"> {{value | titlecase }} </div>
+        </ng-template>
+      </ngx-datatable-column>
+
+
+      <ngx-datatable-column name="Effective Date" prop='effectiveDate' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+        [draggable]="false" [flexGrow]="0.23">
+        <ng-template ngx-datatable-cell-template let-value="value">
+          <div class="pt-1"> {{value | date: 'MM/dd/yyyy'}} </div>
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column name="Expiration Date" prop='expirationDate' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+        [draggable]="false" [flexGrow]="0.24">
+        <ng-template ngx-datatable-cell-template let-value="value">
+          <div class="pt-1"> {{value | date: 'MM/dd/yyyy'}} </div>
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false" [flexGrow]="1">
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+          <div class="p-1">
+            <span class="splitcase-warning" *ngIf="validateData(row)">
+              {{'SPLIT_CASE_FEE_ERRORS.GREATER_THAN_5$_OR_49%'| translate }}
+            </span>
+            <span class="splitcase-warning" *ngIf="row.splitCaseFee == 0.00">
+              {{'SPLIT_CASE_FEE_ERRORS.ZERO_SPLIT_CASE_FEE'| translate }}
+            </span>
+          </div>
+        </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable>
+  </div>
+  <div class="splitcase-border-line"></div>
+
+  <div class="horizontal-line"></div>
+
+  <div class="bottom-bar" *ngIf="!displayViewMode || canEditFurtherance">
+      <button type="submit" [ngClass]="isSaveGrayedOut() ? 'grayed-out' : ''" class="pull-right btn btn-primary align-save" (click)="checkAttachedPricingExhibit()">{{'COMMON.BTN_REVIEW'| translate }}</button>
+      <span  *ngIf="splitCaseNonNumericError" class="pull-right error-message"><img src="{{imageDir}}assets/images/danger-icon.png"  alt="danger icon" class="danger-icon">{{'SPLIT_CASE_FEE_ERRORS.SPLITCASE_NONNUMERIC_ERROR'| translate }}</span>
+      <span  *ngIf="spitCaseInvalidError" class="pull-right error-message"><img src="{{imageDir}}assets/images/danger-icon.png"  alt="danger icon" class="danger-icon">{{'SPLIT_CASE_FEE_ERRORS.SPLITCASE_INVALID_ERROR'| translate }}</span>
+  </div>
+    <app-footer></app-footer>
+    <app-delete-exhibit (isExhibitDeleted)="onExhibitDeletion($event)"></app-delete-exhibit>
+

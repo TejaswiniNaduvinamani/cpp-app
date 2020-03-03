@@ -1,0 +1,143 @@
+
+.ngx-datatable.bootstrap {
+  box-shadow: none;
+  font-size: 14px;
+  .datatable-header {
+    .datatable-header-cell {
+      vertical-align: bottom;
+      padding: 0.75rem;
+      padding-left: 1.25rem;
+      padding-bottom: 0;
+      .datatable-header-cell-label {
+        line-height: 24px;
+      }
+    }
+  }
+  .datatable-body {
+    .datatable-body-row {
+      padding-left: 1.25rem;
+      vertical-align: top;
+      &.datatable-row-odd {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+      &.active {
+        background-color: #e8f0ff;
+        color: #000;
+      }
+      .datatable-body-cell {
+        text-align: left;
+        vertical-align: top;
+      }
+    }
+  }
+  .datatable-footer {
+    background: #424242;
+    color: #ededed;
+    margin-top: -1px;
+    .page-count {
+      line-height: 50px;
+      height: 50px;
+      padding: 0 1.2rem;
+    }
+    .datatable-pager {
+      margin: 0 10px;
+      vertical-align: top;
+      ul {
+        li {
+          margin: 10px 0px;
+          &:not(.disabled) {
+            &.active,
+            &:hover {
+              a {
+                background-color: #545454;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+      a {
+        height: 22px;
+        min-width: 24px;
+        line-height: 22px;
+        padding: 0;
+        border-radius: 3px;
+        margin: 0 3px;
+        text-align: center;
+        vertical-align: top;
+        text-decoration: none;
+        vertical-align: bottom;
+        color: #ededed;
+      }
+      .datatable-icon-left,
+      .datatable-icon-skip,
+      .datatable-icon-right,
+      .datatable-icon-prev {
+        font-size: 18px;
+        line-height: 27px;
+        padding: 0 3px;
+      }
+    }
+  }
+}
+
+.ngx-datatable.fixed-header .datatable-header .datatable-header-inner .datatable-header-cell {
+  background-color: #e8e8e8;
+  font-weight: bold;
+}
+
+.datatable-header-modify {
+  line-height: 54px;
+}
+
+.ngx-datatable.fixed-header .datatable-header .datatable-header-inner .datatable-header-cell{
+  line-height: 54px;
+}
+
+.markup, .item-markup, .subgroup-markup {
+  width: 110px;
+  height: 30px;
+  border-radius: 2px;
+  background-color: #ffffff;
+  border: solid 1px #bdbdbd;
+  outline-style: none;
+  padding: 5px;
+}
+
+.item-id {
+  @extend .markup;
+  width: 90px;
+}
+
+.subgroup-id {
+  @extend .markup;
+  width: 170px;
+}
+
+.item-description-input {
+  @extend .markup;
+  width: 170px;
+}
+
+.splitcase {
+  @extend .markup;
+  width: 118px;
+
+}
+
+.markup-type, .item-markup-type, .subgroup-markup-type {
+  width: 130px;
+  height: 30px;
+  border-radius: 2px;
+  background-color: #ffffff;
+  border: solid 1px #bdbdbd;
+  outline-style: none;
+}
+
+.unit {
+  width: 50px;
+  height: 30px;
+  border-radius: 2px;
+  background-color: #ffffff;
+  border: solid 1px #bdbdbd;
+}

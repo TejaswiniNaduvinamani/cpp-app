@@ -1,0 +1,41 @@
+@import 'variables';
+
+input[type=checkbox].css-checkbox {
+  position: absolute;
+  z-index: -1000;
+  left: -1000px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.css-checkbox + .css-label {
+  padding-left: 28px;
+  height: 22px;
+  display: inline-block;
+  line-height: 22px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  font-family: $gfs-font-family;
+  padding-right: 15px;
+  font-weight: normal;
+
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label {
+  background-position: 0 -22px;
+}
+
+input[type=checkbox].css-checkbox:disabled + label.css-label {
+  background-position: 0 -44px;
+  color: $gfs-gray-5;
+}
+
+
+

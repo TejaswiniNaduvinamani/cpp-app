@@ -1,0 +1,87 @@
+@import '../../../assets/scss/partials/_variables';
+@import '../../../assets/scss/partials/global';
+@import '../../../assets/scss/partials/checkbox';
+@import '../../../assets/scss/partials/mixins';
+@import '../../../assets/scss/partials/checkbox-viewmode';
+
+.vertical-spacing {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.distribution-centers {
+  width: 230px;
+  height: 24px;
+  font-family: $gfs-font-family;
+  font-size: $gfs-fontsize-18;
+  font-weight: 500;
+  line-height: 1.33;
+  text-align: left;
+  color: $gfs-stepper-black;
+}
+
+.select-all {
+  width: 92px;
+  height: 18px;
+  font-family: $gfs-font-family;
+  font-size: $gfs-fontsize-14;
+  font-weight: bold;
+  line-height: 1.29;
+  letter-spacing: 1.2px;
+  text-align: center;
+  color: $gfs-lt-navy-blue;
+  background-color: $gfs-white;
+  border: none;
+  text-decoration: underline;
+  padding: 0;
+  cursor: pointer;
+}
+
+.clear {
+  @extend .select-all;
+  width: 50px;
+
+}
+
+.alignDC {
+  width: 40%;
+  padding-bottom: 40px;
+}
+
+.css-label {
+  background-image: url('./../../../assets/images/checkbox.png');
+}
+
+hr{
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.setWidth {
+  width: 33%;
+}
+
+.warning-font {
+  color: $gfs-red;
+}
+
+.warning-text {
+  @extend .warning-font;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.viewmode-label {
+  @extend .css-label;
+  opacity: .6;
+  cursor: default;
+}
+
+.horizontal-line {
+  @include horizontal-separator(100%);
+  box-sizing: border-box;
+  margin-left: 0;
+  margin-bottom: 15px;
+}
+

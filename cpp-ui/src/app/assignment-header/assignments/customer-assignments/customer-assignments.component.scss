@@ -1,0 +1,110 @@
+@import '../../../../assets/scss/partials/global';
+@import '../../../../assets/scss/partials/_variables.scss';
+
+.customer-title {
+    height: 24px;
+    font-size: $gfs-fontsize-18;
+    font-weight: 500;
+    text-align: left;
+    color: $gfs-stepper-black;
+}
+
+.customer-details {
+    height: 18px;
+    font-size: $gfs-fontsize-14;
+    text-align: right;
+    color: $gfs-label-black;
+}
+
+.markup-header {
+  font-size: $gfs-fontsize-14;
+  text-align: left;
+  font-weight: bold;
+}
+
+.invalid {
+  color: $gfs-red;
+  font-size: $gfs-fontsize-14;
+  font-weight: bold;
+  font-style: italic;
+  text-align: left;
+}
+
+.add-real-customer {
+  border-radius: 4px;
+  background-color: $gfs-header-color;
+  font-size: $gfs-fontsize-16;
+  font-weight: bold;
+  color: $gfs-stepper-black;
+  border: none;
+  width: 125px;
+}
+
+.save-assignments {
+  position: relative;
+  bottom: 20px;
+}
+
+.fade {
+  background-color: rgba(0, 0, 0, .35);
+}
+
+.modal-dialog {
+  max-width: 640px;
+  border-radius: 2px;
+  margin: 140px auto;
+}
+
+.modal-content {
+  background-color: $gfs-white-2;
+}
+
+.modal-header {
+  padding: 20px;
+  border-bottom: unset;
+  padding-bottom: 10px;
+}
+
+.modal-title {
+  width: 95%;
+  height: auto;
+  font-family: $gfs-font-family;
+  font-size: $gfs-fontsize-18;
+  font-weight: 500;
+  text-align: left;
+  color: $gfs-stepper-black;
+  overflow-wrap: break-word;
+}
+
+.modal-footer {
+  box-sizing: border-box;
+  height: 56px;
+  border-top: 1px solid $gfs-gray-4;
+}
+
+.save {
+  @extend .modal-btn;
+  background-color: $gfs-lt-navy-blue;
+}
+
+.saved-search-headers {
+  color: $gfs-gray-5;
+  cursor: default;
+}
+
+.customer-error {
+  margin-left: 22px;
+  font-size: $gfs-fontsize-14;
+  font-weight: bold;
+  font-style: italic;
+  text-align: left;
+  color: $gfs-red;
+  position: relative;
+  top: 10px;
+}
+
+.danger-icon {
+  margin-right: 5px;
+  width: 24px;
+  height: 24px;
+}

@@ -1,0 +1,49 @@
+@import '../../../../../assets/scss/partials/_variables.scss';
+
+.row {
+  overflow-wrap: break-word;
+}
+
+.data {
+  height: 20px;
+  font-size: $gfs-fontsize-14;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  text-align: left;
+  color: $gfs-label-black;
+}
+
+.item-description {
+  padding: 0;
+  width: 38%;
+}
+
+.item-type {
+  padding: 0;
+  width: 40%;
+}
+
+.item-unit {
+  padding: 0;
+  width: 20%;
+  margin-left: 10px;
+}
+
+.table td{
+  border-top: none;
+  padding: 0;
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: .5rem;
+  background-color: transparent;
+}
+
+.expire-lower-spacing {
+  margin-top: 4%;
+  margin-bottom: 2%;
+}
+

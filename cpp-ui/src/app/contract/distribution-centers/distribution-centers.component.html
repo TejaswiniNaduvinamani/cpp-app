@@ -1,0 +1,74 @@
+<div [hidden]="!showSpinner">
+  <div class="spinner">
+    <div class="fa cpp-spinner-lg"></div>
+  </div>
+</div>
+
+<div [hidden]="showSpinner">
+  <div class="mb-2">
+    <div class="orient">
+      <p *ngIf="validDistributionCenterList" class="distribution-centers vertical-spacing">
+        <strong>{{'DISTRIBUTION_CENTERS.DISTRIBUTION_TITLE'| translate }}</strong>
+      </p>
+      <p *ngIf="!validDistributionCenterList" class="distribution-centers vertical-spacing warning-font">
+        <strong>{{'DISTRIBUTION_CENTERS.DISTRIBUTION_TITLE'| translate }}</strong>
+      </p>
+      <div *ngIf="validDistributionCenterList && !displayViewMode; else warningSubheader">
+        <p>
+          {{'DISTRIBUTION_CENTERS.DISTRIBUTION_SUBHEADER'| translate }}
+        </p>
+      </div>
+      <ng-template #warningSubheader>
+        <p *ngIf="!displayViewMode">{{'DISTRIBUTION_CENTERS.DISTRIBUTION_SUBHEADER_WARN'| translate }}</p>
+      </ng-template>
+    </div>
+
+
+    <div class="orient">
+      <div class="row">
+        <div *ngIf="!displayViewMode" class="col-sm-8">
+          <button class="select-all" (click)="selectALL()">{{'DISTRIBUTION_CENTERS.SELECT_ALL'| translate }}</button>
+        </div>
+        <div *ngIf="!displayViewMode" class="col-sm-4">
+          <button class="clear" (click)="clear()">{{'DISTRIBUTION_CENTERS.CLEAR'| translate }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form #dcForm="ngForm" novalidate>
+    <div class="orient">
+      <div class="row form-group">
+        <div class="col-sm-9">
+          <hr>
+          <div class="d-flex flex-wrap">
+            <div class="setWidth" *ngFor="let distributionCenter of distributionCenters ">
+              <div class="alignDC checkbox">
+                <input id="{{distributionCenter.shortName}}" type="checkbox" name="{{distributionCenter.dcNumber}}" value="{{distributionCenter.dcNumber}}"
+                  [(ngModel)]="isActive[distributionCenter.dcNumber]" (click)="viewModeClick($event)" class="css-checkbox">
+                <label for="{{distributionCenter.shortName}}" [ngClass]="(displayViewMode)? 'viewmode-label':'css-label'">
+                  {{distributionCenter.name}}
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+        </div>
+        <div class="orient warning-text" *ngIf="validDistributionCenterList == false">
+          <p>
+            <em class="fa fa-exclamation-triangle" aria-hidden="true"></em>
+            <em> {{'DISTRIBUTION_CENTERS_ERRORS.INVALID_DISTRIBUTION_CENTER_LIST'| translate }} </em>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="horizontal-line"></div>
+    <div class="bottom-bar" *ngIf="!displayViewMode">
+      <button type="submit" class="btn btn-primary pull-right" [ngClass]="!saveGrayed ? 'grayed-out' : ''" (click)="checkAttachedPricingExhibit(dcForm)">{{'COMMON.BTN_MARKUP'| translate }}</button>
+    </div>
+    <app-footer></app-footer>
+  </form>
+  <app-delete-exhibit (isExhibitDeleted)="onExhibitDeletion($event)"></app-delete-exhibit>
+</div>

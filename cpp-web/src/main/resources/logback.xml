@@ -1,0 +1,69 @@
+<!DOCTYPE configuration>
+<configuration>
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>
+			/gfs/${runtime.env}/logs/crmbo/wls/cpp/cpp-web-${hostname}.log
+		</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>
+				/gfs/${runtime.env}/logs/crmbo/wls/cpp/cpp-web-${hostname}-%d{yyyy-MM-dd}-%i.log
+			</fileNamePattern>
+			<maxFileSize>5MB</maxFileSize>
+			<maxHistory>7</maxHistory>
+			<totalSizeCap>40MB</totalSizeCap>
+			<!-- optional -->
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>5MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss} [%t] %-5p [%c:%L] - %m%n</Pattern>
+		</encoder>
+	</appender>
+
+	<appender name="CLM"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>
+			/gfs/${runtime.env}/logs/crmbo/wls/cpp/cpp-web-clm-${hostname}.log
+		</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>
+				/gfs/${runtime.env}/logs/crmbo/wls/cpp/cpp-clm-${hostname}-%d{yyyy-MM-dd}-%i.log
+			</fileNamePattern>
+			<maxFileSize>5MB</maxFileSize>
+			<maxHistory>2</maxHistory>
+			<totalSizeCap>10MB</totalSizeCap>
+			<!-- optional -->
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>5MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss} [%t] %-5p [%c:%L] - %m%n</Pattern>
+		</encoder>
+	</appender>
+
+	<!-- <logger name="org.springframework" level="DEBUG" /> -->
+
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%t] %highlight(%-5p) [%c.%M]-%L -
+				%m%n</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="clmdata" level="INFO"
+		additivity="false">
+		<appender-ref ref="CLM" />
+	</logger>
+
+	<root level="INFO">
+		<appender-ref ref="FILE" />
+		<appender-ref ref="CONSOLE" />
+	</root>
+</configuration>

@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-md-8">
+    <div class="mt-3">
+      <div class="row">
+        <div [ngClass]="!(isViewMode || itemAssignmentDetails.isFutureItemSaved)?'col-md-3' :'saved-search-headers'">
+          <strong>{{'ASSIGNMENT_ITEM_LABELS.ITEM_ID'| translate }}</strong>
+        </div>
+      </div>
+    </div>
+
+    <div *ngFor="let itemMapKey of itemMapKeyList; let i = index">
+      <app-item-search [itemMapKey]="itemMapKey" [itemData]="itemMap.get(itemMapKey)" [rows]="futureItemListLength" (deleteField)="onDelete($event)"
+        [isViewMode]="isViewMode" [itemDetails]="itemAssignmentDetails" [index]="createDeleteModalIndex(i)"></app-item-search>
+    </div>
+
+    <div *ngIf="!isViewMode" class="row">
+      <div class="col-md-4">
+        <button type="button" class="mt-2 btn add-another-item" (click)="addAnotherItem()">{{'ASSIGNMENT_LABELS.ADD_ITEM'| translate }}</button>
+      </div>
+    </div>
+    <br>
+  </div>
+  <div class="col-md-4">
+    <div class="spacing">
+      <strong>{{'ASSIGNMENT_ITEM_LABELS.ASSIGNED'| translate }}</strong>
+      <div class="exception-name">{{ itemAssignmentDetails.exceptionName }}</div>
+    </div>
+  </div>
+</div>
+<div *ngIf="!isViewMode">
+  <button class="btn btn-primary mt-3 save-assignments" [disabled]="disableSaveInd" (click)="onSaveClick()">{{'ASSIGNMENT_LABELS.SAVE_ASSIGNMENTS'| translate }}</button>
+  <span *ngIf="duplicateOnSaveFound" class="item-error">
+    <img src="{{imageDir}}assets/images/danger-icon.png" alt="danger icon" class="danger-icon">{{'ASSIGNMENT_LABELS.DUPLICATE_LIST'| translate }} {{duplicateList}}</span>
+</div>
+
+<div class="modal fade" id="saveItemModal{{index}}" tabindex="-1" role="dialog" aria-labelledby="saveItemModalLabel" aria-hidden="true">
+  <div class="modal-dialog mx-auto" role="document">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <div class="modal-title" id="itemAssignmentModalLabel">{{'ASSIGNMENT_LABELS.ASSIGNMENT_SAVE_POP_MSG'| translate }}</div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="cancel" data-dismiss="modal">
+          <u>{{'COMMON.BTN_CANCEL'| translate }}</u>
+        </button>
+        <button type="submit" #saveItemAssignmentBtn class="btn save" data-dismiss="modal" (click)="saveAssignments()">{{'COMMON.BTN_SAVE'| translate }}</button>
+      </div>
+    </div>
+  </div>
+</div>

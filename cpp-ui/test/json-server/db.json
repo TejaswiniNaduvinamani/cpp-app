@@ -1,0 +1,3957 @@
+{
+  "distributionCenters": [
+    {
+      "dcNumber": "1",
+      "name": "50th St. Distribution Ctr",
+      "shortName": "50TH ST - GR"
+    },
+    {
+      "dcNumber": "17",
+      "name": "Aberdeen Distribution Ctr",
+      "shortName": "ABERDEEN"
+    },
+    {
+      "dcNumber": "5",
+      "name": "Brighton Distribution Ctr",
+      "shortName": "BRIGHTON"
+    },
+    {
+      "dcNumber": "6",
+      "name": "Clay Ave. Distribution Ctr",
+      "shortName": "CLAY AVE -GR"
+    },
+    {
+      "dcNumber": "16",
+      "name": "Dallas DC",
+      "shortName": "DALLAS"
+    },
+    {
+      "dcNumber": "12",
+      "name": "Douglasville Distribution Ctr",
+      "shortName": "DOUGLASVILLE"
+    },
+    {
+      "dcNumber": "9999",
+      "name": "Data Set Up",
+      "shortName": "Data Set Up"
+    },
+    {
+      "dcNumber": "2",
+      "name": "Green Oak Distribution Ctr",
+      "shortName": "GREEN OAK"
+    },
+    {
+      "dcNumber": "15",
+      "name": "Houston DC",
+      "shortName": "HOUSTON"
+    },
+    {
+      "dcNumber": "11",
+      "name": "Imperial Distribution Ctr",
+      "shortName": "IMPERIAL"
+    },
+    {
+      "dcNumber": "19",
+      "name": "Kannapolis Distribution Ctr",
+      "shortName": "KANNAPOLIS"
+    },
+    {
+      "dcNumber": "8",
+      "name": "Kenosha Distribution Ctr",
+      "shortName": "KENOSHA"
+    },
+    {
+      "dcNumber": "20",
+      "name": "Miami Distribution Center",
+      "shortName": "MIAMI"
+    },
+    {
+      "dcNumber": "9",
+      "name": "Plant City Distribution Ctr",
+      "shortName": "PLANT CITY"
+    },
+    {
+      "dcNumber": "4",
+      "name": "Shepherdsville Dist Ctr",
+      "shortName": "SHEPHERDSV"
+    },
+    {
+      "dcNumber": "3",
+      "name": "Springfield Distribution Ctr",
+      "shortName": "SPRINGFIELD"
+    },
+    {
+      "dcNumber": "7550",
+      "name": "Store-MI-Wyoming 192",
+      "shortName": "Store-0192"
+    },
+    {
+      "dcNumber": "7500",
+      "name": "Store-IL-Brickyard 1941",
+      "shortName": "Store-1941"
+    },
+    {
+      "dcNumber": "5500",
+      "name": "Store-NY-Buffalo GRM 2401",
+      "shortName": "Store-2401"
+    },
+    {
+      "dcNumber": "10",
+      "name": "Perkins Paper LLC - Taunton DC",
+      "shortName": "TAUNTON"
+    }
+  ],
+  "fetchSavedDistributionCenters": [
+    {
+      "cppId": "560",
+      "dcCode": "6",
+      "expirationDate": "2018-02-01",
+      "effectiveDate": "2018-01-20"
+    },
+    {
+      "cppId": "560",
+      "dcCode": "16",
+      "expirationDate": "2018-02-01",
+      "effectiveDate": "2018-01-20"
+    }
+  ],
+  "selectedDistributionCenter": {
+    "contractPriceProfileSeq": 14295,
+    "distributionCenters": [
+      "6",
+      "16"
+    ],
+    "effectiveDate": "2019-07-23T00:00:00.000Z",
+    "expirationDate": "9999-01-01T00:00:00.000Z"
+  },
+  "contractPriceProfileInfo": {
+    "contractEndDate": 1604102400000,
+    "contractStartDate": 1563840000000,
+    "contractStatus": "Draft",
+    "agreementId": "f7577793-0fb3-45f6-9710-ddb79514c24a",
+    "contractType": "ICMDistributionAgreementRegional",
+    "contractName": "TEST CONTRACT",
+    "parentAgreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+    "isAmendment": false,
+    "cppInformationDto": {
+      "contractPriceProfileId": 3475,
+      "contractPriceProfileSeq": 14295,
+      "versionNumber": 1
+    }
+  },
+  "savePricingInformation": {
+    "contractName": "TEST CONTRACT",
+    "contractType": "ICMDistributionAgreementRegional",
+    "contractPriceProfileId": 3475,
+    "pricingEffectiveDate": "2019-07-23T00:00:00.000Z",
+    "pricingExpirationDate": "9999-01-01T00:00:00.000Z",
+    "scheduleForCostChange": "fiscal",
+    "priceVerificationFlag": false,
+    "priceAuditFlag": false,
+    "transferFeeFlag": false,
+    "assessmentFeeFlag": false,
+    "contractPriceProfileSeq": 14295,
+    "agreementId": "5ed83f65-8b15-40c9-a91c-d2e119c83663",
+    "clmContractStartDate": "2019-07-23T00:00:00.000Z",
+    "clmContractEndDate": "2020-10-31T00:00:00.000Z",
+    "versionNbr": 1,
+    "parentAgreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea"
+  },
+  "fetchMarkupDefaults": [
+    {
+      "gfsCustomerId": 150,
+      "markupName": "Contract",
+      "gfsCustomerType": 31,
+      "isMarkupSaved": true,
+      "itemLevelMarkupList": [
+        {
+          "noItemId": false,
+          "itemId": "678",
+          "itemDesc": "My Future Item",
+          "stockingCode ": 0,
+          "markup": "1.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "02/21/2018",
+          "expirationDate": "02/28/2018",
+          "inValid": false,
+          "inActive": false,
+          "isItemSaved": true
+        },
+        {
+          "noItemId": false,
+          "itemId": "670",
+          "itemDesc": "My Future Item-1",
+          "stockingCode ": 0,
+          "markup": "1.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "02/21/2018",
+          "expirationDate": "02/28/2018",
+          "inValid": false,
+          "inActive": false,
+          "isItemSaved": true
+        },
+        {
+          "noItemId": true,
+          "itemId": "",
+          "itemDesc": "My Future Item-3",
+          "stockingCode ": 0,
+          "markup": "1.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "02/21/2018",
+          "expirationDate": "02/28/2018",
+          "inValid": false,
+          "inActive": false,
+          "isItemSaved": true
+        },
+        {
+          "noItemId": true,
+          "itemId": "",
+          "itemDesc": "My Future Item-4",
+          "stockingCode ": 0,
+          "markup": "1.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "02/21/2018",
+          "expirationDate": "02/28/2018",
+          "inValid": false,
+          "inActive": false,
+          "isItemSaved": true
+        }
+      ],
+      "subgroupMarkupList": [
+        {
+          "subgroupId": "125",
+          "subgroupDesc": "My Subgroup",
+          "markup": "1.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "02/21/2018",
+          "expirationDate": "02/28/2018",
+          "isSubgroupSaved": false
+        }
+      ],
+      "productMarkupList": [
+        {
+          "productType": "GROCERY",
+          "itemPriceId": 1,
+          "markup": "1.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "FROZEN",
+          "itemPriceId": 2,
+          "markup": "2.00",
+          "unit": "%",
+          "markupType": 2,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "MEAT",
+          "itemPriceId": 3,
+          "markup": "3.00",
+          "unit": "$",
+          "markupType": 3,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "SEAFOOD",
+          "itemPriceId": 4,
+          "markup": "4.00",
+          "unit": "%",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "POULTRY",
+          "itemPriceId": 5,
+          "markup": "5.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "DAIRY",
+          "itemPriceId": 6,
+          "markup": "6.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "DISPOSABLES",
+          "itemPriceId": 7,
+          "markup": "7.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "CHEMICAL",
+          "itemPriceId": 8,
+          "markup": "8.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "BEVERAGE",
+          "itemPriceId": 9,
+          "markup": "9.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "PRODUCE",
+          "itemPriceId": 10,
+          "markup": "10.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "TABLETOP",
+          "itemPriceId": 11,
+          "markup": "11.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "SERVICE ITEMS",
+          "itemPriceId": 12,
+          "markup": "12.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        }
+      ]
+    }
+  ],
+  "fetchSplitCaseFee": [
+    {
+      "productType": "GROCERY",
+      "splitCaseFee": "35.00",
+      "unit": "%",
+      "effectiveDate": "12/26/2017",
+      "expirationDate": "12/31/2017",
+      "itemPriceId": "1",
+      "lessCaseRuleId": "2"
+    },
+    {
+      "productType": "FROZEN",
+      "splitCaseFee": "35.00",
+      "unit": "%",
+      "effectiveDate": "12/26/2017",
+      "expirationDate": "12/31/2017",
+      "itemPriceId": "2",
+      "lessCaseRuleId": "2"
+    },
+    {
+      "productType": "MEAT",
+      "splitCaseFee": "35.00",
+      "unit": "%",
+      "effectiveDate": "12/26/2017",
+      "expirationDate": "12/31/2017",
+      "itemPriceId": "3",
+      "lessCaseRuleId": "2"
+    },
+    {
+      "productType": "SEAFOOD",
+      "splitCaseFee": "35.00",
+      "unit": "%",
+      "effectiveDate": "12/26/2017",
+      "expirationDate": "12/31/2017",
+      "itemPriceId": "4",
+      "lessCaseRuleId": "2"
+    },
+    {
+      "productType": "POULTRY",
+      "splitCaseFee": "35.00",
+      "unit": "%",
+      "effectiveDate": "12/26/2017",
+      "expirationDate": "12/31/2017",
+      "itemPriceId": "5",
+      "lessCaseRuleId": "2"
+    },
+    {
+      "productType": "DAIRY",
+      "splitCaseFee": "35.00",
+      "unit": "%",
+      "effectiveDate": "12/26/2017",
+      "expirationDate": "12/31/2017",
+      "itemPriceId": "6",
+      "lessCaseRuleId": "2"
+    },
+    {
+      "productType": "DISPOSABLES",
+      "splitCaseFee": "35.00",
+      "unit": "%",
+      "effectiveDate": "12/26/2017",
+      "expirationDate": "12/31/2017",
+      "itemPriceId": "7",
+      "lessCaseRuleId": "2"
+    },
+    {
+      "productType": "CHEMICAL",
+      "splitCaseFee": "35.00",
+      "unit": "%",
+      "effectiveDate": "12/26/2017",
+      "expirationDate": "12/31/2017",
+      "itemPriceId": "8",
+      "lessCaseRuleId": "2"
+    },
+    {
+      "productType": "BEVERAGE",
+      "splitCaseFee": "35.00",
+      "unit": "%",
+      "effectiveDate": "12/26/2017",
+      "expirationDate": "12/31/2017",
+      "itemPriceId": "9",
+      "lessCaseRuleId": "2"
+    },
+    {
+      "productType": "PRODUCE",
+      "splitCaseFee": "35.00",
+      "unit": "%",
+      "effectiveDate": "12/26/2017",
+      "expirationDate": "12/31/2017",
+      "itemPriceId": "10",
+      "lessCaseRuleId": "2"
+    },
+    {
+      "productType": "TABLETOP",
+      "splitCaseFee": "35.00",
+      "unit": "%",
+      "effectiveDate": "12/26/2017",
+      "expirationDate": "12/31/2017",
+      "itemPriceId": "11",
+      "lessCaseRuleId": "2"
+    },
+    {
+      "productType": "SERVICE ITEMS",
+      "splitCaseFee": "35.00",
+      "unit": "%",
+      "effectiveDate": "12/26/2017",
+      "expirationDate": "12/31/2017",
+      "itemPriceId": "12",
+      "lessCaseRuleId": "2"
+    }
+  ],
+  "saveSplitCaseFee": {
+    "contractPriceProfileSeq": 14295,
+    "splitCaseFeeValues": [
+      {
+        "productType": "GROCERY",
+        "splitCaseFee": "35.00",
+        "unit": "%",
+        "effectiveDate": "12/26/2017",
+        "expirationDate": "12/31/2017",
+        "itemPriceId": "1",
+        "lessCaseRuleId": "2"
+      },
+      {
+        "productType": "FROZEN",
+        "splitCaseFee": "35.00",
+        "unit": "%",
+        "effectiveDate": "12/26/2017",
+        "expirationDate": "12/31/2017",
+        "itemPriceId": "2",
+        "lessCaseRuleId": "2"
+      },
+      {
+        "productType": "MEAT",
+        "splitCaseFee": "35.00",
+        "unit": "%",
+        "effectiveDate": "12/26/2017",
+        "expirationDate": "12/31/2017",
+        "itemPriceId": "3",
+        "lessCaseRuleId": "2"
+      },
+      {
+        "productType": "SEAFOOD",
+        "splitCaseFee": "35.00",
+        "unit": "%",
+        "effectiveDate": "12/26/2017",
+        "expirationDate": "12/31/2017",
+        "itemPriceId": "4",
+        "lessCaseRuleId": "2"
+      },
+      {
+        "productType": "POULTRY",
+        "splitCaseFee": "35.00",
+        "unit": "%",
+        "effectiveDate": "12/26/2017",
+        "expirationDate": "12/31/2017",
+        "itemPriceId": "5",
+        "lessCaseRuleId": "2"
+      },
+      {
+        "productType": "DAIRY",
+        "splitCaseFee": "35.00",
+        "unit": "%",
+        "effectiveDate": "12/26/2017",
+        "expirationDate": "12/31/2017",
+        "itemPriceId": "6",
+        "lessCaseRuleId": "2"
+      },
+      {
+        "productType": "DISPOSABLES",
+        "splitCaseFee": "35.00",
+        "unit": "%",
+        "effectiveDate": "12/26/2017",
+        "expirationDate": "12/31/2017",
+        "itemPriceId": "7",
+        "lessCaseRuleId": "2"
+      },
+      {
+        "productType": "CHEMICAL",
+        "splitCaseFee": "35.00",
+        "unit": "%",
+        "effectiveDate": "12/26/2017",
+        "expirationDate": "12/31/2017",
+        "itemPriceId": "8",
+        "lessCaseRuleId": "2"
+      },
+      {
+        "productType": "BEVERAGE",
+        "splitCaseFee": "35.00",
+        "unit": "%",
+        "effectiveDate": "12/26/2017",
+        "expirationDate": "12/31/2017",
+        "itemPriceId": "9",
+        "lessCaseRuleId": "2"
+      },
+      {
+        "productType": "PRODUCE",
+        "splitCaseFee": "35.00",
+        "unit": "%",
+        "effectiveDate": "12/26/2017",
+        "expirationDate": "12/31/2017",
+        "itemPriceId": "10",
+        "lessCaseRuleId": "2"
+      },
+      {
+        "productType": "TABLETOP",
+        "splitCaseFee": "35.00",
+        "unit": "%",
+        "effectiveDate": "12/26/2017",
+        "expirationDate": "12/31/2017",
+        "itemPriceId": "11",
+        "lessCaseRuleId": "2"
+      },
+      {
+        "productType": "SERVICE ITEMS",
+        "splitCaseFee": "35.00",
+        "unit": "%",
+        "effectiveDate": "12/26/2017",
+        "expirationDate": "12/31/2017",
+        "itemPriceId": "12",
+        "lessCaseRuleId": "2"
+      }
+    ]
+  },
+  "saveMarkup": {
+    "contractPriceProfileSeq": 14295,
+    "markupWrapper": {
+      "isCompleted": false,
+      "gfsCustomerId": 150,
+      "markupName": "Contract",
+      "itemLevelMarkupList": [
+        {
+          "noItemId": false,
+          "itemId": "678",
+          "itemDesc": "My Future Item",
+          "stockingCode ": 0,
+          "markup": "1.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "02/21/2018",
+          "expirationDate": "02/28/2018",
+          "inValid": false,
+          "inActive": false,
+          "isItemSaved": true
+        },
+        {
+          "noItemId": false,
+          "itemId": "670",
+          "itemDesc": "My Future Item-1",
+          "stockingCode ": 0,
+          "markup": "1.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "02/21/2018",
+          "expirationDate": "02/28/2018",
+          "inValid": false,
+          "inActive": false,
+          "isItemSaved": true
+        }
+      ],
+      "subgroupMarkupList": [
+        {
+          "subgroupId": "125",
+          "subgroupDesc": "My Subgroup",
+          "markup": "1.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "02/21/2018",
+          "expirationDate": "02/28/2018",
+          "isSubgroupSaved": false
+        }
+      ],
+      "productMarkupList": [
+        {
+          "productType": "GROCERY",
+          "itemPriceId": 1,
+          "markup": "1.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019",
+          "isInvalidCurrency": false,
+          "invalidMarkup": false
+        },
+        {
+          "productType": "FROZEN",
+          "itemPriceId": 2,
+          "markup": "2.00",
+          "unit": "%",
+          "markupType": 2,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "MEAT",
+          "itemPriceId": 3,
+          "markup": "3.00",
+          "unit": "$",
+          "markupType": 3,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "SEAFOOD",
+          "itemPriceId": 4,
+          "markup": "4.00",
+          "unit": "%",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "POULTRY",
+          "itemPriceId": 5,
+          "markup": "5.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "DAIRY",
+          "itemPriceId": 6,
+          "markup": "6.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "DISPOSABLES",
+          "itemPriceId": 7,
+          "markup": "7.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "CHEMICAL",
+          "itemPriceId": 8,
+          "markup": "8.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "BEVERAGE",
+          "itemPriceId": 9,
+          "markup": "9.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "PRODUCE",
+          "itemPriceId": 10,
+          "markup": "10.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "TABLETOP",
+          "itemPriceId": 11,
+          "markup": "11.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "SERVICE ITEMS",
+          "itemPriceId": 12,
+          "markup": "12.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        }
+      ],
+      "markupGridIndex": 0
+    }
+  },
+  "saveMarkupFurtherance": {
+    "MarkupGridDetails": {
+      "gfsCustomerId": 150,
+      "markupName": "Contract",
+      "contractPriceProfileSeq": 14295,
+      "gfsCustomerType": 31,
+      "isMarkupSaved": false,
+      "itemLevelMarkupList": [
+        {
+          "noItemId": false,
+          "itemId": "678",
+          "itemDesc": "My Future Item",
+          "stockingCode ": 0,
+          "markup": "1.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "02/21/2018",
+          "expirationDate": "02/28/2018",
+          "inValid": false,
+          "inActive": false,
+          "isItemSaved": true
+        },
+        {
+          "noItemId": false,
+          "itemId": "670",
+          "itemDesc": "My Future Item-1",
+          "stockingCode ": 0,
+          "markup": "1.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "02/21/2018",
+          "expirationDate": "02/28/2018",
+          "inValid": false,
+          "inActive": false,
+          "isItemSaved": true
+        },
+        {
+          "noItemId": true,
+          "itemId": "",
+          "itemDesc": "My Future Item-3",
+          "stockingCode ": 0,
+          "markup": "1.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "02/21/2018",
+          "expirationDate": "02/28/2018",
+          "inValid": false,
+          "inActive": false,
+          "isItemSaved": true
+        },
+        {
+          "noItemId": true,
+          "itemId": "",
+          "itemDesc": "My Future Item-4",
+          "stockingCode ": 0,
+          "markup": "1.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "02/21/2018",
+          "expirationDate": "02/28/2018",
+          "inValid": false,
+          "inActive": false,
+          "isItemSaved": true
+        }
+      ],
+      "subgroupMarkupList": [
+        {
+          "subgroupId": "125",
+          "subgroupDesc": "My Subgroup",
+          "markup": "1.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "02/21/2018",
+          "expirationDate": "02/28/2018",
+          "isSubgroupSaved": false
+        }
+      ],
+      "productMarkupList": [
+        {
+          "productType": "GROCERY",
+          "itemPriceId": 1,
+          "markup": "1.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019",
+          "isInvalidCurrency": false,
+          "invalidMarkup": false
+        },
+        {
+          "productType": "FROZEN",
+          "itemPriceId": 2,
+          "markup": "2.00",
+          "unit": "%",
+          "markupType": 2,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "MEAT",
+          "itemPriceId": 3,
+          "markup": "3.00",
+          "unit": "$",
+          "markupType": 3,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "SEAFOOD",
+          "itemPriceId": 4,
+          "markup": "4.00",
+          "unit": "%",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "POULTRY",
+          "itemPriceId": 5,
+          "markup": "5.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "DAIRY",
+          "itemPriceId": 6,
+          "markup": "6.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "DISPOSABLES",
+          "itemPriceId": 7,
+          "markup": "7.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "CHEMICAL",
+          "itemPriceId": 8,
+          "markup": "8.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "BEVERAGE",
+          "itemPriceId": 9,
+          "markup": "9.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "PRODUCE",
+          "itemPriceId": 10,
+          "markup": "10.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "TABLETOP",
+          "itemPriceId": 11,
+          "markup": "11.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        },
+        {
+          "productType": "SERVICE ITEMS",
+          "itemPriceId": 12,
+          "markup": "12.00",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "12/30/2017",
+          "expirationDate": "12/07/2019"
+        }
+      ],
+      "markupGridIndex": 0
+    }
+  },
+  "renameMarkupException": {
+    "contractPriceProfileSeq": 21,
+    "gfsCustomerId": "151",
+    "markupName": "qwerty",
+    "newMarkupName": "fdff"
+  },
+  "deleteMarkupException": [
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "150",
+      "markupName": "qwerty"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "150",
+      "markupName": "qwerty"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "150",
+      "markupName": "qwerty"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "150",
+      "markupName": "qwerty"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "150",
+      "markupName": "qwerty"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "150",
+      "markupName": "qwerty"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "150",
+      "markupName": "qwerty"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "150",
+      "markupName": "qwerty"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "150",
+      "markupName": "qwerty"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "150",
+      "markupName": "qwerty"
+    }
+  ],
+  "saveItems": {
+    "contractPriceProfileSeq": 21,
+    "futureItemDesc": "French Fries",
+    "exceptionName": "Chilli's - 2",
+    "gfsCustomerId": 150,
+    "gfsCustomerTypeCode": 12,
+    "isFutureItemSaved": true,
+    "itemAssignmentList": [
+      {
+        "itemId": "166720",
+        "itemDescription": "BLUEBERRY IQF 4-5# GFS",
+        "isItemSaved": false,
+        "invalidItem": false,
+        "itemExists": false
+      },
+      {
+        "itemId": "166720",
+        "itemDescription": "BLUEBERRY IQF 4-5# GFS",
+        "isItemSaved": false,
+        "invalidItem": false,
+        "itemExists": false
+      },
+      {
+        "itemId": "166720",
+        "itemDescription": "BLUEBERRY IQF 4-5# GFS",
+        "isItemSaved": false,
+        "invalidItem": false,
+        "itemExists": false
+      }
+    ]
+  },
+  "addException": {
+    "isCompleted": false,
+    "gfsCustomerId": 151,
+    "markupName": "qwerty",
+    "itemLevelMarkupList": [],
+    "subgroupMarkupList": [],
+    "productMarkupList": [
+      {
+        "productType": "GROCERY",
+        "itemPriceId": 1,
+        "markup": "",
+        "unit": "$",
+        "markupType": 1,
+        "effectiveDate": "12/30/2017",
+        "expirationDate": "12/07/2019"
+      },
+      {
+        "productType": "FROZEN",
+        "itemPriceId": 2,
+        "markup": "",
+        "unit": "$",
+        "markupType": 1,
+        "effectiveDate": "12/30/2017",
+        "expirationDate": "12/07/2019"
+      },
+      {
+        "productType": "MEAT",
+        "itemPriceId": 3,
+        "markup": "",
+        "unit": "$",
+        "markupType": 1,
+        "effectiveDate": "12/30/2017",
+        "expirationDate": "12/07/2019"
+      },
+      {
+        "productType": "SEAFOOD",
+        "itemPriceId": 4,
+        "markup": "",
+        "unit": "$",
+        "markupType": 1,
+        "effectiveDate": "12/30/2017",
+        "expirationDate": "12/07/2019"
+      },
+      {
+        "productType": "POULTRY",
+        "itemPriceId": 5,
+        "markup": "",
+        "unit": "$",
+        "markupType": 1,
+        "effectiveDate": "12/30/2017",
+        "expirationDate": "12/07/2019"
+      },
+      {
+        "productType": "DAIRY",
+        "itemPriceId": 6,
+        "markup": "",
+        "unit": "$",
+        "markupType": 1,
+        "effectiveDate": "12/30/2017",
+        "expirationDate": "12/07/2019"
+      },
+      {
+        "productType": "DISPOSABLES",
+        "itemPriceId": 7,
+        "markup": "",
+        "unit": "$",
+        "markupType": 1,
+        "effectiveDate": "12/30/2017",
+        "expirationDate": "12/07/2019"
+      },
+      {
+        "productType": "CHEMICAL",
+        "itemPriceId": 8,
+        "markup": "",
+        "unit": "$",
+        "markupType": 1,
+        "effectiveDate": "12/30/2017",
+        "expirationDate": "12/07/2019"
+      },
+      {
+        "productType": "BEVERAGE",
+        "itemPriceId": 9,
+        "markup": "",
+        "unit": "$",
+        "markupType": 1,
+        "effectiveDate": "12/30/2017",
+        "expirationDate": "12/07/2019"
+      },
+      {
+        "productType": "PRODUCE",
+        "itemPriceId": 10,
+        "markup": "",
+        "unit": "$",
+        "markupType": 1,
+        "effectiveDate": "12/30/2017",
+        "expirationDate": "12/07/2019"
+      },
+      {
+        "productType": "TABLETOP",
+        "itemPriceId": 11,
+        "markup": "",
+        "unit": "$",
+        "markupType": 1,
+        "effectiveDate": "12/30/2017",
+        "expirationDate": "12/07/2019"
+      },
+      {
+        "productType": "SERVICE ITEMS",
+        "itemPriceId": 12,
+        "markup": "",
+        "unit": "$",
+        "markupType": 1,
+        "effectiveDate": "12/30/2017",
+        "expirationDate": "12/07/2019"
+      }
+    ]
+  },
+  "saveMarkupIndicators": {
+    "contractPriceProfileSeq": 14295,
+    "effectiveDate": "2019-07-23T00:00:00.000Z",
+    "expirationDate": "9999-01-01T00:00:00.000Z",
+    "expireLower": true,
+    "markupOnSell": false
+  },
+  "fetchMarkupIndicators": {
+    "contractPriceProfileSeq": 21,
+    "effectiveDate": "03/20/2018",
+    "expirationDate": "03/30/2018",
+    "expireLower": true,
+    "markupOnSell": false
+  },
+  "reviewData": {
+    "contractPricingReviewDTO": {
+      "scheduleForCost": "GFS Fiscal Calendar",
+      "scheduleForCostContractLanguage": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eleifend ante eros, at dictum mauris consectetur eu. Aenean at porta enim. Nulla volutpat risus in iaculis egestas. In suscipit id dui nec facilisis. Vivamus iaculis augue vitae elit luctus, ac dapibus odio scelerisque. Maecenas purus nulla, rutrum in ex in, egestas vulputate ipsum. Cras ac metus a nisl dictum bibendum blandit eget urna. Fusce sagittis, magna nec vulputate dignissim, odio lectus imperdiet dolor, id posuere tellus nisi quis metus. Nullam a mattis purus, et laoreet ipsum. Sed scelerisque eu ligula nec congue. Phasellus dictum tempus sollicitudin. Mauris congue tempus magna, non blandit est aliquet ut. Nunc sodale",
+      "formalPriceAudit": "No",
+      "formalPriceAuditContractLanguage": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eleifend ante eros, at dictum mauris consectetur eu. Aenean at porta enim. Nulla volutpat risus in iaculis egestas. In suscipit id dui nec facilisis. Vivamus iaculis augue vitae elit luctus, ac dapibus odio scelerisque. Maecenas purus nulla, rutrum in ex in, egestas vulputate ipsum. Cras ac metus a nisl dictum bibendum blandit eget urna. Fusce sagittis, magna nec vulputate dignissim, odio lectus imperdiet dolor, id posuere tellus nisi quis metus. Nullam a mattis purus, et laoreet ipsum. Sed scelerisque eu ligula nec congue. Phasellus dictum tempus sollicitudin. Mauris congue tempus magna, non blandit est aliquet ut. Nunc sodales elit egestas, euismod ex id, eleifend sem.",
+      "priceVerification": "No",
+      "priceVerificationContractLanguage": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eleifend ante eros, at dictum mauris consectetur eu. Aenean at porta enim. Nulla volutpat risus in iaculis egestas. In suscipit id dui nec facilisis. Vivamus iaculis augue vitae elit luctus, ac dapibus odio scelerisque. Maecenas purus nulla, rutrum in ex in, egestas vulputate ipsum. Cras ac metus a nisl dictum bibendum blandit eget urna. Fusce sagittis, magna nec vulputate dignissim, odio lectus imperdiet dolor, id posuere tellus nisi quis metus. Nullam a mattis purus, et laoreet ipsum. Sed scelerisque eu ligula nec congue. Phasellus dictum tempus sollicitudin. Mauris congue tempus magna, non blandit est aliquet ut. Nunc sodales elit egestas, euismod ex id, eleifen",
+      "gfsTransferFee": "NO",
+      "gfsLabelAssesmentFee": "NO",
+      "costOfProductsContractLanguage": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eleifend ante eros, at dictum mauris consectetur eu. Aenean at porta enim. Nulla volutpat risus in iaculis egestas. In suscipit id dui nec facilisis. Vivamus iaculis augue vitae elit luctus, ac dapibus odio scelerisque. Maecenas purus nulla, rutrum in ex in, egestas vulputate ipsum. Cras ac metus a nisl dictum bibendum blandit eget urna. Fusce sagittis, magna nec vulputate dignissim, odio lectus imperdiet dolor, id posuere tellus nisi quis metus. Nullam a mattis purus, et laoreet ipsum. Sed scelerisque eu ligula nec congue. Phasellus dictum tempus sollicitudin. Mauris congue tempus magna, non blandit est aliquet ut. Nunc sodales elit egestas, euismod ex id, eleifen"
+    },
+    "distributionCenter": [
+      "Abc",
+      "DEF"
+    ],
+    "markupReviewDTO": {
+      "markupBasedOnSell": "NO",
+      "markupBasedOnSellContractLanguage1": "Except as otherwise set forth in Section 6 of the Agreement the price for the Products will be Cost on the date of the order plus the applicable category mark-up (the �Mark-Up�); or, in the case of a percentage Mark-Up, the price is Cost divided by the difference between one (1.0) and the Mark-Up (for example, 0.9 would be used for a 10% mark-up). If a Location requires a Product to be sold in less than full case quantities and such Product can be split into individual units, the split case fee referenced in Section 4 below will be included in the sell price.",
+      "markupTypeDefinitionSellUnitLanguage": "The sell price for a Catch Weight Product subject to a dollar Mark-Up by \"Sell Unit\" identified in Section 4 of this Exhibit (\"Sell Unit Fee\") is Cost per pound based on the average case weight in preceding periods as reasonably determined by GFS plus the Sell Unit Fee. For example, the sell price for a pound of Product with a $3.00 Cost per pound and a $2.00 Sell Unit Fee would be $5.00 per pound.",
+      "markupTypeDefinitionPerCaseLanguage": "The sell price for a Catch Weight Product subject to a dollar Mark-Up \"Per Case\" identified in Section 4 of this Exhibit (\"Per Case Fee\") is the Cost per pound plus the Per Case Fee, converted to a cents per pound fee based upon the average case weight of the Catch Weight Product. The average case weight shall be based on the average of case weights for the Catch Weight Product in preceding periods as reasonably determined by GFS. For example, the sell price for a pound of Product with a $3.00 Cost per pound and a $2.00 Per Case Fee with an average case weight of 20 pounds would be $3.10 per pound ($2.00 / 20 = $0.10 + $3.00 = $3.10).",
+      "markupTypeDefinitionPerWeightLanguage": "For each \"Per Weight\" Mark-Up identified in Section 4 of this Exhibit, the Mark-Up shall apply to each one pound (or part of one pound) of Product according to the actual Cost per pound; or, if not purchased by GFS at a Cost per pound, the Cost converted to a Cost per pound based on the average Case weight in preceding periods as reasonably determined by GFS.",
+      "markupBasedOnSellContractLanguage2": "If Customer has negotiated a specific allowance with a vendor on one or more Products, then such allowance will be deducted from the sell price of the Product, after the Mark-Up has been applied.",
+      "markupGridDTOs": [
+        {
+          "markupName": "Contract",
+          "productTypeMarkups": [
+            {
+              "gfsCustomerId": "59",
+              "productType": "GROCERY",
+              "itemPriceId": 1,
+              "markup": "2.00",
+              "unit": "$",
+              "markupType": 2,
+              "effectiveDate": null,
+              "expirationDate": null,
+              "gfsCustomerTypeCode": 31,
+              "customerItemPriceSeq": 168391,
+              "contractPriceProfileSeq": 96208,
+              "priceLockedInTypeCode": 3,
+              "holdCostFirmInd": 0,
+              "priceLockinReasonCode": 3,
+              "priceMaintenanceSourceCode": 13
+            },
+            {
+              "gfsCustomerId": "59",
+              "productType": "FROZEN",
+              "itemPriceId": 2,
+              "markup": "2.00",
+              "unit": "$",
+              "markupType": 2,
+              "effectiveDate": null,
+              "expirationDate": null,
+              "gfsCustomerTypeCode": 31,
+              "customerItemPriceSeq": 168392,
+              "contractPriceProfileSeq": 96208,
+              "priceLockedInTypeCode": 3,
+              "holdCostFirmInd": 0,
+              "priceLockinReasonCode": 3,
+              "priceMaintenanceSourceCode": 13
+            },
+            {
+              "gfsCustomerId": "59",
+              "productType": "MEAT",
+              "itemPriceId": 3,
+              "markup": "2.00",
+              "unit": "$",
+              "markupType": 2,
+              "effectiveDate": null,
+              "expirationDate": null,
+              "gfsCustomerTypeCode": 31,
+              "customerItemPriceSeq": 168393,
+              "contractPriceProfileSeq": 96208,
+              "priceLockedInTypeCode": 3,
+              "holdCostFirmInd": 0,
+              "priceLockinReasonCode": 3,
+              "priceMaintenanceSourceCode": 13
+            },
+            {
+              "gfsCustomerId": "59",
+              "productType": "SEAFOOD",
+              "itemPriceId": 4,
+              "markup": "2.00",
+              "unit": "$",
+              "markupType": 2,
+              "effectiveDate": null,
+              "expirationDate": null,
+              "gfsCustomerTypeCode": 31,
+              "customerItemPriceSeq": 168394,
+              "contractPriceProfileSeq": 96208,
+              "priceLockedInTypeCode": 3,
+              "holdCostFirmInd": 0,
+              "priceLockinReasonCode": 3,
+              "priceMaintenanceSourceCode": 13
+            },
+            {
+              "gfsCustomerId": "59",
+              "productType": "POULTRY",
+              "itemPriceId": 5,
+              "markup": "2.00",
+              "unit": "$",
+              "markupType": 2,
+              "effectiveDate": null,
+              "expirationDate": null,
+              "gfsCustomerTypeCode": 31,
+              "customerItemPriceSeq": 168395,
+              "contractPriceProfileSeq": 96208,
+              "priceLockedInTypeCode": 3,
+              "holdCostFirmInd": 0,
+              "priceLockinReasonCode": 3,
+              "priceMaintenanceSourceCode": 13
+            },
+            {
+              "gfsCustomerId": "59",
+              "productType": "DAIRY",
+              "itemPriceId": 6,
+              "markup": "2.00",
+              "unit": "$",
+              "markupType": 2,
+              "effectiveDate": null,
+              "expirationDate": null,
+              "gfsCustomerTypeCode": 31,
+              "customerItemPriceSeq": 168396,
+              "contractPriceProfileSeq": 96208,
+              "priceLockedInTypeCode": 3,
+              "holdCostFirmInd": 0,
+              "priceLockinReasonCode": 3,
+              "priceMaintenanceSourceCode": 13
+            },
+            {
+              "gfsCustomerId": "59",
+              "productType": "DISPOSABLES",
+              "itemPriceId": 7,
+              "markup": "2.00",
+              "unit": "$",
+              "markupType": 2,
+              "effectiveDate": null,
+              "expirationDate": null,
+              "gfsCustomerTypeCode": 31,
+              "customerItemPriceSeq": 168397,
+              "contractPriceProfileSeq": 96208,
+              "priceLockedInTypeCode": 3,
+              "holdCostFirmInd": 0,
+              "priceLockinReasonCode": 3,
+              "priceMaintenanceSourceCode": 13
+            },
+            {
+              "gfsCustomerId": "59",
+              "productType": "CHEMICAL",
+              "itemPriceId": 8,
+              "markup": "2.00",
+              "unit": "$",
+              "markupType": 2,
+              "effectiveDate": null,
+              "expirationDate": null,
+              "gfsCustomerTypeCode": 31,
+              "customerItemPriceSeq": 168398,
+              "contractPriceProfileSeq": 96208,
+              "priceLockedInTypeCode": 3,
+              "holdCostFirmInd": 0,
+              "priceLockinReasonCode": 3,
+              "priceMaintenanceSourceCode": 13
+            },
+            {
+              "gfsCustomerId": "59",
+              "productType": "BEVERAGE",
+              "itemPriceId": 9,
+              "markup": "2.00",
+              "unit": "$",
+              "markupType": 2,
+              "effectiveDate": null,
+              "expirationDate": null,
+              "gfsCustomerTypeCode": 31,
+              "customerItemPriceSeq": 168399,
+              "contractPriceProfileSeq": 96208,
+              "priceLockedInTypeCode": 3,
+              "holdCostFirmInd": 0,
+              "priceLockinReasonCode": 3,
+              "priceMaintenanceSourceCode": 13
+            },
+            {
+              "gfsCustomerId": "59",
+              "productType": "PRODUCE",
+              "itemPriceId": 10,
+              "markup": "2.00",
+              "unit": "$",
+              "markupType": 2,
+              "effectiveDate": null,
+              "expirationDate": null,
+              "gfsCustomerTypeCode": 31,
+              "customerItemPriceSeq": 168400,
+              "contractPriceProfileSeq": 96208,
+              "priceLockedInTypeCode": 3,
+              "holdCostFirmInd": 0,
+              "priceLockinReasonCode": 3,
+              "priceMaintenanceSourceCode": 13
+            },
+            {
+              "gfsCustomerId": "59",
+              "productType": "TABLETOP",
+              "itemPriceId": 11,
+              "markup": "2.00",
+              "unit": "$",
+              "markupType": 2,
+              "effectiveDate": null,
+              "expirationDate": null,
+              "gfsCustomerTypeCode": 31,
+              "customerItemPriceSeq": 168401,
+              "contractPriceProfileSeq": 96208,
+              "priceLockedInTypeCode": 3,
+              "holdCostFirmInd": 0,
+              "priceLockinReasonCode": 3,
+              "priceMaintenanceSourceCode": 13
+            }
+          ],
+          "itemMarkups": [
+            {
+              "noItemId": true,
+              "itemId": "",
+              "itemDesc": "future Item",
+              "stockingCode": 0,
+              "markup": "2.50",
+              "unit": "%",
+              "markupType": 1,
+              "effectiveDate": null,
+              "expirationDate": null,
+              "invalid": false,
+              "inactive": false,
+              "isItemSaved": true,
+              "customerItemDescSeq": 32294
+            }
+          ],
+          "subgroupMarkups": [
+            {
+              "subgroupId": "20212",
+              "subgroupDesc": "SAFETY EQUIPMENT & SUPPLIES",
+              "markup": "2.00",
+              "unit": "%",
+              "markupType": 1,
+              "effectiveDate": null,
+              "expirationDate": null,
+              "isSubgroupSaved": true,
+              "customerItemDescSeq": 0
+            }
+          ]
+        },
+        {
+          "markupName": "Chilli-all",
+          "productTypeMarkups": [
+            {
+              "gfsCustomerId": "59",
+              "productType": "GROCERY",
+              "itemPriceId": 1,
+              "markup": "2.00",
+              "unit": "$",
+              "markupType": 2,
+              "effectiveDate": null,
+              "expirationDate": null,
+              "gfsCustomerTypeCode": 31,
+              "customerItemPriceSeq": 168391,
+              "contractPriceProfileSeq": 96208,
+              "priceLockedInTypeCode": 3,
+              "holdCostFirmInd": 0,
+              "priceLockinReasonCode": 3,
+              "priceMaintenanceSourceCode": 13
+            },
+            {
+              "gfsCustomerId": "59",
+              "productType": "FROZEN",
+              "itemPriceId": 2,
+              "markup": "2.00",
+              "unit": "$",
+              "markupType": 2,
+              "effectiveDate": null,
+              "expirationDate": null,
+              "gfsCustomerTypeCode": 31,
+              "customerItemPriceSeq": 168392,
+              "contractPriceProfileSeq": 96208,
+              "priceLockedInTypeCode": 3,
+              "holdCostFirmInd": 0,
+              "priceLockinReasonCode": 3,
+              "priceMaintenanceSourceCode": 13
+            },
+            {
+              "gfsCustomerId": "59",
+              "productType": "MEAT",
+              "itemPriceId": 3,
+              "markup": "2.00",
+              "unit": "$",
+              "markupType": 2,
+              "effectiveDate": null,
+              "expirationDate": null,
+              "gfsCustomerTypeCode": 31,
+              "customerItemPriceSeq": 168393,
+              "contractPriceProfileSeq": 96208,
+              "priceLockedInTypeCode": 3,
+              "holdCostFirmInd": 0,
+              "priceLockinReasonCode": 3,
+              "priceMaintenanceSourceCode": 13
+            },
+            {
+              "gfsCustomerId": "59",
+              "productType": "SEAFOOD",
+              "itemPriceId": 4,
+              "markup": "2.00",
+              "unit": "$",
+              "markupType": 2,
+              "effectiveDate": null,
+              "expirationDate": null,
+              "gfsCustomerTypeCode": 31,
+              "customerItemPriceSeq": 168394,
+              "contractPriceProfileSeq": 96208,
+              "priceLockedInTypeCode": 3,
+              "holdCostFirmInd": 0,
+              "priceLockinReasonCode": 3,
+              "priceMaintenanceSourceCode": 13
+            },
+            {
+              "gfsCustomerId": "59",
+              "productType": "POULTRY",
+              "itemPriceId": 5,
+              "markup": "2.00",
+              "unit": "$",
+              "markupType": 2,
+              "effectiveDate": null,
+              "expirationDate": null,
+              "gfsCustomerTypeCode": 31,
+              "customerItemPriceSeq": 168395,
+              "contractPriceProfileSeq": 96208,
+              "priceLockedInTypeCode": 3,
+              "holdCostFirmInd": 0,
+              "priceLockinReasonCode": 3,
+              "priceMaintenanceSourceCode": 13
+            },
+            {
+              "gfsCustomerId": "59",
+              "productType": "DAIRY",
+              "itemPriceId": 6,
+              "markup": "2.00",
+              "unit": "$",
+              "markupType": 2,
+              "effectiveDate": null,
+              "expirationDate": null,
+              "gfsCustomerTypeCode": 31,
+              "customerItemPriceSeq": 168396,
+              "contractPriceProfileSeq": 96208,
+              "priceLockedInTypeCode": 3,
+              "holdCostFirmInd": 0,
+              "priceLockinReasonCode": 3,
+              "priceMaintenanceSourceCode": 13
+            },
+            {
+              "gfsCustomerId": "59",
+              "productType": "DISPOSABLES",
+              "itemPriceId": 7,
+              "markup": "2.00",
+              "unit": "$",
+              "markupType": 2,
+              "effectiveDate": null,
+              "expirationDate": null,
+              "gfsCustomerTypeCode": 31,
+              "customerItemPriceSeq": 168397,
+              "contractPriceProfileSeq": 96208,
+              "priceLockedInTypeCode": 3,
+              "holdCostFirmInd": 0,
+              "priceLockinReasonCode": 3,
+              "priceMaintenanceSourceCode": 13
+            },
+            {
+              "gfsCustomerId": "59",
+              "productType": "CHEMICAL",
+              "itemPriceId": 8,
+              "markup": "2.00",
+              "unit": "$",
+              "markupType": 2,
+              "effectiveDate": null,
+              "expirationDate": null,
+              "gfsCustomerTypeCode": 31,
+              "customerItemPriceSeq": 168398,
+              "contractPriceProfileSeq": 96208,
+              "priceLockedInTypeCode": 3,
+              "holdCostFirmInd": 0,
+              "priceLockinReasonCode": 3,
+              "priceMaintenanceSourceCode": 13
+            },
+            {
+              "gfsCustomerId": "59",
+              "productType": "BEVERAGE",
+              "itemPriceId": 9,
+              "markup": "2.00",
+              "unit": "$",
+              "markupType": 2,
+              "effectiveDate": null,
+              "expirationDate": null,
+              "gfsCustomerTypeCode": 31,
+              "customerItemPriceSeq": 168399,
+              "contractPriceProfileSeq": 96208,
+              "priceLockedInTypeCode": 3,
+              "holdCostFirmInd": 0,
+              "priceLockinReasonCode": 3,
+              "priceMaintenanceSourceCode": 13
+            },
+            {
+              "gfsCustomerId": "59",
+              "productType": "PRODUCE",
+              "itemPriceId": 10,
+              "markup": "2.00",
+              "unit": "$",
+              "markupType": 2,
+              "effectiveDate": null,
+              "expirationDate": null,
+              "gfsCustomerTypeCode": 31,
+              "customerItemPriceSeq": 168400,
+              "contractPriceProfileSeq": 96208,
+              "priceLockedInTypeCode": 3,
+              "holdCostFirmInd": 0,
+              "priceLockinReasonCode": 3,
+              "priceMaintenanceSourceCode": 13
+            },
+            {
+              "gfsCustomerId": "59",
+              "productType": "TABLETOP",
+              "itemPriceId": 11,
+              "markup": "2.00",
+              "unit": "$",
+              "markupType": 2,
+              "effectiveDate": null,
+              "expirationDate": null,
+              "gfsCustomerTypeCode": 31,
+              "customerItemPriceSeq": 168401,
+              "contractPriceProfileSeq": 96208,
+              "priceLockedInTypeCode": 3,
+              "holdCostFirmInd": 0,
+              "priceLockinReasonCode": 3,
+              "priceMaintenanceSourceCode": 13
+            }
+          ],
+          "itemMarkups": [],
+          "subgroupMarkups": []
+        }
+      ]
+    },
+    "splitCaseReviewDTO": {
+      "feeTypeContractLanguage": "The sell price of a Case Unit will be the full Case sell price divided by the number of Case Units in the Case plus any applicable split case fee listed in Section 4 of this Exhibit.",
+      "feeType": 2,
+      "splitCaseFeeValues": [
+        {
+          "productType": "GROCERY",
+          "splitCaseFee": "40.00",
+          "unit": "%",
+          "effectiveDate": "2018-02-01 00:00:00.0",
+          "expirationDate": "2018-04-30 00:00:00.0",
+          "itemPriceId": "1",
+          "lessCaseRuleId": 2
+        },
+        {
+          "productType": "FROZEN",
+          "splitCaseFee": "40.00",
+          "unit": "%",
+          "effectiveDate": "2018-02-01 00:00:00.0",
+          "expirationDate": "2018-04-30 00:00:00.0",
+          "itemPriceId": "2",
+          "lessCaseRuleId": 2
+        },
+        {
+          "productType": "MEAT",
+          "splitCaseFee": "40.00",
+          "unit": "%",
+          "effectiveDate": "2018-02-01 00:00:00.0",
+          "expirationDate": "2018-04-30 00:00:00.0",
+          "itemPriceId": "3",
+          "lessCaseRuleId": 2
+        },
+        {
+          "productType": "SEAFOOD",
+          "splitCaseFee": "40.00",
+          "unit": "%",
+          "effectiveDate": "2018-02-01 00:00:00.0",
+          "expirationDate": "2018-04-30 00:00:00.0",
+          "itemPriceId": "4",
+          "lessCaseRuleId": 2
+        },
+        {
+          "productType": "POULTRY",
+          "splitCaseFee": "40.00",
+          "unit": "%",
+          "effectiveDate": "2018-02-01 00:00:00.0",
+          "expirationDate": "2018-04-30 00:00:00.0",
+          "itemPriceId": "5",
+          "lessCaseRuleId": 2
+        },
+        {
+          "productType": "DAIRY",
+          "splitCaseFee": "40.00",
+          "unit": "%",
+          "effectiveDate": "2018-02-01 00:00:00.0",
+          "expirationDate": "2018-04-30 00:00:00.0",
+          "itemPriceId": "6",
+          "lessCaseRuleId": 2
+        },
+        {
+          "productType": "DISPOSABLES",
+          "splitCaseFee": "40.00",
+          "unit": "%",
+          "effectiveDate": "2018-02-01 00:00:00.0",
+          "expirationDate": "2018-04-30 00:00:00.0",
+          "itemPriceId": "7",
+          "lessCaseRuleId": 2
+        },
+        {
+          "productType": "CHEMICAL",
+          "splitCaseFee": "40.00",
+          "unit": "%",
+          "effectiveDate": "2018-02-01 00:00:00.0",
+          "expirationDate": "2018-04-30 00:00:00.0",
+          "itemPriceId": "8",
+          "lessCaseRuleId": 2
+        },
+        {
+          "productType": "BEVERAGE",
+          "splitCaseFee": "40.00",
+          "unit": "%",
+          "effectiveDate": "2018-02-01 00:00:00.0",
+          "expirationDate": "2018-04-30 00:00:00.0",
+          "itemPriceId": "9",
+          "lessCaseRuleId": 2
+        },
+        {
+          "productType": "PRODUCE",
+          "splitCaseFee": "40.00",
+          "unit": "%",
+          "effectiveDate": "2018-02-01 00:00:00.0",
+          "expirationDate": "2018-04-30 00:00:00.0",
+          "itemPriceId": "10",
+          "lessCaseRuleId": 2
+        },
+        {
+          "productType": "TABLETOP",
+          "splitCaseFee": "10.00",
+          "unit": "%",
+          "effectiveDate": "2018-02-01 00:00:00.0",
+          "expirationDate": "2018-04-30 00:00:00.0",
+          "itemPriceId": "11",
+          "lessCaseRuleId": 2
+        }
+      ]
+    }
+  },
+  "downloadExhibit": {
+    "contractPriceProfileSeq": 21
+  },
+  "createDefaultItemLevelMarkup": {
+    "noItemId": false,
+    "itemId": "",
+    "itemDesc": "",
+    "stockingCode ": 0,
+    "markup": "",
+    "unit": "$",
+    "markupType": 1,
+    "effectiveDate": "02/21/2018",
+    "expirationDate": "02/28/2018"
+  },
+  "createDefaultSubgroupInformation": {
+    "subgroupId": "",
+    "subgroupDesc": "",
+    "markup": "",
+    "unit": "$",
+    "markupType": 1,
+    "effectiveDate": "02/21/2018",
+    "expirationDate": "02/28/2018",
+    "isSubgroupSaved": false
+  },
+  "assignmentMarkup": [
+    {
+      "gfsCustomerId": "1949",
+      "markupName": "ASDF",
+      "gfsCustomerType": "31",
+      "gfsCustomerTypeId": 31,
+      "itemList": [
+        {
+          "noItemId": true,
+          "itemId": "",
+          "itemDesc": "F1",
+          "stockingCode": 0,
+          "markup": "3.00",
+          "unit": "$",
+          "markupType": 2,
+          "effectiveDate": null,
+          "expirationDate": null,
+          "invalid": false,
+          "inactive": false,
+          "isItemSaved": true,
+          "customerItemDescSeq": 105
+        }
+      ],
+      "markupList": [
+        {
+          "productType": "GROCERY",
+          "itemPriceId": 1,
+          "markup": "44",
+          "unit": "%",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "FROZEN",
+          "itemPriceId": 2,
+          "markup": "44",
+          "unit": "%",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "MEAT",
+          "itemPriceId": 3,
+          "markup": "44",
+          "unit": "%",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "SEAFOOD",
+          "itemPriceId": 4,
+          "markup": "44",
+          "unit": "%",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "POULTRY",
+          "itemPriceId": 5,
+          "markup": "44",
+          "unit": "%",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "DAIRY",
+          "itemPriceId": 6,
+          "markup": "44",
+          "unit": "%",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "DISPOSABLES",
+          "itemPriceId": 7,
+          "markup": "44",
+          "unit": "%",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "CHEMICAL",
+          "itemPriceId": 8,
+          "markup": "44",
+          "unit": "%",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "BEVERAGE",
+          "itemPriceId": 9,
+          "markup": "44",
+          "unit": "%",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "PRODUCE",
+          "itemPriceId": 10,
+          "markup": "44",
+          "unit": "%",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "TABLETOP",
+          "itemPriceId": 11,
+          "markup": "44",
+          "unit": "%",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        }
+      ],
+      "isDefault": true,
+      "isAssignmentSaved": true,
+      "realCustomerDTOList": [
+        {
+          "realCustomerName": "ABC",
+          "realCustomerId": "123",
+          "realCustomerType": "31",
+          "realCustomerGroupType": "SPMG",
+          "isCustomerSaved": true
+        }
+      ],
+      "expireLowerInd": 1
+    },
+    {
+      "gfsCustomerId": "1950",
+      "markupName": "cvbn",
+      "gfsCustomerType": "31",
+      "markupList": [
+        {
+          "productType": "GROCERY",
+          "itemPriceId": 1,
+          "markup": "3",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "FROZEN",
+          "itemPriceId": 2,
+          "markup": "3",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "MEAT",
+          "itemPriceId": 3,
+          "markup": "3",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "SEAFOOD",
+          "itemPriceId": 4,
+          "markup": "3",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "POULTRY",
+          "itemPriceId": 5,
+          "markup": "3",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "DAIRY",
+          "itemPriceId": 6,
+          "markup": "3",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "DISPOSABLES",
+          "itemPriceId": 7,
+          "markup": "3",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "CHEMICAL",
+          "itemPriceId": 8,
+          "markup": "3",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "BEVERAGE",
+          "itemPriceId": 9,
+          "markup": "3",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "PRODUCE",
+          "itemPriceId": 10,
+          "markup": "3",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "TABLETOP",
+          "itemPriceId": 11,
+          "markup": "3",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        }
+      ],
+      "isDefault": false,
+      "isAssignmentSaved": true,
+      "realCustomerDTOList": [
+        {
+          "realCustomerName": "ABC",
+          "realCustomerId": "123",
+          "realCustomerType": "31",
+          "realCustomerGroupType": "SPMG",
+          "isCustomerSaved": true
+        },
+        {
+          "realCustomerName": "ABC",
+          "realCustomerId": "123",
+          "realCustomerType": "31",
+          "realCustomerGroupType": "SPMG",
+          "isCustomerSaved": true
+        },
+        {
+          "realCustomerName": "ABC",
+          "realCustomerId": "123",
+          "realCustomerType": "31",
+          "realCustomerGroupType": "SPMG",
+          "isCustomerSaved": true
+        }
+      ],
+      "expireLowerInd": -1
+    },
+    {
+      "gfsCustomerId": "1951",
+      "markupName": "Chilli",
+      "gfsCustomerType": "31",
+      "markupList": [
+        {
+          "productType": "GROCERY",
+          "itemPriceId": 1,
+          "markup": "3",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "FROZEN",
+          "itemPriceId": 2,
+          "markup": "3",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "MEAT",
+          "itemPriceId": 3,
+          "markup": "3",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "SEAFOOD",
+          "itemPriceId": 4,
+          "markup": "3",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "POULTRY",
+          "itemPriceId": 5,
+          "markup": "3",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "DAIRY",
+          "itemPriceId": 6,
+          "markup": "3",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "DISPOSABLES",
+          "itemPriceId": 7,
+          "markup": "3",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "CHEMICAL",
+          "itemPriceId": 8,
+          "markup": "3",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "BEVERAGE",
+          "itemPriceId": 9,
+          "markup": "3",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "PRODUCE",
+          "itemPriceId": 10,
+          "markup": "3",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        },
+        {
+          "productType": "TABLETOP",
+          "itemPriceId": 11,
+          "markup": "3",
+          "unit": "$",
+          "markupType": 1,
+          "effectiveDate": "9999-01-01 00:00:00.0",
+          "expirationDate": "9999-01-01 00:00:00.0"
+        }
+      ],
+      "isDefault": false,
+      "isAssignmentSaved": false,
+      "realCustomerDTOList": [
+        {
+          "realCustomerName": "",
+          "realCustomerId": "",
+          "realCustomerType": "",
+          "realCustomerGroupType": "",
+          "isCustomerSaved": false
+        }
+      ],
+      "expireLowerInd": 0
+    }
+  ],
+  "fetchPricingInformation": {
+    "contractName": "",
+    "contractType": "",
+    "contractPriceProfileId": 44,
+    "pricingEffectiveDate": "",
+    "pricingExpirationDate": "9999-01-01",
+    "scheduleForCostChange": "fiscal",
+    "priceVerificationFlag": false,
+    "priceAuditFlag": false,
+    "transferFeeFlag": false,
+    "assessmentFeeFlag": false,
+    "isExhibitAttached": false,
+    "pricingExhibitSysId": "120ef-1456f"
+  },
+  "deleteItemLevelMarkup": [
+    {
+      "contractPriceProfileSeq": 14295,
+      "id": "175",
+      "markupName": "Contract"
+    },
+    {
+      "contractPriceProfileSeq": 14295,
+      "id": "175",
+      "markupName": "Contract"
+    },
+    {
+      "contractPriceProfileSeq": 14295,
+      "id": "175",
+      "markupName": "Contract"
+    },
+    {
+      "contractPriceProfileSeq": 14295,
+      "id": "175",
+      "markupName": "Contract"
+    }
+  ],
+  "deleteItemLevelMarkupFurtherance": [
+    {
+      "contractPriceProfileSeq": 14295,
+      "id": "160",
+      "markupName": "qwerty",
+      "cppFurtheranceSeq": "22"
+    },
+    {
+      "contractPriceProfileSeq": 14295,
+      "id": "160",
+      "markupName": "qwerty",
+      "cppFurtheranceSeq": "22"
+    },
+    {
+      "contractPriceProfileSeq": 14295,
+      "id": "160",
+      "markupName": "qwerty",
+      "cppFurtheranceSeq": "22"
+    },
+    {
+      "contractPriceProfileSeq": 14295,
+      "id": "160",
+      "markupName": "qwerty",
+      "cppFurtheranceSeq": "22"
+    },
+    {
+      "contractPriceProfileSeq": 14295,
+      "id": "160",
+      "markupName": "qwerty",
+      "cppFurtheranceSeq": "22"
+    },
+    {
+      "contractPriceProfileSeq": 14295,
+      "id": "160",
+      "markupName": "qwerty",
+      "cppFurtheranceSeq": "22"
+    },
+    {
+      "contractPriceProfileSeq": 14295,
+      "id": "160",
+      "markupName": "qwerty",
+      "cppFurtheranceSeq": "22"
+    },
+    {
+      "contractPriceProfileSeq": 14295,
+      "id": "160",
+      "markupName": "qwerty",
+      "cppFurtheranceSeq": "22"
+    }
+  ],
+  "customerTypes": [
+    {
+      "customerTypeId": 31,
+      "customerTypeValue": "Contract Management Group"
+    },
+    {
+      "customerTypeId": 22,
+      "customerTypeValue": "Super Street Managed"
+    },
+    {
+      "customerTypeId": 21,
+      "customerTypeValue": "Super Bid Managed"
+    },
+    {
+      "customerTypeId": 20,
+      "customerTypeValue": "Super Chain Managed - Link"
+    },
+    {
+      "customerTypeId": 19,
+      "customerTypeValue": "Super Chain Managed - Pricing Only"
+    },
+    {
+      "customerTypeId": 18,
+      "customerTypeValue": "Street Managed"
+    },
+    {
+      "customerTypeId": 17,
+      "customerTypeValue": "Bid Managed"
+    },
+    {
+      "customerTypeId": 16,
+      "customerTypeValue": "Chain Managed - Linked"
+    },
+    {
+      "customerTypeId": 15,
+      "customerTypeValue": "Chain Managed - Pricing Only"
+    },
+    {
+      "customerTypeId": 5,
+      "customerTypeValue": "80000 Legacy Pricing Group"
+    },
+    {
+      "customerTypeId": 3,
+      "customerTypeValue": "Customer Family"
+    },
+    {
+      "customerTypeId": 0,
+      "customerTypeValue": "Customer Unit"
+    }
+  ],
+  "customer": {
+    "customerName": "Heinz Inc.",
+    "validationCode": 200,
+    "validationMessage": "{\"conceptName\":\"Deepank contract\", \"contractPriceProfileId\":\"123\"}"
+  },
+  "customerValid": {
+    "customerName": "Brisket National",
+    "validationCode": 200,
+    "validationMessage": "{\"conceptName\":\"Deepank contract\", \"contractPriceProfileId\":\"123\"}"
+  },
+  "customerDuplicateAcrossAccordion": {
+    "customerName": "",
+    "validationCode": 112,
+    "validationMessage": "{\"conceptName\":\"Deepank contract\", \"contractPriceProfileId\":\"123\"}"
+  },
+  "customerInvalid": {
+    "customerName": "",
+    "validationCode": 117,
+    "validationMessage": ""
+  },
+  "multipleCustomer": {
+    "customerName": "",
+    "validationCode": 113,
+    "validationMessage": ""
+  },
+  "customerNotMappedToDefault": {
+    "customerName": "",
+    "validationCode": 121,
+    "validationMessage": "Customer is not mapped"
+  },
+  "saveAssignments": {
+    "contractPriceProfileId": 3475,
+    "contractPriceProfileSeq": 14295,
+    "pricingEffectiveDate": "07/24/2018",
+    "pricingExpirationDate": 253370764800000,
+    "cmgCustomerId": "1951",
+    "realCustomerDTOList": [
+      {
+        "realCustomerName": "Heinz Inc.",
+        "realCustomerId": "12345",
+        "realCustomerType": "22",
+        "realCustomerGroupType": null,
+        "isCustomerSaved": false,
+        "invalidCustomer": false,
+        "duplicateCustomerFound": false,
+        "multipleAssignmentExists": false,
+        "isDefaultConceptnotMapped": false,
+        "isUnitTypeCustomerMappedtoDefault": false,
+        "validationError": false,
+        "isDefaultConceptNotMapped": false,
+        "isUnitTypeCustomerMappedToDefault": false,
+        "isNotMemberOfDefaultCustomer": false
+      }
+    ]
+  },
+  "fetchAllFutureItems": [
+    {
+      "cppFurtheranceSeq": 0,
+      "futureItemDesc": "F1",
+      "exceptionName": "REGIONAL DEMO",
+      "isFutureItemSaved": true,
+      "gfsCustomerId": "735",
+      "gfsCustomerTypeCode": 31,
+      "itemAssignmentList": [
+        {
+          "itemId": "113952",
+          "itemDescription": "ANGUS RIBEYE L-ON 2\" TL 13#&UP",
+          "isItemSaved": true,
+          "itemPriceLevelCode": 0,
+          "effectiveDate": "2018-08-13",
+          "expirationDate": "9999-01-01",
+          "customerItemDescSeq": 563
+        },
+        {
+          "itemId": "131981",
+          "itemDescription": "ANGUS SHRTLN 0X1\" 22#&DN HAB",
+          "isItemSaved": true,
+          "itemPriceLevelCode": 0,
+          "effectiveDate": "2018-08-13",
+          "expirationDate": "9999-01-01",
+          "customerItemDescSeq": 563
+        },
+        {
+          "itemId": "117541",
+          "itemDescription": "ANGUS STK BALL TIP CHC 20-10Z HAB",
+          "isItemSaved": true,
+          "itemPriceLevelCode": 0,
+          "effectiveDate": "2018-08-13",
+          "expirationDate": "9999-01-01",
+          "customerItemDescSeq": 563
+        }
+      ]
+    },
+    {
+      "cppFurtheranceSeq": 0,
+      "futureItemDesc": "F2",
+      "exceptionName": "REGIONAL DEMO",
+      "isFutureItemSaved": false,
+      "gfsCustomerId": "735",
+      "gfsCustomerTypeCode": 31,
+      "itemAssignmentList": [
+        {
+          "itemId": "",
+          "itemDescription": "",
+          "isItemSaved": false,
+          "itemPriceLevelCode": 0,
+          "effectiveDate": null,
+          "expirationDate": null,
+          "customerItemDescSeq": 0
+        }
+      ]
+    }
+  ],
+  "fetchMappedItemsForFurtherance": {
+    "futureItemDesc": "Heinz Ketchup",
+    "exceptionName": "Chilli's",
+    "isFutureItemSaved": true,
+    "itemAssignmentList": [
+      {
+        "itemId": "517541",
+        "itemDescription": "Heinz Ketchup",
+        "isItemSaved": true
+      },
+      {
+        "itemId": "517541",
+        "itemDescription": "French Ketchup",
+        "isItemSaved": false
+      },
+      {
+        "itemId": "517541",
+        "itemDescription": "Heinz Ketchup",
+        "isItemSaved": false
+      }
+    ]
+  },
+  "authorizationDetails": {
+    "priceProfileEditable": true,
+    "customerAssignmentEditable": true,
+    "itemAssignmentEditable": true,
+    "costModelEditable": true,
+    "cppStatus": "Draft",
+    "isPowerUser": true
+  },
+  "deleteRealCustomer": [
+    {
+      "realCustomerId": "12",
+      "id": "180",
+      "realCustomerType": "31"
+    },
+    {
+      "realCustomerId": "12",
+      "id": "180",
+      "realCustomerType": "31"
+    },
+    {
+      "realCustomerId": "12",
+      "id": "180",
+      "realCustomerType": "31"
+    },
+    {
+      "realCustomerId": "12",
+      "id": "180",
+      "realCustomerType": "31"
+    },
+    {
+      "realCustomerId": "12",
+      "id": "180",
+      "realCustomerType": "31"
+    },
+    {
+      "realCustomerId": "12",
+      "id": "180",
+      "realCustomerType": "31"
+    },
+    {
+      "realCustomerId": "12",
+      "id": "180",
+      "realCustomerType": "31"
+    },
+    {
+      "realCustomerId": "12",
+      "id": "180",
+      "realCustomerType": "31"
+    },
+    {
+      "realCustomerId": "12",
+      "id": "180",
+      "realCustomerType": "31"
+    }
+  ],
+  "savePricingExhibit": {
+    "contractPriceProfileSeq": 14295,
+    "contractAgeementId": "c0e3a4f5-7479-4d22-b349-e61c50b3e26c",
+    "contractTypeName": "ICMDistributionAgreementRegional"
+  },
+  "deleteItemAssignment": [
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "190"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "190"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "190"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "190"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "190"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "190"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "190"
+    }
+  ],
+  "returnToClm": {
+    "clmUrlKey": "https://gfsdev.icertis.com/Agreement/Details?entityName="
+  },
+  "findBlueberryItemInformation": {
+    "itemNo": "166719",
+    "itemDescription": "BLUEBERRY IQF 4-5# GFS",
+    "itemStatusCode": "AC",
+    "stockingCode ": "3",
+    "isActive": true,
+    "isValid": true,
+    "isItemAlreadyExist": false
+  },
+  "findCranberryItemInformation": {
+    "itemNo": "166720",
+    "itemDescription": "CRANBERRY IQF 6-7# GFS",
+    "itemStatusCode": "AC",
+    "stockingCode ": "3",
+    "isActive": true,
+    "isValid": true,
+    "isItemAlreadyExist": false
+  },
+  "findRaspberryItemInformation": {
+    "itemNo": "166724",
+    "itemDescription": "RASPBERRY IQF 8-9# GFS",
+    "itemStatusCode": "AC",
+    "stockingCode ": "3",
+    "isActive": true,
+    "isValid": true,
+    "isItemAlreadyExist": false
+  },
+  "findItemInformationInvalid": {
+    "itemNo": " ",
+    "itemDescription": " ",
+    "itemStatusCode": "AC",
+    "stockingCode ": "3",
+    "isActive": true,
+    "isValid": false,
+    "isItemAlreadyExist": false
+  },
+  "findItemInformationExists": {
+    "itemNo": " ",
+    "itemDescription": " ",
+    "itemStatusCode": "AC",
+    "stockingCode ": "3",
+    "isActive": true,
+    "isValid": false,
+    "isItemAlreadyExist": true
+  },
+  "findItemInformationDuplicate": {
+    "itemNo": "",
+    "itemDescription": null,
+    "itemStatusCode": null,
+    "stockingCode ": null,
+    "isActive": false,
+    "isValid": false,
+    "isItemAlreadyExist": true
+  },
+  "findSubgroupInformationValid": {
+    "subgroupId": "123",
+    "subgroupDesc": "TABLETOP MISC.",
+    "validationMessage": "",
+    "validationCode": 200
+  },
+  "findSubgroupInformationInvalid": {
+    "subgroupId": "456",
+    "subgroupDesc": "",
+    "validationMessage": "",
+    "validationCode": 124
+  },
+  "findSubgroupInformationDuplicate": {
+    "subgroupId": "789",
+    "subgroupDesc": "",
+    "validationMessage": "",
+    "validationCode": 123
+  },
+  "deletePricingExhibit": [
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    },
+    {
+      "agreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+      "id": "200"
+    }
+  ],
+  "activatePricingForCustomer": {},
+  "activatePricingForFurtherance": {},
+  "fetchButtonState": {
+    "enableActivatePricingButton": true
+  },
+  "fetchFurtheranceInfo": {
+    "cppFurtheranceSeq": 123,
+    "contractPriceProfileSeq": 345,
+    "furtheranceStatusCode": 678,
+    "parentCLMAgreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+    "furtheranceEffectiveDate": "2019-07-23T00:00:00.000Z",
+    "changeReasonTxt": "No Apparent Reason",
+    "contractReferenceTxt": "Contract Reference Text here"
+  },
+  "saveFurtheranceInfo": {
+    "cppFurtheranceSeq": 123,
+    "contractPriceProfileSeq": 345,
+    "furtheranceStatusCode": 678,
+    "parentCLMAgreementId": "75490bfc-289d-40d3-b644-ba095c2e1cea",
+    "changeReasonTxt": "No Apparent Reason",
+    "contractReferenceTxt": "Contract Reference Text here",
+    "furtheranceEffectiveDate": "2018-08-14T00:00:00.000Z"
+  },
+  "validateFurtheranceStatus": {
+    "hasInProgressFurtherance": false
+  },
+  "createNewFurtherance": {
+    "agreementId": "c0e3a4f5-7479-4d22-b349-e61c50b3e26c",
+    "contractType": "ICMDistributionAgreementRegional",
+    "cppFurtheranceSeq": 101
+  },
+  "fetchInProgressFurtheranceInfo": {
+    "agreementId": "c0e3a4f5-7479-4d22-b349-e61c50b3e26c",
+    "contractType": "ICMDistributionAgreementRegional",
+    "cppFurtheranceSeq": 101
+  },
+  "createFurtheranceDocument": {},
+  "enableActivatePricingForFurtherance": {
+    "enableActivatePricingButton": true
+  },
+  "saveMappedItemsForFurtherance": {
+    "contractPriceProfileSeq": 14295,
+    "cppFurtheranceSeq": 101,
+    "futureItemDesc": "My Future Item-4",
+    "gfsCustomerId": 150,
+    "gfsCustomerTypeCode": 31,
+    "itemAssignmentList": [
+      {
+        "itemId": "517541",
+        "itemDescription": "French Ketchup",
+        "isItemSaved": false
+      },
+      {
+        "itemId": "517541",
+        "itemDescription": "Heinz Ketchup",
+        "isItemSaved": false
+      },
+      {
+        "itemId": "166720",
+        "itemDescription": "CRANBERRY IQF 6-7# GFS",
+        "isItemSaved": false,
+        "itemExists": false,
+        "invalidItem": false
+      }
+    ]
+  },
+  "deleteItemAssignmentForFurtherance": [
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "210"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "210"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "210"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "210"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "210"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "210"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "210"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "210"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "210"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "210"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "210"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "210"
+    },
+    {
+      "contractPriceProfileSeq": 21,
+      "id": "210"
+    }
+  ],
+  "saveFurtheranceSplitCaseFee": {
+    "contractPriceProfileSeq": 14295,
+    "splitCaseFeeValues": [
+      {
+        "productType": "GROCERY",
+        "splitCaseFee": "35.00",
+        "unit": "%",
+        "effectiveDate": "12/26/2017",
+        "expirationDate": "12/31/2017",
+        "itemPriceId": "1",
+        "lessCaseRuleId": "2",
+        "isNonNumericSplitCaseFee": false,
+        "invalidSplitCaseFee": false
+      },
+      {
+        "productType": "FROZEN",
+        "splitCaseFee": "35.00",
+        "unit": "%",
+        "effectiveDate": "12/26/2017",
+        "expirationDate": "12/31/2017",
+        "itemPriceId": "2",
+        "lessCaseRuleId": "2"
+      },
+      {
+        "productType": "MEAT",
+        "splitCaseFee": "35.00",
+        "unit": "%",
+        "effectiveDate": "12/26/2017",
+        "expirationDate": "12/31/2017",
+        "itemPriceId": "3",
+        "lessCaseRuleId": "2"
+      },
+      {
+        "productType": "SEAFOOD",
+        "splitCaseFee": "35.00",
+        "unit": "%",
+        "effectiveDate": "12/26/2017",
+        "expirationDate": "12/31/2017",
+        "itemPriceId": "4",
+        "lessCaseRuleId": "2"
+      },
+      {
+        "productType": "POULTRY",
+        "splitCaseFee": "35.00",
+        "unit": "%",
+        "effectiveDate": "12/26/2017",
+        "expirationDate": "12/31/2017",
+        "itemPriceId": "5",
+        "lessCaseRuleId": "2"
+      },
+      {
+        "productType": "DAIRY",
+        "splitCaseFee": "35.00",
+        "unit": "%",
+        "effectiveDate": "12/26/2017",
+        "expirationDate": "12/31/2017",
+        "itemPriceId": "6",
+        "lessCaseRuleId": "2"
+      },
+      {
+        "productType": "DISPOSABLES",
+        "splitCaseFee": "35.00",
+        "unit": "%",
+        "effectiveDate": "12/26/2017",
+        "expirationDate": "12/31/2017",
+        "itemPriceId": "7",
+        "lessCaseRuleId": "2"
+      },
+      {
+        "productType": "CHEMICAL",
+        "splitCaseFee": "35.00",
+        "unit": "%",
+        "effectiveDate": "12/26/2017",
+        "expirationDate": "12/31/2017",
+        "itemPriceId": "8",
+        "lessCaseRuleId": "2"
+      },
+      {
+        "productType": "BEVERAGE",
+        "splitCaseFee": "35.00",
+        "unit": "%",
+        "effectiveDate": "12/26/2017",
+        "expirationDate": "12/31/2017",
+        "itemPriceId": "9",
+        "lessCaseRuleId": "2"
+      },
+      {
+        "productType": "PRODUCE",
+        "splitCaseFee": "35.00",
+        "unit": "%",
+        "effectiveDate": "12/26/2017",
+        "expirationDate": "12/31/2017",
+        "itemPriceId": "10",
+        "lessCaseRuleId": "2"
+      },
+      {
+        "productType": "TABLETOP",
+        "splitCaseFee": "35.00",
+        "unit": "%",
+        "effectiveDate": "12/26/2017",
+        "expirationDate": "12/31/2017",
+        "itemPriceId": "11",
+        "lessCaseRuleId": "2"
+      },
+      {
+        "productType": "SERVICE ITEMS",
+        "splitCaseFee": "35.00",
+        "unit": "%",
+        "effectiveDate": "12/26/2017",
+        "expirationDate": "12/31/2017",
+        "itemPriceId": "12",
+        "lessCaseRuleId": "2"
+      }
+    ],
+    "cppFurtheranceSeq": 101
+  },
+  "fetchCostModelList": [
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 96,
+      "costModelTypeValue": "Food Show List & PIP"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 152,
+      "costModelTypeValue": "Invoice ODS NonStock Dropship"
+    },
+    {
+      "profileSelectionCriteria": "L",
+      "costModelId": 82,
+      "costModelTypeValue": "True Last Received Plus Transfer"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 10,
+      "costModelTypeValue": "Invoice - U.S."
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 20,
+      "costModelTypeValue": "Invoice - Canada"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 30,
+      "costModelTypeValue": "New Invoice - Canada"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 40,
+      "costModelTypeValue": "Preferred Customers"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 50,
+      "costModelTypeValue": "Next Order Net - Cost Plus"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 60,
+      "costModelTypeValue": "Next Receipt - Cost Plus"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 70,
+      "costModelTypeValue": "Last Received - Cost Plus"
+    },
+    {
+      "profileSelectionCriteria": "L",
+      "costModelId": 80,
+      "costModelTypeValue": "True Last Received"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 41,
+      "costModelTypeValue": "Preferred B Customers - Next Order"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 90,
+      "costModelTypeValue": "Average Net - Cost Plus"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 51,
+      "costModelTypeValue": "Next Order Net - Bracket Pricing"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 61,
+      "costModelTypeValue": "Next Receipt - Bracket Pricing"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 71,
+      "costModelTypeValue": "Last Received - Bracket Pricing"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 91,
+      "costModelTypeValue": "Average Net - Bracket Pricing"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 85,
+      "costModelTypeValue": "Last Received - Audit Customers"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 52,
+      "costModelTypeValue": "Marketplace"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 43,
+      "costModelTypeValue": "Audit Customers"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 86,
+      "costModelTypeValue": "Last Received - Preferred Customers"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 151,
+      "costModelTypeValue": "VR samples/CRCL billback Model"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 97,
+      "costModelTypeValue": "Food Show List cost"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 148,
+      "costModelTypeValue": "Credit ODS Marketplace Credit Model"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 53,
+      "costModelTypeValue": "Next Order Bid Cost"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 49,
+      "costModelTypeValue": "Street Smart Cost"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 145,
+      "costModelTypeValue": "Vendor Agreements Application Next Order"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 146,
+      "costModelTypeValue": "Vendor Agreements Average Cost"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 150,
+      "costModelTypeValue": "WMS Average Cost Model"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 147,
+      "costModelTypeValue": "Invoice ODS / Credit ODS Applications"
+    },
+    {
+      "profileSelectionCriteria": "H",
+      "costModelId": 153,
+      "costModelTypeValue": "WMS Avg Cost Model"
+    }
+  ],
+  "fetchCostGrid": [
+    {
+        "itemPriceLevelCode": 0,
+        "itemPriceId": null,
+        "costModelId": 70,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "Item",
+        "costModelTypeValue": "Last Received - Cost Plus"
+    },
+    {
+        "itemPriceLevelCode": 1,
+        "itemPriceId": null,
+        "costModelId": 70,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "Subgroup",
+        "costModelTypeValue": "Last Received - Cost Plus"
+    },
+    {
+        "itemPriceLevelCode": 2,
+        "itemPriceId": "1",
+        "costModelId": 70,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "GROCERY",
+        "costModelTypeValue": "Last Received - Cost Plus"
+    },
+    {
+        "itemPriceLevelCode": 2,
+        "itemPriceId": "2",
+        "costModelId": 70,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "FROZEN",
+        "costModelTypeValue": "Last Received - Cost Plus"
+    },
+    {
+        "itemPriceLevelCode": 2,
+        "itemPriceId": "3",
+        "costModelId": 70,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "MEAT",
+        "costModelTypeValue": "Last Received - Cost Plus"
+    },
+    {
+        "itemPriceLevelCode": 2,
+        "itemPriceId": "4",
+        "costModelId": 70,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "SEAFOOD",
+        "costModelTypeValue": "Last Received - Cost Plus"
+    },
+    {
+        "itemPriceLevelCode": 2,
+        "itemPriceId": "5",
+        "costModelId": 70,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "POULTRY",
+        "costModelTypeValue": "Last Received - Cost Plus"
+    },
+    {
+        "itemPriceLevelCode": 2,
+        "itemPriceId": "6",
+        "costModelId": 70,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "DAIRY",
+        "costModelTypeValue": "Last Received - Cost Plus"
+    },
+    {
+        "itemPriceLevelCode": 2,
+        "itemPriceId": "7",
+        "costModelId": 70,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "DISPOSABLES",
+        "costModelTypeValue": "Last Received - Cost Plus"
+    },
+    {
+        "itemPriceLevelCode": 2,
+        "itemPriceId": "8",
+        "costModelId": 70,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "CHEMICAL",
+        "costModelTypeValue": "Last Received - Cost Plus"
+    },
+    {
+        "itemPriceLevelCode": 2,
+        "itemPriceId": "9",
+        "costModelId": 70,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "BEVERAGE",
+        "costModelTypeValue": "Last Received - Cost Plus"
+    },
+    {
+        "itemPriceLevelCode": 2,
+        "itemPriceId": "10",
+        "costModelId": 70,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "PRODUCE",
+        "costModelTypeValue": "Last Received - Cost Plus"
+    },
+    {
+        "itemPriceLevelCode": 2,
+        "itemPriceId": "11",
+        "costModelId": 70,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "TABLETOP",
+        "costModelTypeValue": "Last Received - Cost Plus"
+    }
+  ],
+  "savePricingDocumentForFurtherance": {
+    "cppFurtheranceSeq": 101,
+    "agreementId": "d8380b04-f1b2-4e58-b0e4-4913b5830221",
+    "contractType": "ICMDistributionAgreementRegional"
+  },
+  "canEditFurtherance": {
+    "canEditFurtherance": true
+  },
+  "saveCostGrid": [
+    [
+      {
+        "itemPriceLevelCode": 0,
+        "itemPriceId": null,
+        "costModelId": 70,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "Item",
+        "costModelTypeValue": null
+      },
+      {
+        "itemPriceLevelCode": 1,
+        "itemPriceId": null,
+        "costModelId": 70,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "Subgroup",
+        "costModelTypeValue": null
+      },
+      {
+        "itemPriceLevelCode": 2,
+        "itemPriceId": "1",
+        "costModelId": 10,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "GROCERY",
+        "costModelTypeValue": null
+      },
+      {
+        "itemPriceLevelCode": 2,
+        "itemPriceId": "2",
+        "costModelId": 70,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "FROZEN",
+        "costModelTypeValue": null
+      },
+      {
+        "itemPriceLevelCode": 2,
+        "itemPriceId": "3",
+        "costModelId": 70,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "MEAT",
+        "costModelTypeValue": null
+      },
+      {
+        "itemPriceLevelCode": 2,
+        "itemPriceId": "4",
+        "costModelId": 70,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "SEAFOOD",
+        "costModelTypeValue": null
+      },
+      {
+        "itemPriceLevelCode": 2,
+        "itemPriceId": "5",
+        "costModelId": 96,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "POULTRY",
+        "costModelTypeValue": null
+      },
+      {
+        "itemPriceLevelCode": 2,
+        "itemPriceId": "6",
+        "costModelId": 70,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "DAIRY",
+        "costModelTypeValue": null
+      },
+      {
+        "itemPriceLevelCode": 2,
+        "itemPriceId": "7",
+        "costModelId": 70,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "DISPOSABLES",
+        "costModelTypeValue": null
+      },
+      {
+        "itemPriceLevelCode": 2,
+        "itemPriceId": "8",
+        "costModelId": 40,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "CHEMICAL",
+        "costModelTypeValue": null
+      },
+      {
+        "itemPriceLevelCode": 2,
+        "itemPriceId": "9",
+        "costModelId": 70,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "BEVERAGE",
+        "costModelTypeValue": null
+      },
+      {
+        "itemPriceLevelCode": 2,
+        "itemPriceId": "10",
+        "costModelId": 70,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "PRODUCE",
+        "costModelTypeValue": null
+      },
+      {
+        "itemPriceLevelCode": 2,
+        "itemPriceId": "11",
+        "costModelId": 50,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": "TABLETOP",
+        "costModelTypeValue": null
+      },
+      {
+        "itemPriceLevelCode": 2,
+        "itemPriceId": "12",
+        "costModelId": 70,
+        "gfsCustomerId": "3617",
+        "gfsCustomerTypeCode": 31,
+        "groupType": null,
+        "costModelTypeValue": null
+      }
+    ]
+  ],
+  "searchContractByContractName": [
+    {
+      "contractName": "TESTING FURTHERANCE ACTIVATION",
+      "contractPriceProfileId": 724,
+      "version": 1,
+      "customerName": "JCZ DESSERTS LLC",
+      "isFurtheranceExist": "Yes",
+      "agreementId": "c03c2f79-9192-4216-b098-821f88342875",
+      "contractType": "Regional-Original",
+      "effectiveDate": "2018-10-05",
+      "status": "Pricing Activated",
+      "cppLink": "/furtheranceinformation?agreementId=c03c2f79-9192-4216-b098-821f88342875&contractType=ICMDistributionAgreementRegional"
+    },
+    {
+      "contractName": "Brinker's International",
+      "contractPriceProfileId": 73454,
+      "version": 1,
+      "customerName": "BRINKERS",
+      "isFurtheranceExist": "No",
+      "agreementId": "c03c2f79-9192-4216-b098-821f88342887",
+      "contractType": "National-Original",
+      "effectiveDate": "2018-10-05",
+      "status": "Draft",
+      "cppLink": "/pricinginformation?agreementId=c03c2f79-9192-4216-b098-821f88342875&contractType=ICMDistributionAgreementRegional"
+    },
+    {
+      "contractName": "Doritos International",
+      "contractPriceProfileId": 72486,
+      "version": 1,
+      "customerName": "Doritos Foods LLC",
+      "isFurtheranceExist": "Yes",
+      "agreementId": "c03c2f79-9192-4216-b098-821f88342875",
+      "contractType": "National-Amendment",
+      "effectiveDate": "2018-10-05",
+      "status": "Pricing Activated",
+      "cppLink": "/furtheranceinformation?agreementId=c03c2f79-9192-4216-b098-821f88342875&contractType=ICMDistributionAgreementRegional"
+    },
+    {
+      "contractName": "Baskin Robbins International",
+      "contractPriceProfileId": 724,
+      "version": 1,
+      "customerName": "BASKIN ROBBINS DESSERTS LLC",
+      "isFurtheranceExist": "Yes",
+      "agreementId": "c03c2f79-9192-4216-b098-821f88342875",
+      "contractType": "Regional-Original",
+      "effectiveDate": "2018-10-05",
+      "status": "Pricing Activated",
+      "cppLink": "/furtheranceinformation?agreementId=c03c2f79-9192-4216-b098-821f88342875&contractType=ICMDistributionAgreementRegional"
+    }
+  ],
+  "searchContractsByContractName": [
+    {
+      "contractName": "Brinker's International",
+      "contractPriceProfileId": 73454,
+      "version": 1,
+      "customerName": "BRINKERS",
+      "isFurtheranceExist": "No",
+      "agreementId": "c03c2f79-9192-4216-b098-821f88342887",
+      "contractType": "National-Original",
+      "effectiveDate": "2018-10-05",
+      "status": "Draft",
+      "cppLink": "/pricinginformation?agreementId=c03c2f79-9192-4216-b098-821f88342875&contractType=ICMDistributionAgreementRegional"
+    },
+    {
+      "contractName": "Doritos International",
+      "contractPriceProfileId": 72486,
+      "version": 1,
+      "customerName": "Doritos Foods LLC",
+      "isFurtheranceExist": "Yes",
+      "agreementId": "c03c2f79-9192-4216-b098-821f88342875",
+      "contractType": "National-Amendment",
+      "effectiveDate": "2018-10-05",
+      "status": "Pricing Activated",
+      "cppLink": "/furtheranceinformation?agreementId=c03c2f79-9192-4216-b098-821f88342875&contractType=ICMDistributionAgreementRegional"
+    }
+  ],
+  "searchContractsByCPPId": [
+    {
+      "contractName": "Brinker's International",
+      "contractPriceProfileId": 73454,
+      "version": 1,
+      "customerName": "BRINKERS",
+      "isFurtheranceExist": "No",
+      "agreementId": "c03c2f79-9192-4216-b098-821f88342887",
+      "contractType": "National-Original",
+      "effectiveDate": "2018-10-05",
+      "status": "Draft",
+      "cppLink": "/pricinginformation?agreementId=c03c2f79-9192-4216-b098-821f88342875&contractType=ICMDistributionAgreementRegional"
+    },
+    {
+      "contractName": "Doritos International",
+      "contractPriceProfileId": 72486,
+      "version": 1,
+      "customerName": "Doritos Foods LLC",
+      "isFurtheranceExist": "Yes",
+      "agreementId": "c03c2f79-9192-4216-b098-821f88342875",
+      "contractType": "National-Amendment",
+      "effectiveDate": "2018-10-05",
+      "status": "Pricing Activated",
+      "cppLink": "/furtheranceinformation?agreementId=c03c2f79-9192-4216-b098-821f88342875&contractType=ICMDistributionAgreementRegional"
+    }
+  ],
+  "searchContractsByCustomer": [
+    {
+      "contractName": "TESTING FURTHERANCE ACTIVATION",
+      "contractPriceProfileId": 724,
+      "version": 1,
+      "customerName": "JCZ DESSERTS LLC",
+      "isFurtheranceExist": "Yes",
+      "agreementId": "c03c2f79-9192-4216-b098-821f88342875",
+      "contractType": "Regional-Original",
+      "effectiveDate": "2018-10-05",
+      "status": "Pricing Activated",
+      "cppLink": "/furtheranceinformation?agreementId=c03c2f79-9192-4216-b098-821f88342875&contractType=ICMDistributionAgreementRegional"
+    },
+    {
+      "contractName": "Brinker's International",
+      "contractPriceProfileId": 73454,
+      "version": 1,
+      "customerName": "BRINKERS",
+      "isFurtheranceExist": "No",
+      "agreementId": "c03c2f79-9192-4216-b098-821f88342887",
+      "contractType": "National-Original",
+      "effectiveDate": "2018-10-05",
+      "status": "Draft",
+      "cppLink": "/pricinginformation?agreementId=c03c2f79-9192-4216-b098-821f88342875&contractType=ICMDistributionAgreementRegional"
+    },
+    {
+      "contractName": "Doritos International",
+      "contractPriceProfileId": 72486,
+      "version": 1,
+      "customerName": "Doritos Foods LLC",
+      "isFurtheranceExist": "Yes",
+      "agreementId": "c03c2f79-9192-4216-b098-821f88342875",
+      "contractType": "National-Amendment",
+      "effectiveDate": "2018-10-05",
+      "status": "Pricing Activated",
+      "cppLink": "/furtheranceinformation?agreementId=c03c2f79-9192-4216-b098-821f88342875&contractType=ICMDistributionAgreementRegional"
+    },
+    {
+      "contractName": "Baskin Robbins International",
+      "contractPriceProfileId": 724,
+      "version": 1,
+      "customerName": "BASKIN ROBBINS DESSERTS LLC",
+      "isFurtheranceExist": "Yes",
+      "agreementId": "c03c2f79-9192-4216-b098-821f88342875",
+      "contractType": "Regional-Original",
+      "effectiveDate": "2018-10-05",
+      "status": "Pricing Activated",
+      "cppLink": "/furtheranceinformation?agreementId=c03c2f79-9192-4216-b098-821f88342875&contractType=ICMDistributionAgreementRegional"
+    }
+  ],
+  "isUserAuthorizedToViewOnly": {
+    "isUserAuthorizedToViewOnly": true
+  }
+}

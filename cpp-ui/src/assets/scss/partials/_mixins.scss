@@ -1,0 +1,58 @@
+@import "variables";
+
+@mixin gfs-label-style ($color: $gfs-label-black) {
+  width: 27px;
+  height: 30px;
+  font-family: $gfs-font-family;
+  font-size: 14px;
+  line-height: 2.14;
+  text-align: left;
+  color: $color;
+}
+
+@mixin gfs-sub-headers ($width: 180px) {
+  height: 21px;
+  font-family: $gfs-font-family;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: left;
+  color: $gfs-stepper-black;
+  width: $width;
+}
+
+@mixin contract-info-view-col-title ($width) {
+  width: $width;
+  height: 20px;
+  font-family: $gfs-font-family;
+  font-size: 14px;
+  line-height: 1.43;
+  text-align: center;
+  color: $gfs-stepper-gray;
+  float: left;
+}
+
+@mixin contract-info-view-data {
+  height: 24px;
+  font-family: $gfs-font-family;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: $gfs-stepper-black;
+}
+
+@mixin horizontal-separator ($width) {
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-top: 10px;
+  width: $width;
+  height: 1px;
+  background-color: $gfs-gray-4;
+}
+
+@mixin subheader-title ($position-top) {
+  font-weight: 500;
+  font-size: $gfs-fontsize-24;
+  position: relative;
+  left: 6px;
+  top: $position-top;
+}

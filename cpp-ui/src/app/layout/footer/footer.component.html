@@ -1,0 +1,12 @@
+<footer class="footer">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 copyright-container">
+      <span translate="COMMON.COPYRIGHT" [translateParams]="{year: year}"></span>
+    </div>
+    <div class="col-md-4 version-container">
+      <span translate="COMMON.VERSION"></span>
+      <span [innerText]="'${project.version}'"></span>
+    </div>
+  </div>
+</footer>

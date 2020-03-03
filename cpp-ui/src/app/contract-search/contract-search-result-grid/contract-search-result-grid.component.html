@@ -1,0 +1,72 @@
+<div class="padding">
+<ngx-datatable class="bootstrap" [headerHeight]="54" [columnMode]="'flex'" [rowHeight]="32" [rows]="contractSearchResults" [selected]="selected" [messages]="datatable_messages"
+[selectionType]="'single'">
+
+<ngx-datatable-column name="Contract Name" prop='contractName' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+  [draggable]="false" [flexGrow]="0.50">
+  <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+    <div *ngIf="!isViewOnlyUser" [title]="value" class="pt-1"> {{value | stringLength: 30:false}}</div>
+    <span *ngIf="isViewOnlyUser">
+      <button type="button" class="open-cpp-contract pt-1" (click)="goToContract(row)" [title]="value"> {{value | stringLength: 25:false}}</button>
+    </span>
+  </ng-template>
+</ngx-datatable-column>
+
+<ngx-datatable-column name="CPP ID" prop='contractPriceProfileId' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+  [flexGrow]="0.30">
+  <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+    <div class="pt-1"> {{value}}</div>
+  </ng-template>
+</ngx-datatable-column>
+
+<ngx-datatable-column name="Version" prop='version' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+  [flexGrow]="0.20">
+  <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+    <div class="pt-1"> {{value}}</div>
+  </ng-template>
+</ngx-datatable-column>
+
+<ngx-datatable-column name="Customer Name" prop='customerName' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+  [flexGrow]="0.45">
+  <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+    <div [title]="value" class="pt-1"> {{value | stringLength: 25:false }}</div>
+  </ng-template>
+</ngx-datatable-column>
+
+<ngx-datatable-column name="Contract Type" prop='contractType' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+  [flexGrow]="0.40">
+  <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+    <div class="pt-1"> {{value}}</div>
+  </ng-template>
+</ngx-datatable-column>
+
+<ngx-datatable-column name="Furtherance" prop='isFurtheranceExist' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+  [flexGrow]="0.25">
+  <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+    <div class="pt-1"> {{value}}</div>
+  </ng-template>
+</ngx-datatable-column>
+
+<ngx-datatable-column name="Agreement ID" prop='agreementId' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+  [flexGrow]="0.50">
+  <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+    <div [title]="value" class="pt-1"> {{value | stringLength: 30:false}}</div>
+  </ng-template>
+</ngx-datatable-column>
+
+<ngx-datatable-column name="Effective Date" prop='effectiveDate' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+  [draggable]="false" [flexGrow]="0.30">
+  <ng-template ngx-datatable-cell-template let-value="value">
+    <div class="pt-1"> {{value | date: 'MM/dd/yyyy' }} </div>
+  </ng-template>
+</ngx-datatable-column>
+
+<ngx-datatable-column name="Status" prop='status' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+  [flexGrow]="0.35">
+  <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+    <div class="pt-1"> {{value}}</div>
+  </ng-template>
+</ngx-datatable-column>
+</ngx-datatable>
+</div>
+

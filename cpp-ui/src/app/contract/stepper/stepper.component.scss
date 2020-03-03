@@ -1,0 +1,126 @@
+@import '../../../assets/scss/partials/variables';
+@import '../../../assets/scss/partials/global';
+@import '../../../assets/scss/partials/mixins';
+
+.title {
+  @include subheader-title(25px);
+}
+
+.contract-info {
+  padding-top: 10px;
+  color: $gfs-stepper-gray;
+  font-weight: 300;
+  text-align: right;
+  font-size: $gfs-fontsize-14;
+}
+
+.stepper-container {
+  height: 75px;
+  border-bottom: solid 1px $gfs-gray-4;
+}
+
+.stepper {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  padding: 5px 70px 0 20px;
+}
+
+.horizontal-divider {
+  padding-top: 2px;
+  margin: 0 20px;
+  min-width: 26px;
+  border-bottom: solid 1px $gfs-gray-2;
+}
+.last-divider {
+  display: none;
+}
+
+.step {
+  transition: 0.5s;
+  display: flex;
+}
+
+a {
+  padding: 20px 0;
+  font-size: $gfs-fontsize-14;
+  text-align: left;
+  color: $gfs-label-black;
+  text-decoration: none;
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+.label {
+  width: 139px;
+  height: 24px;
+  font-size: $gfs-fontsize-14;
+  font-weight: bold;
+  line-height: 1.71;
+  text-align: left;
+  color: $gfs-stepper-black;
+}
+
+.completed > .circle {
+  background: none;
+}
+
+.completed > .label {
+  color: $gfs-stepper-black2;
+}
+
+.current > .circle {
+  background: $gfs-lt-navy-blue;
+}
+.current > .label {
+  font-weight: 600;
+  color: $gfs-stepper-black2;
+}
+
+.circle {
+  display: inline-block;
+  color: $gfs-white;
+  border-radius: 50%;
+  background: $gfs-circle-background;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  margin-right: 15px;
+  text-align: center;
+}
+
+.scrollable-content {
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 3;
+}
+
+.btn {
+  width: 132px;
+  margin-bottom: 20px;
+}
+
+.gfs-cpp-id {
+  color: $gfs-stepper-gray;
+  font-weight: 100;
+  text-align: right;
+  font-size: $gfs-fontsize-14;
+  position: relative;
+  top: 50%;
+}
+
+.gfs-cpp-version {
+  color: $gfs-stepper-gray;
+  font-weight: 100;
+  text-align: right;
+  font-size: $gfs-fontsize-14;
+  position: relative;
+  top: 50%;
+}
+
+.container{
+  position: relative;
+}

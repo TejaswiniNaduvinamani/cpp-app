@@ -1,0 +1,21 @@
+<header class="d-flex justify-content-start header-background">
+  <a href="#" [ngClass]="isContractSearchPage ? 'disable-logo' : null" (click)="disableForSearchPage($event)">
+    <div class="gfsLogo"></div>
+  </a>
+  <div class="d-flex flex-column">
+    <div *ngIf="isContractSearchPage" class="app-label font-weight-bold" [ngClass]="isContractSearchPage ? 'vertical-align' : ''">
+      {{'COMMON.TITLE_SEARCH' | translate }}
+    </div>
+    <div *ngIf="!isContractSearchPage" class="app-label font-weight-bold" [ngClass]="isErrorPage ? 'vertical-align' : ''">
+      {{'COMMON.TITLE' | translate }}
+    </div>
+    <div *ngIf="!isErrorPage && !isContractSearchPage" class="d-flex flex-row">
+      <div><a routerLinkActive="tab-selected" routerLink="pricinginformation" class="tabs">{{'COMMON.PRICE_PROFILE'| translate }}</a></div>
+	    <div><a [hidden]="!isPricingInformationSaved" routerLinkActive="tab-selected" routerLink="costinformation"  class="tabs">{{'COMMON.COST_MODEL'| translate }}</a></div>
+      <div><a [hidden]="!isPricingInformationSaved" routerLinkActive="tab-selected" routerLink="assignments"  class="tabs">{{'COMMON.ASSIGNMENT_SUB_HEADER'| translate }}</a></div>
+    </div>
+  </div>
+</header>
+<section class="row shade-height">
+  <div class="col-md-12"></div>
+</section>

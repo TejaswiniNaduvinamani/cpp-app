@@ -1,0 +1,57 @@
+@import "../../../assets/scss/partials/global";
+@import "../../../assets/scss/partials/mixins";
+@import "../../../assets/scss/partials/_variables.scss";
+
+.info-bar {
+  width: 1350px;
+  height: 20px;
+}
+
+.contract-information {
+  @include gfs-sub-headers(168px);
+  margin-top: 20px;
+}
+
+.col-space {
+  margin-top: 23px;
+}
+
+.header-spacing {
+  width: 35px;
+  height: 40px;
+  float: left;
+}
+
+.header-spacing-with-separator {
+  @extend .header-spacing;
+  border-left: 1px solid $gfs-gray-4;
+}
+
+hr {
+  margin-top: 0;
+}
+
+.left {
+  float: left;
+}
+
+.horizontal-separator {
+  @extend .horizontal-line;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.table-cell-title {
+  padding-right: 35px;
+  padding-left: 20px;
+  color: $gfs-stepper-gray;
+  font-size: 14px;
+}
+
+.table-cell-data {
+  padding-right: 40px;
+  padding-left: 20px;
+  padding-bottom: 25px;
+  padding-bottom: 2px;
+  font-size: 16px;
+}

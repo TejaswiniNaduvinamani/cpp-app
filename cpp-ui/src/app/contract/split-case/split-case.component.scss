@@ -1,0 +1,185 @@
+@import '../../../assets/scss/partials/global';
+@import '../../../assets/scss/partials/mixins';
+@import '../../../assets/scss/partials/variables';
+
+.split-case-fee {
+  width: 150px;
+  height: 24px;
+  font-size:  $gfs-fontsize-18;
+  font-weight: 500;
+  line-height: 1.33;
+  text-align: left;
+  color: $gfs-stepper-black;
+  margin-top: 20px;
+}
+
+#radio-group {
+  float: left;
+}
+
+#radio-group label {
+  float: left;
+  width: 32px;
+  line-height: 30px;
+  height: 30px;
+  border: 1px solid $gfs-gray-3;
+  background-color: $gfs-white;
+  color: $gfs-stepper-black2;
+}
+
+#radio-group label span {
+  text-align: center;
+  font-size:  $gfs-fontsize-14;
+  padding: 0;
+  height: 29px;
+  display: block;
+}
+
+#radio-group label input {
+  position: absolute;
+  top: -20px;
+}
+
+#radio-group input:checked + span {
+  background-color: $gfs-lt-navy-blue;
+  color: $gfs-white;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.info-icon {
+  width: 15px;
+  height: 15px;
+}
+
+
+.tooltip-box {
+  width: 220px;
+  background-color: $gfs-label-black;
+  position: absolute;
+  left: -110px;
+  padding: 10px 10px 20px;
+  top: 0;
+}
+
+.tooltip-label {
+  font-size:  $gfs-fontsize-14;
+  font-weight: bold;
+  text-align: left;
+  padding: 10px 0;
+}
+
+.tooltip-body {
+  font-size:  $gfs-fontsize-12;
+  text-align: left;
+}
+
+.ngx-datatable.bootstrap .datatable-footer .page-count {
+  line-height: 155px;
+  height: 118px;
+  padding: 0 1.2rem;
+}
+
+hr {
+  margin-top: 0;
+}
+
+.copy-design{
+  width: 91px;
+  height: 24px;
+  border-radius: 4px;
+  background-color: $gfs-lt-navy-blue;
+  font-size:  $gfs-fontsize-14;
+  text-align: center;
+  line-height: 0.29;
+  position: relative;
+  right: 35px;
+}
+
+.splitcase-warning {
+  font-size:  $gfs-fontsize-12;
+  font-style: italic;
+  color: $gfs-gray-2;
+}
+
+:focus {
+  outline-color: transparent;
+  outline-style: none;
+}
+
+.error-message {
+  height: 24px;
+  font-size: $gfs-fontsize-16;
+  text-align: left;
+  color: $gfs-red;
+  margin-right: 10px;
+  position: relative;
+  top: 26px;
+}
+
+.splitcasefee-error{
+  border: $gfs-red solid 1px;
+}
+
+.danger-icon {
+  margin-right: 5px;
+  width: 24px;
+  height: 24px;
+}
+
+.grayed-out {
+  opacity: .55;
+}
+
+.drop-down {
+  box-sizing: border-box;
+  border-radius: 2px;
+  background-color: $gfs-white;
+  border: solid 1px $gfs-gray-3;
+  height: 36px;
+  width: 20%;
+  padding: 0 5px;
+}
+
+.drop-down-view-mode {
+  @extend .drop-down;
+  color: $gfs-stepper-gray;
+}
+
+.fee-type {
+  color: $gfs-stepper-black;
+  font-size: $gfs-fontsize-16;
+}
+
+.fee-type-view-mode {
+  color: $gfs-gray-3;
+  font-size: $gfs-fontsize-16;
+}
+
+.fee-type-tooltip-box {
+  @extend .tooltip-box;
+  position: absolute;
+  left: 5px;
+  top: -145px;
+}
+
+.horizontal-line {
+  @include horizontal-separator(100%);
+  box-sizing: border-box;
+  margin-left: 0;
+  margin-bottom: 15px;
+}
+
+.splitcase-border-line {
+  @extend .horizontal-line;
+  margin-top: 0;
+  position: relative;
+  top: -5px;
+}
+
+.view-mode-radio {
+  opacity: .6;
+  pointer-events: none;
+}

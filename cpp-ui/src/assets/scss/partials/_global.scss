@@ -1,0 +1,179 @@
+@import "variables";
+@import "datatable";
+
+
+.btn {
+  font-size: $gfs-fontsize-16;
+  font-weight: bold;
+  font-family: $gfs-font-family;
+}
+
+.btn-primary {
+  color: $gfs-white;
+  background-color: $gfs-lt-navy-blue;
+  border-color: $gfs-lt-navy-blue;
+}
+
+.btn-primary:hover {
+  cursor: pointer;
+}
+
+.orient {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.app-footer {
+  position: relative;
+  bottom: 0;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: $gfs-font-family;
+  height: 100%;
+}
+
+.form-control-sm {
+  border-radius: 0;
+}
+
+.input-group-addon {
+  background-color: $gfs-header-color;
+  padding: 5px;
+  border-radius: 0;
+  width: 36px;
+  height: 36px;
+}
+
+label {
+  width: 300px;
+  height: 18px;
+  font-family: $gfs-font-family;
+  font-size: $gfs-fontsize-14;
+  font-weight: bold;
+  line-height: 1.29;
+  text-align: left;
+  color: $gfs-label-black;
+}
+
+.rectangle-5  {
+  width: 300px;
+  height: 36px;
+  border-radius: 2px;
+  background-color: $gfs-white;
+  border: solid 1px $gfs-gray-3;
+}
+
+.bottom-bar {
+  height: 60px;
+  margin-right: 20px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.date-field {
+  @extend .rectangle-5;
+  width: 153px;
+}
+
+.horizontal-line {
+  width: 100%;
+  height: 1px;
+  background-color: $gfs-gray-4;
+}
+
+button:focus {
+  outline: none;
+}
+
+.btn.focus, .btn:focus {
+  box-shadow: none;
+}
+
+.toast-error {
+  background-color: $gfs-red;
+}
+
+.toast-success {
+  background-color: $gfs-green;
+}
+
+.toast-info {
+  background-color: $gfs-light-blue;
+}
+
+.toast-message {
+  font-size: $gfs-fontsize-18;
+}
+
+#toast-container.toast-top-full-width .toast {
+  width: 100%;
+}
+
+.modal-btn {
+  box-shadow: none;
+  margin-right: 0;
+  color: $gfs-white;
+  margin-top: 20px;
+  width: 80px;
+  height: 36px;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  bottom: 7px;
+}
+
+.cancel {
+  width: 50px;
+  height: 19px;
+  font-family: $gfs-font-family;
+  font-size: $gfs-fontsize-16;
+  color: $gfs-lt-navy-blue;
+  background-color: $gfs-white-2;
+  border: none;
+  padding: 0;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.grayed-out {
+  opacity: .55;
+}
+
+.grayed-out:hover {
+  cursor: default;
+}
+
+.btn:disabled {
+  cursor: default;
+}
+
+.setup-header {
+  box-sizing: border-box;
+  height: 80px;
+  border-bottom: solid 1px $gfs-gray-4;
+}
+
+.return-to-clm {
+  margin-right: 10px;
+  height: 39px;
+  border-radius: 4px;
+  background-color: $gfs-header-color;
+  color: $gfs-label-black;
+  border-style: none;
+}
+
+// classes to override bootstrap default behaviour
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active {
+  background-color: $gfs-lt-navy-blue;
+  border-color: $gfs-lt-navy-blue;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus {
+  box-shadow: none;
+}

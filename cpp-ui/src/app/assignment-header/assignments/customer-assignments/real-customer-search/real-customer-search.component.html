@@ -1,0 +1,87 @@
+<div class="row">
+  <div  class="col-md-3">
+    <select (change)="onDropDownChange()" [disabled]="realCustomerData.isCustomerSaved || isViewMode" [(ngModel)]="selectedCustomerTypeModel" required name="customerType" [ngClass]="realCustomerData.isCustomerSaved || isViewMode?'saved-drop-down mt-2':'drop-down mt-2'" id={{gridMapKey}}>
+      <option value="-1" [selected]="true" hidden disabled="true">{{'REAL_CUSTOMER_LABELS.SELECT'| translate }}</option>
+      <option *ngFor="let customerType of customerTypes; let i = index" [ngValue]="customerType.customerTypeId">{{customerType.customerTypeValue}}</option>
+    </select>
+  </div>
+
+  <div class="col-md-2">
+    <input [disabled]="realCustomerData.isCustomerSaved || isViewMode" type="text" name="customerID" id={{gridMapKey}} value="{{realCustomerData.realCustomerId}}"
+    [ngClass]="realCustomerData.isCustomerSaved || isViewMode?'saved-customer-id mt-2' :'customer-id mt-2'" ondrop="return false;"
+      (keypress)="onCustomerKeyPress($event)" (blur)="onBlurCustomerId($event)" (keyup)="onKeyupCustomerId($event)" (keyup.enter)="findRealCustomer()" placeholder="12345">
+  </div>
+  <div *ngIf="!isViewMode" class="col-md-1">
+    <button class="btn btn-primary mt-2"   [ngClass]="{'saved-find-customer' : realCustomerData.isCustomerSaved == true,
+    'find-customer' : realCustomerData.isCustomerSaved == false,
+    'grayed-out' : isFindGrayedOut() == true }"  (click)="findRealCustomer()">{{'REAL_CUSTOMER_LABELS.FIND'| translate }}</button>
+  </div>
+  <div class="col-md-2">
+    <div *ngIf="realCustomerData.realCustomerName">
+      <div class="customer-name"> {{'REAL_CUSTOMER_LABELS.CUSTOMER_NAME'| translate }} </div>
+      <div class="customer-name-value">{{realCustomerData.realCustomerName}}</div>
+    </div>
+  </div>
+  <div *ngIf="realCustomerData.isCustomerSaved && !isViewMode">
+    <img src="{{imageDir}}assets/images/trash-icon.png" alt="thrash icon" class="mt-3 trash-icon" (click)="onDeleteClick()">
+  </div>
+  <div *ngIf="!assignmentDetails.isDefault && allowClear && !realCustomerData.isCustomerSaved && !isViewMode" class="col-md-1">
+    <img src="{{imageDir}}assets/images/clear.png" alt="clear icon" class="delete mt-2" (click)="deleteSearchField()">
+  </div>
+</div>
+<div>
+
+</div>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div *ngIf="realCustomerData.duplicateCustomerFound" class="col-md-2 invalid-customer-warning">
+    <span translate="VALIDATION_CODE.112" [translateParams]="{concept: concept, cppId: cppId}"></span>
+  </div>
+  <div *ngIf="realCustomerData.validationError" class="col-md-2 invalid-customer-warning">
+    {{validationMsg}}
+</div>
+</div>
+
+<div class="modal fade" id="deleteRealCustomer{{index}}" tabindex="-1" role="dialog" aria-labelledby="deleteRealCustomer" aria-hidden="true">
+  <div class="modal-dialog mx-auto" role="document">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <div class="modal-title" id="deleteAssignmentModalLabel">{{'ASSIGNMENT_LABELS.DELETE'| translate }}<q>{{realCustomerData.realCustomerName}}</q>?</div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {{'ASSIGNMENT_LABELS.ASSIGNMENT_DELETE_POP_MSG'| translate }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="cancel" data-dismiss="modal">
+          <u>{{'COMMON.BTN_CANCEL'| translate }}</u>
+        </button>
+        <button type="submit" #deleteRealCustomerBtn class="btn delete-customer" data-dismiss="modal" (click)="deleteRealCustomer()">{{'COMMON.BTN_DELETE'| translate }}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="deleteDefaultRealCustomer" tabindex="-1" role="dialog" aria-labelledby="deleteDefaultRealCustomer" aria-hidden="true">
+  <div class="modal-dialog mx-auto" role="document">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <div class="modal-title" id="deleteDefaultAssignmentModalLabel">{{'ASSIGNMENT_LABELS.DELETE'| translate }}<q>{{realCustomerData.realCustomerName}}</q>?</div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {{'ASSIGNMENT_LABELS.ASSIGNMENT_DEFAULT_CONCEPT_DELETE_POP_MSG'| translate }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="cancel" data-dismiss="modal">
+          <u>{{'COMMON.BTN_CANCEL'| translate }}</u>
+        </button>
+        <button type="submit" #deleteDefaultRealCustomerBtn class="btn delete-customer" data-dismiss="modal" (click)="deleteRealCustomer()">{{'COMMON.BTN_DELETE'| translate }}</button>
+      </div>
+    </div>
+  </div>
+</div>

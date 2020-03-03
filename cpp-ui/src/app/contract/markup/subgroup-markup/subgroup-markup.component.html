@@ -1,0 +1,153 @@
+<div  *ngIf="determineFurtheranceMode" class="pt-3">
+  <ngx-datatable class="bootstrap" [headerHeight]="54" [columnMode]="'flex'" [rowHeight]="32" [rows]="subgroupMarkup"
+    [selected]="selected" [selectionType]="'single'">
+
+    <ngx-datatable-column name="Subgroup ID" prop='subgroupId' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+      [flexGrow]="0.80">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+          <input *ngIf="!isFurtheranceMode" class="subgroup-id" maxlength="10" [ngClass]="(row.subgroupDesc) ? 'change-to-label' : ''" [disabled]="(row.subgroupDesc) ? true : null"
+            type="text" [value]="value" (keypress)="onSubgroupIdKeyPress($event, row)" (keyup)="onSubgroupIdKeyUp($event, row)" (blur)="onblurSubgroupId($event, row)"
+            ondrop="return false;">
+      <div *ngIf="isFurtheranceMode" class="pt-1"> {{value}}</div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Subgroup Description" prop='subgroupDesc' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+      [draggable]="false" [flexGrow]="0.95">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <div [title]="value" class="pt-1">
+          {{row.subgroupDesc | stringLength: 30:false }}
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Markup" prop='markup' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+      [flexGrow]="0.40">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <input class="subgroup-markup" type="text" [value]="value" (blur)="onblurMarkup($event, row)" (keyup)="onMarkupKeyUp($event, row)"
+          ondrop="return false;">
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="" prop='unit' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+      [flexGrow]="0.35">
+      <ng-template ngx-datatable-header-template let-column="column"></ng-template>
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+        <div id="radio-group" [ngClass]="(isFurtheranceMode)? 'view-mode-radio' : '' ">
+          <label class="radio-unit-label">
+            <input class="form-check-input" value="$" type="radio" id="{{markupGridDetails.markupName}}-unit-{{rowIndex}}" [checked]="value == '$'"
+              (change)="onUnitChange($event, row)" [disabled]=" isFurtheranceMode ? true : null">
+            <span class="unit-label">{{ 'DATATABLE_LABEL.DOLLAR'| translate }}</span>
+          </label>
+          <label class="radio-unit-label">
+            <input class="form-check-input" value="%" type="radio" id="{{markupGridDetails.markupName}}-unit-{{rowIndex}}" [checked]="value == '%'"
+              (change)="onUnitChange($event, row)" [disabled]=" isFurtheranceMode ? true : null">
+            <span class="unit-label">{{ 'DATATABLE_LABEL.PERCENT'| translate }}</span>
+          </label>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Markup Type" prop='markupType' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+      [draggable]="false" [flexGrow]="0.60">
+      <ng-template ngx-datatable-header-template let-column="column">
+        {{ column.name }}
+        <img src="{{imageDir}}assets/images/info-modal.png" alt="info icon" class="info-icon" (click)="onSubgroupTipContent()" data-placement="bottom"
+          container="body">
+      </ng-template>
+
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+        <select class="subgroup-markup-type" [value]="value" (change)="onMarkupTypeChange($event, row)" [disabled]="(row.unit == '%' || isFurtheranceMode) ? true : null">
+          <option value="1">{{ 'DATATABLE_LABEL.SELL_UNIT' | translate}}</option>
+          <option value="2">{{ 'DATATABLE_LABEL.PER_CASE' | translate}}</option>
+          <option value="3">{{ 'DATATABLE_LABEL.PER_WEIGHT' | translate}}</option>
+        </select>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Effective Date" prop='effectiveDate' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+      [draggable]="false" [flexGrow]="0.45">
+      <ng-template ngx-datatable-cell-template let-value="value">
+        <div class="pt-1"> {{value | date: 'MM/dd/yyyy'}} </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Expiration Date" prop='expirationDate' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+      [draggable]="false" [flexGrow]="0.45">
+      <ng-template ngx-datatable-cell-template let-value="value">
+        <div class="pt-1"> {{value | date: 'MM/dd/yyyy'}} </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false" [flexGrow]="0.60">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+        <div *ngIf="!isFurtheranceMode" class="trash-can pull-right pt-1">
+          <span>
+            <img src="{{imageDir}}assets/images/trash-icon.png" alt="trash icon" class="trash-icon" [attr.rowIndex]="rowIndex" [attr.subgroupId]="row.subgroupId"
+              [attr.subgroupDesc]="row.subgroupDesc" (click)="onDeleteSubgroupMarkup($event.target)">
+          </span>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+</div>
+
+<div *ngIf="!displayViewMode" class="horizontal-line"></div>
+
+<div *ngIf="!determineFurtheranceMode" class="pt-3">
+  <ngx-datatable class="bootstrap" [headerHeight]="54" [columnMode]="'flex'" [rowHeight]="32" [rows]="subgroupMarkup"
+    [selected]="selected">
+
+    <ngx-datatable-column name="Subgroup ID" prop='subgroupId' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+      [flexGrow]="0.45">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <div class="pt-1"> {{value}}</div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Subgroup Description" prop='subgroupDesc' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+      [draggable]="false" [flexGrow]="0.45">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <div [title]="value" class="pt-1">
+          {{ value | stringLength: 30:false }}
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Markup" prop='markup' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+      [flexGrow]="0.30">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <div class="pt-1"> {{value}}</div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Markup Type" prop='markupType' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+    [draggable]="false" [flexGrow]="0.30">
+    <ng-template ngx-datatable-header-template let-column="column">
+        {{ column.name }}
+        <img src="{{imageDir}}assets/images/info-modal.png" alt="info icon" class="info-icon" (click)="onSubgroupTipContent()" data-placement="bottom"
+          container="body">
+      </ng-template>
+    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+      <div *ngIf="value == 1" class="pt-1">{{ 'DATATABLE_LABEL.SELL_UNIT' | translate}}</div>
+      <div *ngIf="value == 2" class="pt-1">{{ 'DATATABLE_LABEL.PER_CASE' | translate}}</div>
+      <div *ngIf="value == 3" class="pt-1">{{ 'DATATABLE_LABEL.PER_WEIGHT' | translate}}</div>
+    </ng-template>
+  </ngx-datatable-column>
+
+    <ngx-datatable-column name="Effective Date" prop='effectiveDate' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+      [draggable]="false" [flexGrow]="0.30">
+      <ng-template ngx-datatable-cell-template let-value="value">
+        <div class="pt-1"> {{value | date: 'MM/dd/yyyy'}} </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Expiration Date" prop='expirationDate' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+      [draggable]="false" [flexGrow]="0.60">
+      <ng-template ngx-datatable-cell-template let-value="value">
+        <div class="pt-1"> {{value | date: 'MM/dd/yyyy'}} </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+  </ngx-datatable>
+</div>

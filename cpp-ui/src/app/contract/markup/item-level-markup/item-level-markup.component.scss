@@ -1,0 +1,195 @@
+@import './../../../../assets/scss/partials/variables';
+@import './../../../../assets/scss/partials/global';
+@import './../../../../assets/scss/partials/checkbox';
+@import './../../../../assets/scss/partials/mixins';
+@import './../markup.component.scss';
+@import './../markup-grid/markup-grid.component.scss';
+@import '../../../../assets/scss/partials/checkbox-viewmode';
+
+.css-label {
+  margin-left: 20px;
+  margin-top: 5px;
+  background-image: url('./../../../../assets/images/checkbox.png');
+}
+
+.container {
+  position: relative;
+  display: block;
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.container.disable-checkbox .cover{
+  display: block;
+}
+
+.view-opacity {
+  opacity: .4;
+}
+
+.css-checkbox + .css-label {
+  box-sizing: border-box;
+  width: 2px;
+  padding-left: 8px;
+}
+
+.radio-unit-label {
+  box-sizing: border-box;
+  float: left;
+  width: 32px;
+  line-height: 30px;
+  height: 30px;
+  border: 1px solid $gfs-gray-3;
+  background-color: $gfs-white;
+  color: $gfs-stepper-black2;
+}
+
+.unit-label {
+  text-align: center;
+  font-size: $gfs-fontsize-14;
+  padding: 0;
+  height: 29px;
+  display: block;
+}
+
+input[type=radio] label input {
+  position: absolute;
+  top: -20px;
+}
+
+input[type=radio]:checked + span {
+  background-color: $gfs-lt-navy-blue;
+  color: $gfs-white;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+.horizontal-line {
+  @include horizontal-separator(100%);
+  box-sizing: border-box;
+  margin-left: 0;
+  margin-top: -5px;
+  margin-bottom: 16px;
+}
+
+.tooltip-box {
+  box-sizing: border-box;
+  width: 220px;
+  background-color: $gfs-label-black;
+  position: absolute;
+  left: -210px;
+  padding: 10px 10px 20px;
+  top: 0;
+}
+
+.tooltip-label {
+  font-family: $gfs-font-family;
+  font-size: $gfs-fontsize-14;
+  font-weight: bold;
+  text-align: left;
+  padding: 10px 0;
+}
+
+.tooltip-body {
+  font-family: $gfs-font-family;
+  font-size: $gfs-fontsize-12;
+  text-align: left;
+}
+
+.info-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.trash-can {
+  position: relative;
+  margin-right: 40px;
+  cursor: pointer;
+}
+
+.trash-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.pencil-edit {
+  position: relative;
+  cursor: pointer;
+}
+
+.pencil-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.change-to-label {
+  padding: unset;
+  background: $gfs-tranparent;
+  border: none;
+  color: $gfs-stepper-black2;
+}
+
+.stock-type {
+  margin-top: 5px;
+  width: 24px;
+  height: 24px;
+}
+
+.container {
+  position: relative;
+  display: block;
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.container.disable-checkbox .cover {
+  display: block;
+}
+
+.view-opacity {
+  opacity: .4;
+}
+
+.viewmode-label {
+  @extend .css-label;
+  opacity: .6;
+  cursor: default;
+}
+
+.itemlevel-markup-error{
+  border: $gfs-red solid 1px;
+}
+
+.item-error {
+  font-size: $gfs-fontsize-14;
+  font-weight: bold;
+  font-style: italic;
+  color: $gfs-red;
+  position: relative;
+  left: 0;
+}
+
+.delete-item {
+  @extend .modal-btn;
+  background-color: $gfs-red;
+}

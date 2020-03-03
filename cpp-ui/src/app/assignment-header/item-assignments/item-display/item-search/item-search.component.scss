@@ -1,0 +1,130 @@
+@import './../../../../../assets/scss/partials/global';
+@import './../../../../../assets/scss/partials/variables';
+
+.item-id {
+  box-sizing: border-box;
+  border-radius: 2px;
+  background-color: $gfs-white;
+  border: solid 1px $gfs-gray-3;
+  height: 36px;
+  width: 110%;
+  padding: 0 10px;
+}
+
+.saved-item-id {
+  @extend .item-id;
+  color: $gfs-stepper-gray;
+}
+
+.find-item {
+  height: 36px;
+}
+
+.spacing {
+  margin-left: 10px;
+}
+
+.item-name {
+  margin-top: 5px;
+  margin-left: 20px;
+  font-size: $gfs-fontsize-14;
+  text-align: left;
+  color: $gfs-stepper-gray;
+  height: 19px;
+}
+
+.item-value {
+  margin-left: 20px;
+  font-size: $gfs-fontsize-16;
+  text-align: left;
+  color: $gfs-label-black;
+}
+
+.delete {
+  margin-top: 10px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  position: relative;
+  top: 6px;
+}
+
+.item-error {
+  font-size: $gfs-fontsize-14;
+  font-weight: bold;
+  font-style: italic;
+  text-align: left;
+  color: $gfs-red;
+  width: 70%;
+}
+
+.trash-icon {
+  position: relative;
+  left: 14px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.fade {
+  background-color: rgba(0, 0, 0, .35);
+}
+
+.modal-dialog {
+  max-width: 640px;
+  border-radius: 2px;
+  margin: 140px auto;
+}
+
+.modal-content {
+  background-color: $gfs-white-2;
+}
+
+.modal-header {
+  border-bottom: unset;
+  padding-bottom: 10px;
+}
+
+.modal-title {
+  width: 95%;
+  height: auto;
+  font-family: $gfs-font-family;
+  font-size: $gfs-fontsize-18;
+  font-weight: 500;
+  text-align: left;
+  color: $gfs-stepper-black;
+  overflow-wrap: break-word;
+}
+
+.modal-body {
+  width: 320px;
+  padding-top: unset;
+}
+
+.modal-footer {
+  box-sizing: border-box;
+  height: 56px;
+  border-top: 1px solid $gfs-gray-4;
+}
+
+.delete-item {
+  @extend .modal-btn;
+  background-color: $gfs-red;
+}
+
+.view-label {
+  color: $gfs-gray-5;
+  cursor: default;
+}
+
+.grayed-out {
+  opacity: .55;
+}
+
+.align-left {
+  margin-left: unset;
+}
+
+.item-error-on-popup {
+  width: 115%;
+}

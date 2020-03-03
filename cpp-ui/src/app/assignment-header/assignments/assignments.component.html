@@ -1,0 +1,48 @@
+<div [hidden]="!showSpinner">
+  <div class="spinner">
+    <div class="fa cpp-spinner-lg"></div>
+  </div>
+</div>
+
+<div [hidden]="showSpinner">
+  <div id="assignmentAccordion" data-children=".item">
+    <div *ngFor="let assignmentAccordion of assignmentDetails; let i = index">
+      <div class="item">
+        <div class="orient vertical-spacing">
+          <a data-toggle="collapse" (click)="toggleCollapse($event.target.parentNode)" data-parent="#assignmentAccordion" href="#assignmentStructure{{i}}"
+            role="button" [attr.aria-expanded]="i == 0 ? 'true' : 'false'" [ngClass]="{
+                    current: assignmentAccordion.isCurrent,
+                    completed: assignmentAccordion.isAssignmentSaved,
+                    disabled: assignmentAccordion.isError
+                    }">
+            <span class="align-carat">
+              <em [ngClass]="i == 0 ? 'fa fa-angle-down' : 'fa fa-angle-right'" style="font-size:20px" aria-hidden="true"></em>
+            </span>
+            <span *ngIf="assignmentAccordion.isAssignmentSaved; then savedAssignment else unsavedAssignment"></span>
+            <ng-template #savedAssignment>
+              <img src="{{imageDir}}assets/images/complete.svg" class="circle" alt="saved-assignment-icon" />
+            </ng-template>
+            <ng-template #unsavedAssignment>
+              <span class="circle">{{ i+1 }}</span>
+            </ng-template>
+            <span class="accordion-title">{{ assignmentAccordion.markupName }} </span>
+            <span class="pull-right customer-details">{{assignmentAccordion.gfsCustomerType}} | {{assignmentAccordion.gfsCustomerId}}</span>
+          </a>
+        </div>
+        <div class="collapse" [class.show]="i == 0" role="tabpanel" id="assignmentStructure{{i}}">
+          <div class="orient">
+            <app-customer-assignments (defaultAssignmentDelete)="detectDefaultAssignmentDelete($event)" [customerTypes]="customerTypes"
+            [assignmentData]="assignmentAccordion" [index]="i" (enableActivatePricing)="fetchPricingActivateState($event)" [isViewMode]="isViewMode"></app-customer-assignments>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+      <button *ngIf="!isViewMode" type="submit" class="btn btn-primary mb-3 pull-right" [disabled]="disableActivatePriceProfile" (click)="onActivatePricing()">{{'ASSIGNMENT_LABELS.ACTIVATE_PRICING'| translate }}</button>
+      <button type="submit" class="btn mb-3 pull-right return-to-clm" (click)="returnToCLM()">{{'COMMON.RETURN_TO_CONTRACT'| translate }}</button>
+  </div>
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,114 @@
+@import '../../../assets/scss/partials/global';
+@import '../../../assets/scss/partials/_variables';
+
+.title {
+  font-weight: 500;
+  font-size: $gfs-fontsize-24;
+  position: relative;
+  left: 20px;
+  top: 50%;
+}
+
+.setup-header {
+  box-sizing: border-box;
+  height: 80px;
+  border-bottom: solid 1px $gfs-gray-4;
+}
+
+.accordion-title {
+  font-family: $gfs-font-family;
+  width: 120px;
+  height: 24px;
+  font-size: $gfs-fontsize-18;
+  line-height: 1.33;
+  text-align: left;
+  color: $gfs-lt-navy-blue;
+  vertical-align: middle;
+}
+
+.circle {
+  display: inline-block;
+  font-size: $gfs-fontsize-12;
+  color: $gfs-white;
+  border-radius: 50%;
+  background: $gfs-lt-navy-blue;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  margin-right: 5px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.completed > .circle {
+  background: none;
+}
+
+.completed > .accordion-title {
+  color: $gfs-green;
+}
+
+.current > .circle {
+  background: $gfs-lt-navy-blue;
+}
+.current > .accordion-title {
+  color: $gfs-lt-navy-blue;
+}
+
+.align-carat {
+  vertical-align: middle;
+}
+
+.customer-details {
+  height: 18px;
+  font-size: $gfs-fontsize-14;
+  text-align: right;
+  color: $gfs-label-black;
+  vertical-align: middle;
+}
+
+.customer-title {
+  font-family: $gfs-font-family;
+  width: 120px;
+  height: 24px;
+  font-size: $gfs-fontsize-18;
+  line-height: 1.33;
+  text-align: left;
+  color: $gfs-lt-navy-blue;
+  vertical-align: middle;
+  margin-top: 20px;
+}
+
+a {
+  padding: 20px 0;
+  text-align: center;
+  color: $gfs-lt-navy-blue;
+  text-decoration: none;
+}
+
+a:hover {
+  height: 24px;
+}
+
+a:focus {
+  outline: none;
+}
+
+.gfs-cpp-id {
+  color: $gfs-stepper-gray;
+  font-weight: 100;
+  text-align: right;
+  font-size: $gfs-fontsize-14;
+  position: relative;
+  top: 50%;
+}
+
+.gfs-cpp-version {
+  color: $gfs-stepper-gray;
+  font-weight: 100;
+  text-align: right;
+  font-size: $gfs-fontsize-14;
+  position: relative;
+  top: 50%;
+}
+

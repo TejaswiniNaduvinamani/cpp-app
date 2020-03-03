@@ -1,0 +1,273 @@
+<div *ngIf="determineFurtheranceMode" class="pt-3">
+  <ngx-datatable class="bootstrap" [headerHeight]="54" [columnMode]="'flex'" [rowHeight]="32" [rows]="itemLevelMarkupList"
+    [selected]="selected" [selectionType]="'single'">
+
+    <ngx-datatable-column name="No Item ID" prop='noItemId' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+      [flexGrow]="0.35">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <div [ngClass]="(row.isItemSaved || isFurtheranceMode) ? 'container disable-checkbox view-opacity' : 'container'">
+          <div class="cover"></div>
+          <input id="{{markupGridDetails.markupName}}-{{rowIndex}}" type="checkbox" class="css-checkbox" [checked]="row.noItemId" (click)="onChangeNoItemId(row)"
+            (keyup)="onChangeNoItemId(row)"  [disabled]=" isFurtheranceMode ? true : null">
+          <label class="css-label" for="{{markupGridDetails.markupName}}-{{rowIndex}}"></label>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Item ID" prop='itemId' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+      [flexGrow]="0.35">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <div *ngIf="!row.noItemId">
+          <input class="item-id" maxlength="10" [ngClass]="(row.itemDesc) ? 'change-to-label' : ''" [disabled]="(row.itemDesc) ? true : null"
+            type="text" [value]="value" (keypress)="onItemIdKeyPress($event, row)" (keyup)="onItemIdKeyUp($event, row)" (blur)="onblurItemId($event, row)"
+            ondrop="return false;">
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="" prop='stockingCode' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+      [flexGrow]="0.10">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <span *ngIf="row.stockingCode == 1">
+          <img src="{{imageDir}}assets/images/direct-delivery-icon.png" alt="direct-delivery icon" class="stock-type">
+        </span>
+        <span *ngIf="row.stockingCode == 2">
+          <img src="{{imageDir}}assets/images/non-stock-icon.png" alt="non-stock icon" class="stock-type">
+        </span>
+        <span *ngIf="row.stockingCode == 3">
+          <img src="{{imageDir}}assets/images/warehouse-icon.png" alt="warehouse icon" class="stock-type">
+        </span>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Item Description" prop='itemDesc' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+      [draggable]="false" [flexGrow]="0.95">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <div *ngIf="row.noItemId">
+          <input class="item-description-input" [maxLength]="100" type="text" [value]="value" (keyup)="onKeyupItemDesc($event, row)"
+            [ngClass]="(row.isItemSaved) ? 'change-to-label' : ''" [disabled]="(row.isItemSaved) ? true : null" (paste)="onPasteItemDesc($event, row)"
+            ondrop="return false;" (blur)="onblurItemDesc(row)">
+        </div>
+        <div [title]="value" *ngIf="!row.noItemId" class="pt-1">
+          {{row.itemDesc | stringLength: 30:false }}
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Markup" prop='markup' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+      [flexGrow]="0.40">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <input class="item-markup" type="text" [value]="value" (blur)="onblurMarkup($event, row)" (keyup)="onMarkupKeyUp($event, row)"
+          ondrop="return false;">
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="" prop='unit' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+      [flexGrow]="0.35">
+      <ng-template ngx-datatable-header-template let-column="column"></ng-template>
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+        <div id="radio-group"  [ngClass]="isMarkupUnitDisable(row)? 'view-mode-radio' : '' ">
+          <label class="radio-unit-label">
+            <input class="form-check-input" value="$" type="radio" id="{{markupGridDetails.markupName}}-unit-{{rowIndex}}" [checked]="value == '$'"
+              (change)="onUnitChange($event, row)" [disabled]=" isMarkupUnitDisable(row) ? true : null">
+            <span class="unit-label">{{ 'DATATABLE_LABEL.DOLLAR'| translate }}</span>
+          </label>
+          <label class="radio-unit-label">
+            <input class="form-check-input" value="%" type="radio" id="{{markupGridDetails.markupName}}-unit-{{rowIndex}}" [checked]="value == '%'"
+              (change)="onUnitChange($event, row)" [disabled]=" isMarkupUnitDisable(row) ? true : null">
+            <span class="unit-label">{{ 'DATATABLE_LABEL.PERCENT'| translate }}</span>
+          </label>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Markup Type" prop='markupType' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+      [draggable]="false" [flexGrow]="0.60">
+      <ng-template ngx-datatable-header-template let-column="column">
+        {{ column.name }}
+        <img src="{{imageDir}}assets/images/info-modal.png" alt="info icon" class="info-icon" (click)="onItemLevelTipContent()" data-placement="bottom"
+          container="body">
+      </ng-template>
+
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+        <select class="item-markup-type" [value]="value" (change)="onMarkupTypeChange($event, row)"  [disabled]="(row.unit == '%' || (this.isFurtheranceMode && row.isItemSaved)) ? true : null">
+          <option value="1">{{ 'DATATABLE_LABEL.SELL_UNIT' | translate}}</option>
+          <option value="2">{{ 'DATATABLE_LABEL.PER_CASE' | translate}}</option>
+          <option value="3">{{ 'DATATABLE_LABEL.PER_WEIGHT' | translate}}</option>
+        </select>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Effective Date" prop='effectiveDate' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+      [draggable]="false" [flexGrow]="0.45">
+      <ng-template ngx-datatable-cell-template let-value="value">
+        <div class="pt-1"> {{value | date: 'MM/dd/yyyy'}} </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Expiration Date" prop='expirationDate' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+      [draggable]="false" [flexGrow]="0.45">
+      <ng-template ngx-datatable-cell-template let-value="value">
+        <div class="pt-1"> {{value | date: 'MM/dd/yyyy'}} </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false" [flexGrow]="0.20">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row">
+        <div *ngIf="isFurtheranceMode && row.noItemId" class="pencil-edit pull-right pt-1">
+          <span>
+            <img src="{{imageDir}}assets/images/edit-icon.png" alt="edit" class="pencil-icon" [attr.rowIndex]="rowIndex" [attr.itemId]="row.itemId"
+              [attr.itemDesc]="row.itemDesc" (click)="onEditFutureItem(row)">
+          </span>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false" [flexGrow]="0.20">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+        <div class="trash-can pull-right pt-1">
+          <span>
+            <img src="{{imageDir}}assets/images/trash-icon.png" alt="trash icon" class="trash-icon" [attr.rowIndex]="rowIndex" [attr.itemId]="row.itemId"
+              [attr.itemDesc]="row.itemDesc" (click)="onDeleteItemLevelMarkup($event.target)">
+          </span>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+</div>
+
+<div *ngIf="determineFurtheranceMode" class="horizontal-line"></div>
+
+<div *ngIf="!determineFurtheranceMode" class="pt-3">
+  <ngx-datatable class="bootstrap" [headerHeight]="54" [columnMode]="'flex'" [rowHeight]="32" [rows]="itemLevelMarkupList"
+    [selected]="selected">
+    <ngx-datatable-column name="No Item ID" prop='noItemId' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+      [flexGrow]="0.25">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <input id="{{markupGridDetails.markupName}}-{{rowIndex}}" type="checkbox" onclick="return false;" class="css-checkbox" [checked]="row.noItemId"
+        />
+        <label class="viewmode-label" for="{{markupGridDetails.markupName}}-{{rowIndex}}"></label>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Item ID" prop='itemId' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+      [flexGrow]="0.20">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <div class="pt-1"> {{value}}</div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="" prop='stockingCode' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+      [flexGrow]="0.06">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <span *ngIf="row.stockingCode == 1">
+          <img src="{{imageDir}}assets/images/direct-delivery-icon.png" alt="direct-delivery icon" class="stock-type">
+        </span>
+        <span *ngIf="row.stockingCode == 2">
+          <img src="{{imageDir}}assets/images/non-stock-icon.png" alt="non-stock icon" class="stock-type">
+        </span>
+        <span *ngIf="row.stockingCode == 3">
+          <img src="{{imageDir}}assets/images/warehouse-icon.png" alt="warehouse icon" class="stock-type">
+        </span>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Item Description" prop='itemDesc' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+      [draggable]="false" [flexGrow]="0.40">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <div [title]="value" class="pt-1"> {{ value | stringLength: 30:false }}</div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Markup" prop='markup' [canAutoResize]="true" [resizeable]="false" [sortable]="false" [draggable]="false"
+      [flexGrow]="0.30">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <div class="pt-1"> {{value}}</div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Markup Type" prop='markupType' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+    [draggable]="false" [flexGrow]="0.30">
+    <ng-template ngx-datatable-header-template let-column="column">
+        {{ column.name }}
+        <img src="{{imageDir}}assets/images/info-modal.png" alt="info icon" class="info-icon" (click)="onItemLevelTipContent()" data-placement="bottom"
+          container="body">
+      </ng-template>
+    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+      <div *ngIf="value == 1" class="pt-1">{{ 'DATATABLE_LABEL.SELL_UNIT' | translate}}</div>
+      <div *ngIf="value == 2" class="pt-1">{{ 'DATATABLE_LABEL.PER_CASE' | translate}}</div>
+      <div *ngIf="value == 3" class="pt-1">{{ 'DATATABLE_LABEL.PER_WEIGHT' | translate}}</div>
+    </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Effective Date" prop='effectiveDate' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+      [draggable]="false" [flexGrow]="0.30">
+      <ng-template ngx-datatable-cell-template let-value="value">
+        <div class="pt-1"> {{value | date: 'MM/dd/yyyy'}} </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Expiration Date" prop='expirationDate' [canAutoResize]="true" [resizeable]="false" [sortable]="false"
+      [draggable]="false" [flexGrow]="0.60">
+      <ng-template ngx-datatable-cell-template let-value="value">
+        <div class="pt-1"> {{value | date: 'MM/dd/yyyy'}} </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+  </ngx-datatable>
+</div>
+
+<div class="modal fade" id="futureItemAssignmentModal{{exceptionIndex}}" tabindex="-1" role="dialog" aria-labelledby="futureItemAssignmentModalLabel" aria-hidden="true">
+  <div class="modal-dialog mx-auto" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title" id="futureItemAssignmentModalLabel">{{'MARKUP_LABELS.FUTURE_ITEM_ASSIGNMENT_MODAL_TITLE'| translate }}</div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+
+      <div class="modal-body orient">
+        <strong>{{'ASSIGNMENT_ITEM_LABELS.ITEM_ID'| translate }}</strong>
+
+      <div *ngFor="let itemAssignment of itemAssignmentList; let index = index">
+        <app-item-search [itemData]="itemAssignment" [itemDetails]="itemDetails" [isViewMode]="displayViewMode"  [modalIndex]="exceptionIndex"
+          [onItemLevelMarkup]="true" [rows]="itemAssignmentList.length" [index]="index" (deleteField)="onDeleteItemRow($event)"></app-item-search>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <button type="button" class="mt-2 btn add-another-item" (click)="addAnotherItem()">{{'ASSIGNMENT_LABELS.ADD_ITEM'| translate }}</button>
+        </div>
+      </div>
+    </div>
+      <div class="modal-footer">
+        <span *ngIf="duplicateOnSaveFound" class="item-error">
+        <img src="{{imageDir}}assets/images/danger-icon.png" alt="danger icon" class="danger-icon">{{'ASSIGNMENT_LABELS.DUPLICATE_LIST'| translate }} {{duplicateList}}</span>
+        <button type="button" class="cancel" data-dismiss="modal"><u>{{'COMMON.BTN_CLOSE'| translate }}</u></button>
+        <button [disabled]="disableSaveAssignment" (click)="buildFutureItemDetailsForFurtherance()" #saveAssignmentsBtn class="btn btn-primary">{{'ASSIGNMENT_LABELS.SAVE_ASSIGNMENTS'| translate }}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="itemAssignmentDeleteModalForMarkup{{exceptionIndex}}" tabindex="-1" role="dialog" aria-labelledby="itemAssignmentDeleteModalForMarkup"
+  aria-hidden="true">
+  <div class="modal-dialog mx-auto" role="document">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <div class="modal-title" id="itemAssignmentDeleteLabel">{{'ASSIGNMENT_LABELS.DELETE'| translate }}
+          <q>{{deleteItemTitle}}</q>?</div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-title-text modal-delete">
+        {{'ASSIGNMENT_LABELS.ITEM_ASSIGNMENT_DELETE_POP_UP'| translate }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="cancel" data-dismiss="modal">
+          <u>{{'COMMON.BTN_CANCEL'| translate }}</u>
+        </button>
+        <button type="submit" #deleteItemAssignmentBtn class="btn delete-item" data-dismiss="modal" (click)="deleteItemForFurtherance()" >{{'COMMON.BTN_DELETE'| translate }}</button>
+      </div>
+    </div>
+  </div>
+</div>

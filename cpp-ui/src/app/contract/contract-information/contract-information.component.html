@@ -1,0 +1,50 @@
+<div class="info-bar orient">
+  <div class="contract-information">
+    {{'CONTRCT_INFO_VIEW_LABEL.CONTRACT_INFORMATION' | translate}}
+  </div>
+</div>
+
+<div class="col-space">
+<div class="d-flex flex-row">
+  <div class="d-flex flex-column">
+    <div class="table-cell-title">{{'CONTRCT_INFO_VIEW_LABEL.CONTRACT_NAME' | translate}}</div>
+    <div class="table-cell-data">{{contractName}}</div>
+  </div>
+  <div class="d-flex flex-column">
+    <div class="table-cell-title">{{'CONTRCT_INFO_VIEW_LABEL.CONTRACT_TYPE' | translate}}</div>
+    <div class="table-cell-data">{{contractTypeDisplayName}}</div>
+  </div>
+  <div class="d-flex flex-column">
+    <div *ngIf="isAmendment" class="table-cell-title">{{'CONTRCT_INFO_VIEW_LABEL.AMENDMENT_START_DATE' | translate}}</div>
+    <div *ngIf="!isAmendment" class="table-cell-title">{{'CONTRCT_INFO_VIEW_LABEL.CONTRACT_START_DATE' | translate}}</div>
+    <div class="table-cell-data">{{contractStartDate | date: 'MM/dd/yyyy'}}</div>
+  </div>
+  <div class="d-flex flex-column">
+    <div class="table-cell-title">{{'CONTRCT_INFO_VIEW_LABEL.CONTRACT_END_DATE' | translate}}</div>
+    <div class="table-cell-data">{{contractEndDate | date: 'MM/dd/yyyy'}}</div>
+  </div>
+  <span *ngIf="contractInfoInd; then showPricingHeader"></span>
+  <ng-template #showPricingHeader class="left">
+      <div class="d-flex flex-column">
+      <div class="header-spacing-with-separator"></div>
+    </div>
+  <div class="d-flex flex-column">
+    <div class="table-cell-title">{{'CONTRCT_INFO_VIEW_LABEL.PRICING_START_DATE' | translate}}</div>
+    <div class="table-cell-data">{{priceStartDate | date: 'MM/dd/yyyy'}}</div>
+  </div>
+  <div class="d-flex flex-column">
+    <div class="table-cell-title">{{'CONTRCT_INFO_VIEW_LABEL.PRICING_END_DATE' | translate}}</div>
+    <div class="table-cell-data">{{priceEndDate | date: 'MM/dd/yyyy'}}</div>
+  </div>
+  <div *ngIf="isFurtheranceMode">
+    <div class="d-flex flex-column">
+      <div class="table-cell-title">{{'CONTRCT_INFO_VIEW_LABEL.FURTHERANCE_EFFECTIVE_DATE' | translate}}</div>
+      <div class="table-cell-data">{{furtheranceEffectiveDate | date: 'MM/dd/yyyy'}}</div>
+    </div>
+  </div>
+</ng-template>
+</div>
+</div>
+<br>
+<hr>
+
