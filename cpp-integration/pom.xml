@@ -1,0 +1,142 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.gfs.price.customer</groupId>
+		<artifactId>cpp-parent</artifactId>
+		<version>1.2.0-SNAPSHOT</version>
+		<relativePath>../cpp-parent/pom.xml</relativePath>
+	</parent>
+	<artifactId>cpp-integration</artifactId>
+	<packaging>war</packaging>
+	<name>cpp-integration</name>
+	<description>CPP to CLM Integration </description>
+
+
+	<build>
+		<finalName>cpp-integration</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.4.2.v20170220</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.eclipse.jetty</groupId>
+						<artifactId>jetty-io</artifactId>
+						<version>9.4.2.v20170220</version>
+					</dependency>
+					<dependency>
+						<groupId>com.oracle</groupId>
+						<artifactId>ojdbc7</artifactId>
+						<version>12.1.0.2</version>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<useProvidedScope>true</useProvidedScope>
+					<scanIntervalSeconds>50</scanIntervalSeconds>
+					<webAppSourceDirectory>${project.build.directory}\${project.artifactId}-${project.version}</webAppSourceDirectory>
+					<webApp>
+						<contextPath>/cpp-integration</contextPath>
+						<overrideDescriptor>${basedir}/src/main/jetty/webdefault.xml</overrideDescriptor>
+					</webApp>
+				</configuration>
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<attachClasses>true</attachClasses>
+					<archive>
+						<manifest>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+						</manifest>
+						<manifestEntries>
+							<Javac-Target-Version>${gfs.jdk.target.version}</Javac-Target-Version>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.gfs.price.customer</groupId>
+			<artifactId>cpp-component</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.gfs.price.customer</groupId>
+			<artifactId>cpp-common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.jms</groupId>
+			<artifactId>jms</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.tibco</groupId>
+			<artifactId>tibjms</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.tibco</groupId>
+			<artifactId>tibcrypt</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gfs.util.spring</groupId>
+			<artifactId>springUtil-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.gfs.util.spring</groupId>
+			<artifactId>springUtil-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.gfs.util.spring</groupId>
+			<artifactId>springUtil-retry</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-core</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+</project>

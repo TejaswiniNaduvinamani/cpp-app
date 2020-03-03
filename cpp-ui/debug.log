@@ -1,0 +1,5 @@
+[0531/140249.343:ERROR:crash_report_database_win.cc(568)] CreateDirectory C:\Users\TNADUV~1\AppData\Local\Temp\karma-4164024\Crashpad: The system cannot find the path specified. (0x3)
+[0531/140249.359:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: The pipe has been ended. (0x6D)
+[0531/140249.359:ERROR:crash_report_database_win.cc(568)] CreateDirectory C:\Users\TNADUV~1\AppData\Local\Temp\karma-4164024\Crashpad: The system cannot find the path specified. (0x3)
+[0712/123832.100:ERROR:exception_handler_server.cc(526)] ConnectNamedPipe: The pipe is being closed. (0xE8)
+[0715/220129.489:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports

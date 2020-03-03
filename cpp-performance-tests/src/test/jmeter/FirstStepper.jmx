@@ -1,0 +1,1497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0 r1823414">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+        <stringProp name="delimiter">,</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="filename">user.csv</stringProp>
+        <boolProp name="ignoreFirstLine">false</boolProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="variableNames">hostname,port,threads,user,password</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain">${hostname}</stringProp>
+        <stringProp name="HTTPSampler.port"></stringProp>
+        <stringProp name="HTTPSampler.protocol">https</stringProp>
+        <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Content-Type</stringProp>
+            <stringProp name="Header.value">application/json</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Accept</stringProp>
+            <stringProp name="Header.value">application/json</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
+        <collectionProp name="AuthManager.auth_list">
+          <elementProp name="" elementType="Authorization">
+            <stringProp name="Authorization.url">https://${hostname}</stringProp>
+            <stringProp name="Authorization.username">${user}</stringProp>
+            <stringProp name="Authorization.password">${password}</stringProp>
+            <stringProp name="Authorization.domain"></stringProp>
+            <stringProp name="Authorization.realm"></stringProp>
+          </elementProp>
+        </collectionProp>
+      </AuthManager>
+      <hashTree/>
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration" enabled="true">
+        <boolProp name="autocommit">true</boolProp>
+        <stringProp name="checkQuery">select * from CONTRACT_PRICE_PROFILE</stringProp>
+        <stringProp name="connectionAge">5000</stringProp>
+        <stringProp name="dataSource">DEV DB Connection</stringProp>
+        <stringProp name="dbUrl">jdbc:oracle:thin:@ot1s.grhq.gfs.com:45006:ot1s</stringProp>
+        <stringProp name="driver">oracle.jdbc.OracleDriver</stringProp>
+        <boolProp name="keepAlive">true</boolProp>
+        <stringProp name="password">chang3_me</stringProp>
+        <stringProp name="poolMax">0</stringProp>
+        <stringProp name="timeout">10000</stringProp>
+        <stringProp name="transactionIsolation">DEFAULT</stringProp>
+        <stringProp name="trimInterval">60000</stringProp>
+        <stringProp name="username">cpp_appl</stringProp>
+      </JDBCDataSource>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+        <boolProp name="useGroupName">true</boolProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="FetchCPPInformation" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;contractName&quot;:&quot;PERFORMANCE_TEST_1018&quot;,&quot;contractType&quot;:&quot;ICMDistributionAgreementRegional&quot;,&quot;contractPriceProfileId&quot;:&quot;-1&quot;,&quot;pricingEffectiveDate&quot;:&quot;11/28/2019&quot;,&quot;pricingExpirationDate&quot;:&quot;10/06/2020&quot;,&quot;scheduleForCostChange&quot;:&quot;fiscal&quot;,&quot;priceVerificationFlag&quot;:true,&quot;priceAuditFlag&quot;:true,&quot;transferFeeFlag&quot;:true,&quot;assessmentFeeFlag&quot;:true,&quot;contractPriceProfileSeq&quot;:&quot;-1&quot;,&quot;agreementId&quot;:&quot;performance-agrmnt-id&quot;,&quot;clmContractStartDate&quot;:&quot;2019-11-28T04:00:00.000Z&quot;,&quot;clmContractEndDate&quot;:&quot;2020-10-06T04:00:00.000Z&quot;,&quot;versionNbr&quot;:1,&quot;parentAgreementId&quot;:null}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/cpp/rest/contractPricing/savePricingInformation</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="FetchInLoop" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler" enabled="true">
+          <stringProp name="BeanShellSampler.query">print(&quot;Test to store csv values to array&quot;);
+print(&quot;no of threads &quot;+vars.get(&quot;threads&quot;));
+String max = vars.get(&quot;threads&quot;);
+for(int i=1;i&lt;=Integer.valueOf(max);i++){
+	vars.put(&quot;cppSeq_&quot;+String.valueOf(i),String.valueOf(i*-1));
+	//print(&quot;variable is=&quot;+ &quot;cppSeq_&quot;+i + &quot; &amp; value is &quot; + &quot;cppSeq_&quot;+vars.get(&quot;cppSeq_&quot;+String.valueOf(i)));
+}
+</stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters"></stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+        </BeanShellSampler>
+        <hashTree/>
+        <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="ForEach Controller" enabled="true">
+          <stringProp name="ForeachController.inputVal">cppSeq</stringProp>
+          <stringProp name="ForeachController.returnVal">cppSeq</stringProp>
+          <boolProp name="ForeachController.useSeparator">true</boolProp>
+        </ForeachController>
+        <hashTree>
+          <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+            <boolProp name="displayJMeterProperties">true</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySystemProperties">true</boolProp>
+          </DebugSampler>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="FirstStepper-SAVE-PricingInformation" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;contractName&quot;:&quot;PERFORMANCE_TEST_1018&quot;,&quot;contractType&quot;:&quot;ICMDistributionAgreementRegional&quot;,&quot;contractPriceProfileId&quot;:${cppSeq},&quot;pricingEffectiveDate&quot;:&quot;2018-08-14T04:00:00.000Z&quot;,&quot;pricingExpirationDate&quot;:&quot;9999-01-01T00:00:00.000Z&quot;,&quot;scheduleForCostChange&quot;:&quot;fiscal&quot;,&quot;priceVerificationFlag&quot;:true,&quot;priceAuditFlag&quot;:true,&quot;transferFeeFlag&quot;:true,&quot;assessmentFeeFlag&quot;:true,&quot;contractPriceProfileSeq&quot;:${cppSeq},&quot;agreementId&quot;:&quot;performance-agrmnt-id&quot;,&quot;clmContractStartDate&quot;:&quot;2018-08-14T04:00:00.000Z&quot;,&quot;clmContractEndDate&quot;:&quot;9999-01-01T00:00:00.000Z&quot;,&quot;versionNbr&quot;:1,&quot;parentAgreementId&quot;:null}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/cpp/rest/contractPricing/savePricingInformation</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="FirstStepper-FETCH-PricingInformation" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="contractPriceProfileSeq" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${cppSeq}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">contractPriceProfileSeq</stringProp>
+                </elementProp>
+                <elementProp name="agreementId" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">performance-agrmnt-id</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">agreementId</stringProp>
+                </elementProp>
+                <elementProp name="contractStatus" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">Draft</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">contractStatus</stringProp>
+                </elementProp>
+                <elementProp name="isAutoRenewalEnabled" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">false</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">isAutoRenewalEnabled</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/cpp/rest/contractPricing/fetchPricingInformation</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="SecondStepper-LOAD-DistributionCenter" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/cpp/#/distributioncenters</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="SecondStepper-SAVE-DistributionCenter" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;contractPriceProfileSeq&quot;:${cppSeq},&quot;distributionCenters&quot;:[&quot;5&quot;,&quot;6&quot;],&quot;effectiveDate&quot;:&quot;2018-08-14T04:00:00.000Z&quot;,&quot;expirationDate&quot;:&quot;9999-01-01T00:00:00.000Z&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/cpp/rest/distributionCenter/saveDistributionCenters</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ThirdStepper-LOAD-Markup" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/cpp/#/markup</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ThirdStepper-ADD-addDefaultItemLevelMarkupGrid" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="contractPriceProfileSeq" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${cppSeq}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">contractPriceProfileSeq</stringProp>
+                </elementProp>
+                <elementProp name="pricingEffectiveDate" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">11/28/2019</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">pricingEffectiveDate</stringProp>
+                </elementProp>
+                <elementProp name="pricingExpirationDate" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">10/06/2020</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">pricingExpirationDate</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/cpp/rest/markup/createDefaultItemLevelMarkup</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="DB-SELECT-CMGCustomerForDefaultMarkup" enabled="true">
+            <stringProp name="dataSource">DEV DB Connection</stringProp>
+            <stringProp name="queryType">Select Statement</stringProp>
+            <stringProp name="query">select GFS_CUSTOMER_ID from CONTRACT_PRICE_PROF_CUSTOMER WHERE CONTRACT_PRICE_PROFILE_SEQ=${cppSeq} and DEFAULT_CUSTOMER_IND=1</stringProp>
+            <stringProp name="queryArguments"></stringProp>
+            <stringProp name="queryArgumentsTypes"></stringProp>
+            <stringProp name="variableNames"></stringProp>
+            <stringProp name="resultVariable">CONTRACT_PRICE_PROF_CUSTOMER</stringProp>
+            <stringProp name="queryTimeout"></stringProp>
+            <stringProp name="resultSetHandler">Store as String</stringProp>
+          </JDBCSampler>
+          <hashTree>
+            <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="INTERNAL-STORE-DefaultCMGCustomer" enabled="true">
+              <stringProp name="BeanShellAssertion.query">if(ResponseCode.equals(&quot;200&quot;)) {
+
+	if(vars.getObject(&quot;CONTRACT_PRICE_PROF_CUSTOMER&quot;).size() != 0) {
+
+		String defaultMarkupCMGCustomerValue = vars.getObject(&quot;CONTRACT_PRICE_PROF_CUSTOMER&quot;).get(0).get(&quot;GFS_CUSTOMER_ID&quot;) + &quot;&quot;;
+		vars.put(&quot;defaultMarkupCMGCustomer&quot;,defaultMarkupCMGCustomerValue);
+
+		
+		log.info(&quot; default CMG customer is : &quot; + defaultMarkupCMGCustomerValue);
+	
+	} else {
+	
+		FailureMessage = &quot;!!!!!!!!!!!! The response is empty !!!!!!!!!!!!!&quot;;
+		Failure = true;	
+		prev.setStopThread(true); 
+	}	
+	
+} else {
+	
+	FailureMessage = &quot;!!!!!!!!!!!! No connection to the database !!!!!!!!!!!!!&quot;;
+	Failure = true;	
+	prev.setStopThread(true); 
+}
+</stringProp>
+              <stringProp name="BeanShellAssertion.filename"></stringProp>
+              <stringProp name="BeanShellAssertion.parameters"></stringProp>
+              <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+            </BeanShellAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ThirdStepper-SAVE-DefaultMarkup" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+	&quot;markupWrapper&quot;: {&#xd;
+		&quot;gfsCustomerId&quot;: ${defaultMarkupCMGCustomer},&#xd;
+		&quot;gfsCustomerType&quot;: 31,&#xd;
+		&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+		&quot;markupName&quot;: &quot;PERFORMANCE_TEST_1018&quot;,&#xd;
+		&quot;isMarkupSaved&quot;: false,&#xd;
+		&quot;cppFurtheranceSeq&quot;: 0,&#xd;
+		&quot;productMarkupList&quot;: [{&#xd;
+			&quot;gfsCustomerId&quot;: ${defaultMarkupCMGCustomer},&#xd;
+			&quot;productType&quot;: &quot;GROCERY&quot;,&#xd;
+			&quot;itemPriceId&quot;: 1,&#xd;
+			&quot;markup&quot;: &quot;6.00&quot;,&#xd;
+			&quot;unit&quot;: &quot;$&quot;,&#xd;
+			&quot;markupType&quot;: 2,&#xd;
+			&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+			&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+			&quot;gfsCustomerTypeCode&quot;: 0,&#xd;
+			&quot;customerItemPriceSeq&quot;: 0,&#xd;
+			&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+			&quot;priceLockedInTypeCode&quot;: 0,&#xd;
+			&quot;holdCostFirmInd&quot;: 0,&#xd;
+			&quot;priceLockinReasonCode&quot;: 0,&#xd;
+			&quot;priceMaintenanceSourceCode&quot;: 0,&#xd;
+			&quot;isInvalidCurrency&quot;: false,&#xd;
+			&quot;invalidMarkup&quot;: false&#xd;
+		}, {&#xd;
+			&quot;gfsCustomerId&quot;: ${defaultMarkupCMGCustomer},&#xd;
+			&quot;productType&quot;: &quot;FROZEN&quot;,&#xd;
+			&quot;itemPriceId&quot;: 2,&#xd;
+			&quot;markup&quot;: &quot;6.00&quot;,&#xd;
+			&quot;unit&quot;: &quot;$&quot;,&#xd;
+			&quot;markupType&quot;: 2,&#xd;
+			&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+			&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+			&quot;gfsCustomerTypeCode&quot;: 0,&#xd;
+			&quot;customerItemPriceSeq&quot;: 0,&#xd;
+			&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+			&quot;priceLockedInTypeCode&quot;: 0,&#xd;
+			&quot;holdCostFirmInd&quot;: 0,&#xd;
+			&quot;priceLockinReasonCode&quot;: 0,&#xd;
+			&quot;priceMaintenanceSourceCode&quot;: 0,&#xd;
+			&quot;invalidMarkup&quot;: false,&#xd;
+			&quot;isInvalidCurrency&quot;: false&#xd;
+		}, {&#xd;
+			&quot;gfsCustomerId&quot;: ${defaultMarkupCMGCustomer},&#xd;
+			&quot;productType&quot;: &quot;MEAT&quot;,&#xd;
+			&quot;itemPriceId&quot;: 3,&#xd;
+			&quot;markup&quot;: &quot;6.00&quot;,&#xd;
+			&quot;unit&quot;: &quot;$&quot;,&#xd;
+			&quot;markupType&quot;: 2,&#xd;
+			&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+			&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+			&quot;gfsCustomerTypeCode&quot;: 0,&#xd;
+			&quot;customerItemPriceSeq&quot;: 0,&#xd;
+			&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+			&quot;priceLockedInTypeCode&quot;: 0,&#xd;
+			&quot;holdCostFirmInd&quot;: 0,&#xd;
+			&quot;priceLockinReasonCode&quot;: 0,&#xd;
+			&quot;priceMaintenanceSourceCode&quot;: 0,&#xd;
+			&quot;invalidMarkup&quot;: false,&#xd;
+			&quot;isInvalidCurrency&quot;: false&#xd;
+		}, {&#xd;
+			&quot;gfsCustomerId&quot;: ${defaultMarkupCMGCustomer},&#xd;
+			&quot;productType&quot;: &quot;SEAFOOD&quot;,&#xd;
+			&quot;itemPriceId&quot;: 4,&#xd;
+			&quot;markup&quot;: &quot;6.00&quot;,&#xd;
+			&quot;unit&quot;: &quot;$&quot;,&#xd;
+			&quot;markupType&quot;: 2,&#xd;
+			&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+			&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+			&quot;gfsCustomerTypeCode&quot;: 0,&#xd;
+			&quot;customerItemPriceSeq&quot;: 0,&#xd;
+			&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+			&quot;priceLockedInTypeCode&quot;: 0,&#xd;
+			&quot;holdCostFirmInd&quot;: 0,&#xd;
+			&quot;priceLockinReasonCode&quot;: 0,&#xd;
+			&quot;priceMaintenanceSourceCode&quot;: 0,&#xd;
+			&quot;invalidMarkup&quot;: false,&#xd;
+			&quot;isInvalidCurrency&quot;: false&#xd;
+		}, {&#xd;
+			&quot;gfsCustomerId&quot;: ${defaultMarkupCMGCustomer},&#xd;
+			&quot;productType&quot;: &quot;POULTRY&quot;,&#xd;
+			&quot;itemPriceId&quot;: 5,&#xd;
+			&quot;markup&quot;: &quot;6.00&quot;,&#xd;
+			&quot;unit&quot;: &quot;$&quot;,&#xd;
+			&quot;markupType&quot;: 2,&#xd;
+			&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+			&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+			&quot;gfsCustomerTypeCode&quot;: 0,&#xd;
+			&quot;customerItemPriceSeq&quot;: 0,&#xd;
+			&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+			&quot;priceLockedInTypeCode&quot;: 0,&#xd;
+			&quot;holdCostFirmInd&quot;: 0,&#xd;
+			&quot;priceLockinReasonCode&quot;: 0,&#xd;
+			&quot;priceMaintenanceSourceCode&quot;: 0,&#xd;
+			&quot;invalidMarkup&quot;: false,&#xd;
+			&quot;isInvalidCurrency&quot;: false&#xd;
+		}, {&#xd;
+			&quot;gfsCustomerId&quot;: ${defaultMarkupCMGCustomer},&#xd;
+			&quot;productType&quot;: &quot;DAIRY&quot;,&#xd;
+			&quot;itemPriceId&quot;: 6,&#xd;
+			&quot;markup&quot;: &quot;6.00&quot;,&#xd;
+			&quot;unit&quot;: &quot;$&quot;,&#xd;
+			&quot;markupType&quot;: 2,&#xd;
+			&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+			&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+			&quot;gfsCustomerTypeCode&quot;: 0,&#xd;
+			&quot;customerItemPriceSeq&quot;: 0,&#xd;
+			&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+			&quot;priceLockedInTypeCode&quot;: 0,&#xd;
+			&quot;holdCostFirmInd&quot;: 0,&#xd;
+			&quot;priceLockinReasonCode&quot;: 0,&#xd;
+			&quot;priceMaintenanceSourceCode&quot;: 0,&#xd;
+			&quot;invalidMarkup&quot;: false,&#xd;
+			&quot;isInvalidCurrency&quot;: false&#xd;
+		}, {&#xd;
+			&quot;gfsCustomerId&quot;: ${defaultMarkupCMGCustomer},&#xd;
+			&quot;productType&quot;: &quot;DISPOSABLES&quot;,&#xd;
+			&quot;itemPriceId&quot;: 7,&#xd;
+			&quot;markup&quot;: &quot;6.00&quot;,&#xd;
+			&quot;unit&quot;: &quot;$&quot;,&#xd;
+			&quot;markupType&quot;: 2,&#xd;
+			&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+			&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+			&quot;gfsCustomerTypeCode&quot;: 0,&#xd;
+			&quot;customerItemPriceSeq&quot;: 0,&#xd;
+			&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+			&quot;priceLockedInTypeCode&quot;: 0,&#xd;
+			&quot;holdCostFirmInd&quot;: 0,&#xd;
+			&quot;priceLockinReasonCode&quot;: 0,&#xd;
+			&quot;priceMaintenanceSourceCode&quot;: 0,&#xd;
+			&quot;invalidMarkup&quot;: false,&#xd;
+			&quot;isInvalidCurrency&quot;: false&#xd;
+		}, {&#xd;
+			&quot;gfsCustomerId&quot;: ${defaultMarkupCMGCustomer},&#xd;
+			&quot;productType&quot;: &quot;CHEMICAL&quot;,&#xd;
+			&quot;itemPriceId&quot;: 8,&#xd;
+			&quot;markup&quot;: &quot;6.00&quot;,&#xd;
+			&quot;unit&quot;: &quot;$&quot;,&#xd;
+			&quot;markupType&quot;: 2,&#xd;
+			&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+			&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+			&quot;gfsCustomerTypeCode&quot;: 0,&#xd;
+			&quot;customerItemPriceSeq&quot;: 0,&#xd;
+			&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+			&quot;priceLockedInTypeCode&quot;: 0,&#xd;
+			&quot;holdCostFirmInd&quot;: 0,&#xd;
+			&quot;priceLockinReasonCode&quot;: 0,&#xd;
+			&quot;priceMaintenanceSourceCode&quot;: 0,&#xd;
+			&quot;invalidMarkup&quot;: false,&#xd;
+			&quot;isInvalidCurrency&quot;: false&#xd;
+		}, {&#xd;
+			&quot;gfsCustomerId&quot;: ${defaultMarkupCMGCustomer},&#xd;
+			&quot;productType&quot;: &quot;BEVERAGE&quot;,&#xd;
+			&quot;itemPriceId&quot;: 9,&#xd;
+			&quot;markup&quot;: &quot;6.00&quot;,&#xd;
+			&quot;unit&quot;: &quot;$&quot;,&#xd;
+			&quot;markupType&quot;: 2,&#xd;
+			&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+			&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+			&quot;gfsCustomerTypeCode&quot;: 0,&#xd;
+			&quot;customerItemPriceSeq&quot;: 0,&#xd;
+			&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+			&quot;priceLockedInTypeCode&quot;: 0,&#xd;
+			&quot;holdCostFirmInd&quot;: 0,&#xd;
+			&quot;priceLockinReasonCode&quot;: 0,&#xd;
+			&quot;priceMaintenanceSourceCode&quot;: 0,&#xd;
+			&quot;invalidMarkup&quot;: false,&#xd;
+			&quot;isInvalidCurrency&quot;: false&#xd;
+		}, {&#xd;
+			&quot;gfsCustomerId&quot;: ${defaultMarkupCMGCustomer},&#xd;
+			&quot;productType&quot;: &quot;PRODUCE&quot;,&#xd;
+			&quot;itemPriceId&quot;: 10,&#xd;
+			&quot;markup&quot;: &quot;6.00&quot;,&#xd;
+			&quot;unit&quot;: &quot;$&quot;,&#xd;
+			&quot;markupType&quot;: 2,&#xd;
+			&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+			&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+			&quot;gfsCustomerTypeCode&quot;: 0,&#xd;
+			&quot;customerItemPriceSeq&quot;: 0,&#xd;
+			&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+			&quot;priceLockedInTypeCode&quot;: 0,&#xd;
+			&quot;holdCostFirmInd&quot;: 0,&#xd;
+			&quot;priceLockinReasonCode&quot;: 0,&#xd;
+			&quot;priceMaintenanceSourceCode&quot;: 0,&#xd;
+			&quot;invalidMarkup&quot;: false,&#xd;
+			&quot;isInvalidCurrency&quot;: false&#xd;
+		}, {&#xd;
+			&quot;gfsCustomerId&quot;: ${defaultMarkupCMGCustomer},&#xd;
+			&quot;productType&quot;: &quot;TABLETOP&quot;,&#xd;
+			&quot;itemPriceId&quot;: 11,&#xd;
+			&quot;markup&quot;: &quot;6.00&quot;,&#xd;
+			&quot;unit&quot;: &quot;$&quot;,&#xd;
+			&quot;markupType&quot;: 2,&#xd;
+			&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+			&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+			&quot;gfsCustomerTypeCode&quot;: 0,&#xd;
+			&quot;customerItemPriceSeq&quot;: 0,&#xd;
+			&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+			&quot;priceLockedInTypeCode&quot;: 0,&#xd;
+			&quot;holdCostFirmInd&quot;: 0,&#xd;
+			&quot;priceLockinReasonCode&quot;: 0,&#xd;
+			&quot;priceMaintenanceSourceCode&quot;: 0,&#xd;
+			&quot;invalidMarkup&quot;: false,&#xd;
+			&quot;isInvalidCurrency&quot;: false&#xd;
+		}],&#xd;
+		&quot;itemLevelMarkupList&quot;: [{&#xd;
+			&quot;noItemId&quot;: false,&#xd;
+			&quot;itemId&quot;: &quot;318191&quot;,&#xd;
+			&quot;itemDesc&quot;: &quot;COFFEE DECAF 128-1.25Z MAXW&quot;,&#xd;
+			&quot;stockingCode&quot;: &quot;3&quot;,&#xd;
+			&quot;markup&quot;: &quot;7.00&quot;,&#xd;
+			&quot;unit&quot;: &quot;$&quot;,&#xd;
+			&quot;markupType&quot;: 2,&#xd;
+			&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+			&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+			&quot;invalid&quot;: false,&#xd;
+			&quot;inactive&quot;: false,&#xd;
+			&quot;isItemSaved&quot;: false,&#xd;
+			&quot;customerItemDescSeq&quot;: 0,&#xd;
+			&quot;isItemAlreadyExist&quot;: false,&#xd;
+			&quot;isInvalidMarkupCurrency&quot;: false,&#xd;
+			&quot;invalidMarkup&quot;: false&#xd;
+		}],&#xd;
+		&quot;subgroupMarkupList&quot;: [],&#xd;
+		&quot;markupGridIndex&quot;: 0&#xd;
+	}&#xd;
+	}&#xd;
+</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/cpp/rest/markup/saveMarkup</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ThirdStepper-ADD-AddExceptionMarkupGrid" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="contractPriceProfileSeq" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${cppSeq}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">contractPriceProfileSeq</stringProp>
+                </elementProp>
+                <elementProp name="exceptionName" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">ExceptionMarkup1</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">exceptionName</stringProp>
+                </elementProp>
+                <elementProp name="pricingEffectiveDate" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">11/28/2019</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">pricingEffectiveDate</stringProp>
+                </elementProp>
+                <elementProp name="pricingExpirationDate" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">01/01/9999</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">pricingExpirationDate</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/cpp/rest/markup/addException</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ThridStepper-EXTERNAL-FindItemInformation" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="itemId" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">-11</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">itemId</stringProp>
+                </elementProp>
+                <elementProp name="cmgCustomerId" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${defaultMarkupCMGCustomer}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">cmgCustomerId</stringProp>
+                </elementProp>
+                <elementProp name="cmgCustomerTypeCode" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">31</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">cmgCustomerTypeCode</stringProp>
+                </elementProp>
+                <elementProp name="contractPriceProfileSeq" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${cppSeq}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">contractPriceProfileSeq</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">cpp/rest/item/findItemInformation</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="DB-SELECT-CMGCustomerForExceptionMarkup" enabled="true">
+            <stringProp name="dataSource">DEV DB Connection</stringProp>
+            <stringProp name="queryType">Select Statement</stringProp>
+            <stringProp name="query">select GFS_CUSTOMER_ID from CONTRACT_PRICE_PROF_CUSTOMER WHERE CONTRACT_PRICE_PROFILE_SEQ=${cppSeq} and DEFAULT_CUSTOMER_IND=0</stringProp>
+            <stringProp name="queryArguments"></stringProp>
+            <stringProp name="queryArgumentsTypes"></stringProp>
+            <stringProp name="variableNames"></stringProp>
+            <stringProp name="resultVariable">CONTRACT_PRICE_PROF_CUSTOMER</stringProp>
+            <stringProp name="queryTimeout"></stringProp>
+            <stringProp name="resultSetHandler">Store as String</stringProp>
+          </JDBCSampler>
+          <hashTree>
+            <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="INTERNAL-STORE-DefaultCMGCustomer" enabled="true">
+              <stringProp name="BeanShellAssertion.query">if(ResponseCode.equals(&quot;200&quot;)) {
+
+	if(vars.getObject(&quot;CONTRACT_PRICE_PROF_CUSTOMER&quot;).size() != 0) {
+
+		String exceptionMarkupCMGCustomerValue = vars.getObject(&quot;CONTRACT_PRICE_PROF_CUSTOMER&quot;).get(0).get(&quot;GFS_CUSTOMER_ID&quot;) + &quot;&quot;;
+		vars.put(&quot;exceptionMarkupCMGCustomer&quot;,exceptionMarkupCMGCustomerValue);
+
+		
+		log.info(&quot; Exception CMG customer is : &quot; + exceptionMarkupCMGCustomerValue);
+	
+	} else {
+	
+		FailureMessage = &quot;!!!!!!!!!!!! The response is empty !!!!!!!!!!!!!&quot;;
+		Failure = true;	
+		prev.setStopThread(true); 
+	}	
+	
+} else {
+	
+	FailureMessage = &quot;!!!!!!!!!!!! No connection to the database !!!!!!!!!!!!!&quot;;
+	Failure = true;	
+	prev.setStopThread(true); 
+}
+</stringProp>
+              <stringProp name="BeanShellAssertion.filename"></stringProp>
+              <stringProp name="BeanShellAssertion.parameters"></stringProp>
+              <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+            </BeanShellAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ThirdStepper-SAVE-ExceptionMarkup" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+	&quot;markupWrapper&quot;: {&#xd;
+		&quot;gfsCustomerId&quot;: ${exceptionMarkupCMGCustomer},&#xd;
+		&quot;gfsCustomerType&quot;: 31,&#xd;
+		&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+		&quot;markupName&quot;: &quot;PERFORMANCE_TEST_1018&quot;,&#xd;
+		&quot;isMarkupSaved&quot;: false,&#xd;
+		&quot;cppFurtheranceSeq&quot;: 0,&#xd;
+		&quot;productMarkupList&quot;: [{&#xd;
+			&quot;gfsCustomerId&quot;: ${exceptionMarkupCMGCustomer},&#xd;
+			&quot;productType&quot;: &quot;GROCERY&quot;,&#xd;
+			&quot;itemPriceId&quot;: 1,&#xd;
+			&quot;markup&quot;: &quot;6.00&quot;,&#xd;
+			&quot;unit&quot;: &quot;$&quot;,&#xd;
+			&quot;markupType&quot;: 2,&#xd;
+			&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+			&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+			&quot;gfsCustomerTypeCode&quot;: 0,&#xd;
+			&quot;customerItemPriceSeq&quot;: 0,&#xd;
+			&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+			&quot;priceLockedInTypeCode&quot;: 0,&#xd;
+			&quot;holdCostFirmInd&quot;: 0,&#xd;
+			&quot;priceLockinReasonCode&quot;: 0,&#xd;
+			&quot;priceMaintenanceSourceCode&quot;: 0&#xd;
+		}, {&#xd;
+			&quot;gfsCustomerId&quot;: ${exceptionMarkupCMGCustomer},&#xd;
+			&quot;productType&quot;: &quot;FROZEN&quot;,&#xd;
+			&quot;itemPriceId&quot;: 2,&#xd;
+			&quot;markup&quot;: &quot;6.00&quot;,&#xd;
+			&quot;unit&quot;: &quot;$&quot;,&#xd;
+			&quot;markupType&quot;: 2,&#xd;
+			&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+			&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+			&quot;gfsCustomerTypeCode&quot;: 0,&#xd;
+			&quot;customerItemPriceSeq&quot;: 0,&#xd;
+			&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+			&quot;priceLockedInTypeCode&quot;: 0,&#xd;
+			&quot;holdCostFirmInd&quot;: 0,&#xd;
+			&quot;priceLockinReasonCode&quot;: 0,&#xd;
+			&quot;priceMaintenanceSourceCode&quot;: 0&#xd;
+		}, {&#xd;
+			&quot;gfsCustomerId&quot;: ${exceptionMarkupCMGCustomer},&#xd;
+			&quot;productType&quot;: &quot;MEAT&quot;,&#xd;
+			&quot;itemPriceId&quot;: 3,&#xd;
+			&quot;markup&quot;: &quot;6.00&quot;,&#xd;
+			&quot;unit&quot;: &quot;$&quot;,&#xd;
+			&quot;markupType&quot;: 2,&#xd;
+			&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+			&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+			&quot;gfsCustomerTypeCode&quot;: 0,&#xd;
+			&quot;customerItemPriceSeq&quot;: 0,&#xd;
+			&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+			&quot;priceLockedInTypeCode&quot;: 0,&#xd;
+			&quot;holdCostFirmInd&quot;: 0,&#xd;
+			&quot;priceLockinReasonCode&quot;: 0,&#xd;
+			&quot;priceMaintenanceSourceCode&quot;: 0&#xd;
+		}, {&#xd;
+			&quot;gfsCustomerId&quot;: ${exceptionMarkupCMGCustomer},&#xd;
+			&quot;productType&quot;: &quot;SEAFOOD&quot;,&#xd;
+			&quot;itemPriceId&quot;: 4,&#xd;
+			&quot;markup&quot;: &quot;6.00&quot;,&#xd;
+			&quot;unit&quot;: &quot;$&quot;,&#xd;
+			&quot;markupType&quot;: 2,&#xd;
+			&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+			&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+			&quot;gfsCustomerTypeCode&quot;: 0,&#xd;
+			&quot;customerItemPriceSeq&quot;: 0,&#xd;
+			&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+			&quot;priceLockedInTypeCode&quot;: 0,&#xd;
+			&quot;holdCostFirmInd&quot;: 0,&#xd;
+			&quot;priceLockinReasonCode&quot;: 0,&#xd;
+			&quot;priceMaintenanceSourceCode&quot;: 0&#xd;
+		}, {&#xd;
+			&quot;gfsCustomerId&quot;: ${exceptionMarkupCMGCustomer},&#xd;
+			&quot;productType&quot;: &quot;POULTRY&quot;,&#xd;
+			&quot;itemPriceId&quot;: 5,&#xd;
+			&quot;markup&quot;: &quot;6.00&quot;,&#xd;
+			&quot;unit&quot;: &quot;$&quot;,&#xd;
+			&quot;markupType&quot;: 2,&#xd;
+			&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+			&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+			&quot;gfsCustomerTypeCode&quot;: 0,&#xd;
+			&quot;customerItemPriceSeq&quot;: 0,&#xd;
+			&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+			&quot;priceLockedInTypeCode&quot;: 0,&#xd;
+			&quot;holdCostFirmInd&quot;: 0,&#xd;
+			&quot;priceLockinReasonCode&quot;: 0,&#xd;
+			&quot;priceMaintenanceSourceCode&quot;: 0&#xd;
+		}, {&#xd;
+			&quot;gfsCustomerId&quot;: ${exceptionMarkupCMGCustomer},&#xd;
+			&quot;productType&quot;: &quot;DAIRY&quot;,&#xd;
+			&quot;itemPriceId&quot;: 6,&#xd;
+			&quot;markup&quot;: &quot;6.00&quot;,&#xd;
+			&quot;unit&quot;: &quot;$&quot;,&#xd;
+			&quot;markupType&quot;: 2,&#xd;
+			&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+			&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+			&quot;gfsCustomerTypeCode&quot;: 0,&#xd;
+			&quot;customerItemPriceSeq&quot;: 0,&#xd;
+			&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+			&quot;priceLockedInTypeCode&quot;: 0,&#xd;
+			&quot;holdCostFirmInd&quot;: 0,&#xd;
+			&quot;priceLockinReasonCode&quot;: 0,&#xd;
+			&quot;priceMaintenanceSourceCode&quot;: 0&#xd;
+		}, {&#xd;
+			&quot;gfsCustomerId&quot;: ${exceptionMarkupCMGCustomer},&#xd;
+			&quot;productType&quot;: &quot;DISPOSABLES&quot;,&#xd;
+			&quot;itemPriceId&quot;: 7,&#xd;
+			&quot;markup&quot;: &quot;6.00&quot;,&#xd;
+			&quot;unit&quot;: &quot;$&quot;,&#xd;
+			&quot;markupType&quot;: 2,&#xd;
+			&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+			&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+			&quot;gfsCustomerTypeCode&quot;: 0,&#xd;
+			&quot;customerItemPriceSeq&quot;: 0,&#xd;
+			&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+			&quot;priceLockedInTypeCode&quot;: 0,&#xd;
+			&quot;holdCostFirmInd&quot;: 0,&#xd;
+			&quot;priceLockinReasonCode&quot;: 0,&#xd;
+			&quot;priceMaintenanceSourceCode&quot;: 0&#xd;
+		}, {&#xd;
+			&quot;gfsCustomerId&quot;: ${exceptionMarkupCMGCustomer},&#xd;
+			&quot;productType&quot;: &quot;CHEMICAL&quot;,&#xd;
+			&quot;itemPriceId&quot;: 8,&#xd;
+			&quot;markup&quot;: &quot;6.00&quot;,&#xd;
+			&quot;unit&quot;: &quot;$&quot;,&#xd;
+			&quot;markupType&quot;: 2,&#xd;
+			&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+			&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+			&quot;gfsCustomerTypeCode&quot;: 0,&#xd;
+			&quot;customerItemPriceSeq&quot;: 0,&#xd;
+			&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+			&quot;priceLockedInTypeCode&quot;: 0,&#xd;
+			&quot;holdCostFirmInd&quot;: 0,&#xd;
+			&quot;priceLockinReasonCode&quot;: 0,&#xd;
+			&quot;priceMaintenanceSourceCode&quot;: 0&#xd;
+		}, {&#xd;
+			&quot;gfsCustomerId&quot;: ${exceptionMarkupCMGCustomer},&#xd;
+			&quot;productType&quot;: &quot;BEVERAGE&quot;,&#xd;
+			&quot;itemPriceId&quot;: 9,&#xd;
+			&quot;markup&quot;: &quot;6.00&quot;,&#xd;
+			&quot;unit&quot;: &quot;$&quot;,&#xd;
+			&quot;markupType&quot;: 2,&#xd;
+			&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+			&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+			&quot;gfsCustomerTypeCode&quot;: 0,&#xd;
+			&quot;customerItemPriceSeq&quot;: 0,&#xd;
+			&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+			&quot;priceLockedInTypeCode&quot;: 0,&#xd;
+			&quot;holdCostFirmInd&quot;: 0,&#xd;
+			&quot;priceLockinReasonCode&quot;: 0,&#xd;
+			&quot;priceMaintenanceSourceCode&quot;: 0&#xd;
+		}, {&#xd;
+			&quot;gfsCustomerId&quot;: ${exceptionMarkupCMGCustomer},&#xd;
+			&quot;productType&quot;: &quot;PRODUCE&quot;,&#xd;
+			&quot;itemPriceId&quot;: 10,&#xd;
+			&quot;markup&quot;: &quot;6.00&quot;,&#xd;
+			&quot;unit&quot;: &quot;$&quot;,&#xd;
+			&quot;markupType&quot;: 2,&#xd;
+			&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+			&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+			&quot;gfsCustomerTypeCode&quot;: 0,&#xd;
+			&quot;customerItemPriceSeq&quot;: 0,&#xd;
+			&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+			&quot;priceLockedInTypeCode&quot;: 0,&#xd;
+			&quot;holdCostFirmInd&quot;: 0,&#xd;
+			&quot;priceLockinReasonCode&quot;: 0,&#xd;
+			&quot;priceMaintenanceSourceCode&quot;: 0&#xd;
+		}, {&#xd;
+			&quot;gfsCustomerId&quot;: ${exceptionMarkupCMGCustomer},&#xd;
+			&quot;productType&quot;: &quot;TABLETOP&quot;,&#xd;
+			&quot;itemPriceId&quot;: 11,&#xd;
+			&quot;markup&quot;: &quot;6.00&quot;,&#xd;
+			&quot;unit&quot;: &quot;$&quot;,&#xd;
+			&quot;markupType&quot;: 2,&#xd;
+			&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+			&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+			&quot;gfsCustomerTypeCode&quot;: 0,&#xd;
+			&quot;customerItemPriceSeq&quot;: 0,&#xd;
+			&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+			&quot;priceLockedInTypeCode&quot;: 0,&#xd;
+			&quot;holdCostFirmInd&quot;: 0,&#xd;
+			&quot;priceLockinReasonCode&quot;: 0,&#xd;
+			&quot;priceMaintenanceSourceCode&quot;: 0&#xd;
+		}],&#xd;
+		&quot;itemLevelMarkupList&quot;: [{&#xd;
+			&quot;noItemId&quot;: false,&#xd;
+			&quot;itemId&quot;: &quot;123123&quot;,&#xd;
+			&quot;itemDesc&quot;: &quot;LOAF MINI VERY BRY WHLWHE 120-2Z&quot;,&#xd;
+			&quot;stockingCode&quot;: &quot;3&quot;,&#xd;
+			&quot;markup&quot;: &quot;8.00&quot;,&#xd;
+			&quot;unit&quot;: &quot;%&quot;,&#xd;
+			&quot;markupType&quot;: 1,&#xd;
+			&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+			&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+			&quot;invalid&quot;: false,&#xd;
+			&quot;inactive&quot;: false,&#xd;
+			&quot;isItemSaved&quot;: false,&#xd;
+			&quot;customerItemDescSeq&quot;: 0,&#xd;
+			&quot;isItemAlreadyExist&quot;: false,&#xd;
+			&quot;isInvalidMarkupCurrency&quot;: false,&#xd;
+			&quot;invalidMarkup&quot;: false&#xd;
+		}],&#xd;
+		&quot;subgroupMarkupList&quot;: [],&#xd;
+		&quot;markupGridIndex&quot;: 1&#xd;
+	}&#xd;
+}&#xd;
+</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/cpp/rest/markup/saveMarkup</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ThirdStepper-SAVE-Markup" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;contractPriceProfileSeq&quot;:${cppSeq},&quot;effectiveDate&quot;:&quot;2018-08-21T00:00:00.000Z&quot;,&quot;expirationDate&quot;:&quot;9999-01-01T00:00:00.000Z&quot;,&quot;expireLower&quot;:false,&quot;markupOnSell&quot;:true}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/cpp/rest/markup/saveMarkupIndicators</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="FourthStepper-LOAD-SplitCaseFee" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/cpp/#/splitcasefee</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="FourthStepper-SAVE-SplitCaseFee" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;contractPriceProfileSeq&quot;: ${cppSeq},&#xd;
+	&quot;splitCaseFeeValues&quot;: [{&#xd;
+		&quot;productType&quot;: &quot;GROCERY&quot;,&#xd;
+		&quot;splitCaseFee&quot;: &quot;35.00&quot;,&#xd;
+		&quot;unit&quot;: &quot;%&quot;,&#xd;
+		&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+		&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+		&quot;itemPriceId&quot;: &quot;1&quot;,&#xd;
+		&quot;lessCaseRuleId&quot;: 2&#xd;
+	}, {&#xd;
+		&quot;productType&quot;: &quot;FROZEN&quot;,&#xd;
+		&quot;splitCaseFee&quot;: &quot;35.00&quot;,&#xd;
+		&quot;unit&quot;: &quot;%&quot;,&#xd;
+		&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+		&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+		&quot;itemPriceId&quot;: &quot;2&quot;,&#xd;
+		&quot;lessCaseRuleId&quot;: 2&#xd;
+	}, {&#xd;
+		&quot;productType&quot;: &quot;MEAT&quot;,&#xd;
+		&quot;splitCaseFee&quot;: &quot;35.00&quot;,&#xd;
+		&quot;unit&quot;: &quot;%&quot;,&#xd;
+		&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+		&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+		&quot;itemPriceId&quot;: &quot;3&quot;,&#xd;
+		&quot;lessCaseRuleId&quot;: 2&#xd;
+	}, {&#xd;
+		&quot;productType&quot;: &quot;SEAFOOD&quot;,&#xd;
+		&quot;splitCaseFee&quot;: &quot;35.00&quot;,&#xd;
+		&quot;unit&quot;: &quot;%&quot;,&#xd;
+		&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+		&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+		&quot;itemPriceId&quot;: &quot;4&quot;,&#xd;
+		&quot;lessCaseRuleId&quot;: 2&#xd;
+	}, {&#xd;
+		&quot;productType&quot;: &quot;POULTRY&quot;,&#xd;
+		&quot;splitCaseFee&quot;: &quot;35.00&quot;,&#xd;
+		&quot;unit&quot;: &quot;%&quot;,&#xd;
+		&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+		&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+		&quot;itemPriceId&quot;: &quot;5&quot;,&#xd;
+		&quot;lessCaseRuleId&quot;: 2&#xd;
+	}, {&#xd;
+		&quot;productType&quot;: &quot;DAIRY&quot;,&#xd;
+		&quot;splitCaseFee&quot;: &quot;35.00&quot;,&#xd;
+		&quot;unit&quot;: &quot;%&quot;,&#xd;
+		&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+		&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+		&quot;itemPriceId&quot;: &quot;6&quot;,&#xd;
+		&quot;lessCaseRuleId&quot;: 2&#xd;
+	}, {&#xd;
+		&quot;productType&quot;: &quot;DISPOSABLES&quot;,&#xd;
+		&quot;splitCaseFee&quot;: &quot;35.00&quot;,&#xd;
+		&quot;unit&quot;: &quot;%&quot;,&#xd;
+		&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+		&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+		&quot;itemPriceId&quot;: &quot;7&quot;,&#xd;
+		&quot;lessCaseRuleId&quot;: 2&#xd;
+	}, {&#xd;
+		&quot;productType&quot;: &quot;CHEMICAL&quot;,&#xd;
+		&quot;splitCaseFee&quot;: &quot;35.00&quot;,&#xd;
+		&quot;unit&quot;: &quot;%&quot;,&#xd;
+		&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+		&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+		&quot;itemPriceId&quot;: &quot;8&quot;,&#xd;
+		&quot;lessCaseRuleId&quot;: 2&#xd;
+	}, {&#xd;
+		&quot;productType&quot;: &quot;BEVERAGE&quot;,&#xd;
+		&quot;splitCaseFee&quot;: &quot;35.00&quot;,&#xd;
+		&quot;unit&quot;: &quot;%&quot;,&#xd;
+		&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+		&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+		&quot;itemPriceId&quot;: &quot;9&quot;,&#xd;
+		&quot;lessCaseRuleId&quot;: 2&#xd;
+	}, {&#xd;
+		&quot;productType&quot;: &quot;PRODUCE&quot;,&#xd;
+		&quot;splitCaseFee&quot;: &quot;35.00&quot;,&#xd;
+		&quot;unit&quot;: &quot;%&quot;,&#xd;
+		&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+		&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+		&quot;itemPriceId&quot;: &quot;10&quot;,&#xd;
+		&quot;lessCaseRuleId&quot;: 2&#xd;
+	}, {&#xd;
+		&quot;productType&quot;: &quot;TABLETOP&quot;,&#xd;
+		&quot;splitCaseFee&quot;: &quot;35.00&quot;,&#xd;
+		&quot;unit&quot;: &quot;%&quot;,&#xd;
+		&quot;effectiveDate&quot;: &quot;2018-08-21T00:00:00.000Z&quot;,&#xd;
+		&quot;expirationDate&quot;: &quot;9999-01-01T00:00:00.000Z&quot;,&#xd;
+		&quot;itemPriceId&quot;: &quot;11&quot;,&#xd;
+		&quot;lessCaseRuleId&quot;: 2&#xd;
+	}]&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/cpp/rest/splitcase/saveSplitCaseFee</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="FifthStepper-LOAD-Review" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/cpp/#/review</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="DB-UPDATE-UpdateContractStatusToContractApproved" enabled="true">
+            <stringProp name="dataSource">DEV DB Connection</stringProp>
+            <stringProp name="queryType">Update Statement</stringProp>
+            <stringProp name="query">BEGIN
+
+update CONTRACT_PRICE_PROFILE set CONTRACT_PRC_PROF_STATUS_CODE =40 where CONTRACT_PRICE_PROFILE_SEQ=${cppSeq};
+
+END;</stringProp>
+            <stringProp name="queryArguments"></stringProp>
+            <stringProp name="queryArgumentsTypes"></stringProp>
+            <stringProp name="variableNames"></stringProp>
+            <stringProp name="resultVariable"></stringProp>
+            <stringProp name="queryTimeout"></stringProp>
+            <stringProp name="resultSetHandler">Store as String</stringProp>
+          </JDBCSampler>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Stepper-SAVE-CustomerAssignmentForDefaultMarkup" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;contractPriceProfileId&quot;:${cppSeq},&quot;contractPriceProfileSeq&quot;:${cppSeq},&quot;pricingEffectiveDate&quot;:&quot;11/28/2019&quot;,&quot;pricingExpirationDate&quot;:&quot;10/06/2020&quot;,&quot;cmgCustomerId&quot;:${defaultMarkupCMGCustomer},&quot;cmgCustomerType&quot;:31,&quot;realCustomerDTOList&quot;:[{&quot;realCustomerName&quot;:&quot;SAMI SHATARA&quot;,&quot;realCustomerId&quot;:&quot;152287&quot;,&quot;realCustomerType&quot;:&quot;3&quot;,&quot;realCustomerGroupType&quot;:&quot;&quot;,&quot;isCustomerSaved&quot;:false,&quot;invalidCustomer&quot;:false,&quot;duplicateCustomerFound&quot;:false,&quot;multipleAssignmentExists&quot;:false,&quot;isDefaultConceptNotMapped&quot;:false,&quot;isUnitTypeCustomerMappedToDefault&quot;:false,&quot;isNotMemberOfDefaultCustomer&quot;:false}]}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/cpp/rest/assignments/saveAssignments</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Stepper-SAVE-CustomerAssignmentForExcetionMarkup" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;contractPriceProfileId&quot;:${cppSeq},&quot;contractPriceProfileSeq&quot;:${cppSeq},&quot;clmContractStartDate&quot;:&quot;2018-08-21T00:00:00.000Z&quot;,&quot;clmContractEndDate&quot;:&quot;9999-01-01T00:00:00.000Z&quot;,&quot;cmgCustomerId&quot;:${exceptionMarkupCMGCustomer},&quot;cmgCustomerType&quot;:&quot;31&quot;,&quot;realCustomerDTOList&quot;:[{&quot;realCustomerName&quot;:&quot;PITA HOUSE-GRANDVILLE&quot;,&quot;realCustomerId&quot;:&quot;100092337&quot;,&quot;realCustomerType&quot;:&quot;0&quot;,&quot;realCustomerGroupType&quot;:&quot;&quot;,&quot;isCustomerSaved&quot;:false,&quot;invalidCustomer&quot;:false,&quot;duplicateCustomerFound&quot;:false,&quot;multipleAssignmentExists&quot;:false,&quot;isDefaultConceptNotMapped&quot;:false,&quot;isUnitTypeCustomerMappedToDefault&quot;:false,&quot;isNotMemberOfDefaultCustomer&quot;:false}]}&#xd;
+</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/cpp/rest/assignments/saveAssignments</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="REMOVE-CHECK_UN-MAPPED_CONCEPTS" enabled="true">
+            <stringProp name="dataSource">DEV DB Connection</stringProp>
+            <stringProp name="queryType">Select Statement</stringProp>
+            <stringProp name="query">select contractPriceProfCust.CPP_CUSTOMER_SEQ as ab1 , cppConceptMapping.GFS_CUSTOMER_ID as ab2, cppConceptMapping.CPP_CUSTOMER_SEQ as ab3,cppConceptMapping.GFS_CUSTOMER_TYPE_CODE as ab4, contractPriceProfCust.GFS_CUSTOMER_ID as ab5,  contractPriceProfCust.GFS_CUSTOMER_TYPE_CODE as ab6
+            from CONTRACT_PRICE_PROF_CUSTOMER contractPriceProfCust  
+             LEFT JOIN CPP_CONCEPT_MAPPING cppConceptMapping ON  
+             contractPriceProfCust.CPP_CUSTOMER_SEQ = cppConceptMapping.CPP_CUSTOMER_SEQ  
+             WHERE contractPriceProfCust.CONTRACT_PRICE_PROFILE_SEQ = ${cppSeq} 
+             AND cppConceptMapping.CPP_CUSTOMER_SEQ is null</stringProp>
+            <stringProp name="queryArguments"></stringProp>
+            <stringProp name="queryArgumentsTypes"></stringProp>
+            <stringProp name="variableNames"></stringProp>
+            <stringProp name="resultVariable">UN_MAPPED_CONCEPTS</stringProp>
+            <stringProp name="queryTimeout"></stringProp>
+            <stringProp name="resultSetHandler">Store as String</stringProp>
+          </JDBCSampler>
+          <hashTree>
+            <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="INTERNAL-STORE-DefaultCMGCustomer" enabled="true">
+              <stringProp name="BeanShellAssertion.query">if(ResponseCode.equals(&quot;200&quot;)) {
+
+	if(vars.getObject(&quot;UN_MAPPED_CONCEPTS&quot;).size() != 0) {
+			log.info(&quot; SOME CONCEPTS ARE NOT MAPPED &quot; );
+			log.info(&quot;AB1= &quot;+ vars.getObject(&quot;UN_MAPPED_CONCEPTS&quot;).get(0).get(&quot;ab1&quot;) + &quot;&quot; );
+			log.info(&quot;AB2= &quot;+ vars.getObject(&quot;UN_MAPPED_CONCEPTS&quot;).get(0).get(&quot;ab2&quot;) + &quot;&quot; );
+			log.info(&quot;AB3= &quot;+ vars.getObject(&quot;UN_MAPPED_CONCEPTS&quot;).get(0).get(&quot;ab3&quot;) + &quot;&quot; );
+			log.info(&quot;AB4= &quot;+ vars.getObject(&quot;UN_MAPPED_CONCEPTS&quot;).get(0).get(&quot;ab4&quot;) + &quot;&quot; );
+			log.info(&quot;AB5= &quot;+ vars.getObject(&quot;UN_MAPPED_CONCEPTS&quot;).get(0).get(&quot;ab5&quot;) + &quot;&quot; );
+			log.info(&quot;AB6= &quot;+ vars.getObject(&quot;UN_MAPPED_CONCEPTS&quot;).get(0).get(&quot;ab6&quot;) + &quot;&quot; );
+	} 
+	else {
+			log.info(&quot; ALL CONCEPTS ARE FOUND TO BE MAPPED &quot; );
+	}	
+	
+} else {
+		log.info(&quot; SOME EXCEPTION OCCURED WHILE RETREIVING UN-MAPPED CONCEPTS&quot; );
+}
+</stringProp>
+              <stringProp name="BeanShellAssertion.filename"></stringProp>
+              <stringProp name="BeanShellAssertion.parameters"></stringProp>
+              <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+            </BeanShellAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ActivatePricing" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="contractPriceProfileSeq" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${cppSeq}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">contractPriceProfileSeq</stringProp>
+                </elementProp>
+                <elementProp name="isAmendment" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">false</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">isAmendment</stringProp>
+                </elementProp>
+                <elementProp name="clmContractStatus" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">Executed</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">clmContractStatus</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">cpp/rest/activatePricing/activatePricingForCustomer</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="DB-DELETE-CleanUpDatabase" enabled="true">
+            <stringProp name="dataSource">DEV DB Connection</stringProp>
+            <stringProp name="queryType">Update Statement</stringProp>
+            <stringProp name="query">BEGIN
+
+DELETE from PRC_PROF_AUDIT_AUTHORITY where CONTRACT_PRICE_PROFILE_SEQ=${cppSeq};
+DELETE from PRC_PROF_NON_BRKT_CST_MDL  where CONTRACT_PRICE_PROFILE_SEQ=${cppSeq};
+DELETE  from PRC_PROF_VERIFICATION_PRIVLG  where CONTRACT_PRICE_PROFILE_SEQ=${cppSeq};
+DELETE  from PRC_PROF_COST_RUN_SCHED_GROUP  where CONTRACT_PRICE_PROFILE_SEQ=${cppSeq};
+DELETE  from PRC_PROF_COST_SCHEDULE_PKG where CONTRACT_PRICE_PROFILE_SEQ=${cppSeq};
+DELETE  from CONTRACT_PRICE_PROF_CUSTOMER  where CONTRACT_PRICE_PROFILE_SEQ=${cppSeq};
+DELETE from CONTRACT_PRICE_PROF_SHIP_DC where CONTRACT_PRICE_PROFILE_SEQ=${cppSeq};
+DELETE from PRC_PROF_PRICING_RULE_OVRD where CONTRACT_PRICE_PROFILE_SEQ=${cppSeq};
+DELETE from CUSTOMER_ITEM_PRICE where CONTRACT_PRICE_PROFILE_SEQ=${cppSeq};
+DELETE from PRC_PROF_LESSCASE_RULE  where CONTRACT_PRICE_PROFILE_SEQ=${cppSeq};
+DELETE from CONTRACT_PRICE_PROFILE where CONTRACT_PRICE_PROFILE_SEQ=${cppSeq};
+END;
+
+/*
+DELETE from CPP_CONCEPT_MAPPING where CPP_CUSTOMER_SEQ in (select CPP_CUSTOMER_SEQ from CONTRACT_PRICE_PROF_CUSTOMER where CONTRACT_PRICE_PROFILE_SEQ=-1);
+
+DELETE from CPP_ITEM_MAPPING where CUSTOMER_ITEM_DESC_PRICE_SEQ in (select CUSTOMER_ITEM_DESC_PRICE_SEQ from CUSTOMER_ITEM_DESC_PRICE where CONTRACT_PRICE_PROFILE_SEQ=-1);
+
+DELETE from CUSTOMER_ITEM_DESC_PRICE where CONTRACT_PRICE_PROFILE_SEQ=-1;
+*/</stringProp>
+            <stringProp name="queryArguments"></stringProp>
+            <stringProp name="queryArgumentsTypes">NUMERIC</stringProp>
+            <stringProp name="variableNames"></stringProp>
+            <stringProp name="resultVariable"></stringProp>
+            <stringProp name="queryTimeout"></stringProp>
+            <stringProp name="resultSetHandler">Store as String</stringProp>
+          </JDBCSampler>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

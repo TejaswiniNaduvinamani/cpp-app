@@ -1,0 +1,8 @@
+<project name="cpp-web" basedir="." default="build" xmlns:antics="com.gfs.antics" xmlns:release="com.gfs.release">
+    <property environment="env"/>       
+    <!-- for the deployment to WLS TST environment, override the antics.dist.dir - 
+                  antics by default looks in target/dist, but maven dumps the WAR in target
+     -->
+    <property name="antics.dist.dir" value="./target"/>
+    <import file="${env.ANTICS_HOME}/java-ee/weblogic/wl-12-webapp.xml"/>        
+</project>

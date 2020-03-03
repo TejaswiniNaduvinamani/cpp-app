@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<CLM_CONTRACT_TYPE 
+		CLM_CONTRACT_TYPE_SEQ="-1001"
+		CLM_CONTRACT_TYPE_NAME="ICMDistributionAgreementStreet" 
+		LAST_UPDATE_USER_ID="test user"
+		CLM_CONTRACT_TYPE_DESC ="test" />
+	
+	<CLM_CONTRACT_TYPE 
+		CLM_CONTRACT_TYPE_SEQ="-1002"
+		CLM_CONTRACT_TYPE_NAME="ICMPOC_CPP" 
+		LAST_UPDATE_USER_ID="test user"
+		CLM_CONTRACT_TYPE_DESC ="poc" />
+		
+</dataset>

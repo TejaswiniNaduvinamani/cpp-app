@@ -1,0 +1,6 @@
+* text=auto !eol
+/pom.xml -text svneol=unset#text/plain
+**/pom.xml merge=ours
+pom.xml merge=ours
+**/weblogic.xml merge=ours
+**/package.json merge=ours

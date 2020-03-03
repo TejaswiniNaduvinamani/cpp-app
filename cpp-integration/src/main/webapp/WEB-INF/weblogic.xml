@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weblogic-web-app xmlns="http://xmlns.oracle.com/weblogic/weblogic-web-app"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.oracle.com/weblogic/weblogic-web-app http://xmlns.oracle.com/weblogic/weblogic-web-app/1.5/weblogic-web-app.xsd">
+
+	<context-root>cpp-integration</context-root>
+
+	<container-descriptor>
+		<prefer-application-packages>
+			<package-name>antlr.*</package-name>
+			<package-name>com.sun.el.*</package-name>
+			<package-name>com.sun.istack.*</package-name>
+			<package-name>javax.el.*</package-name>
+			<package-name>javax.validation.*</package-name>
+			<package-name>net.sf.cglib.*</package-name>
+			<package-name>org.apache.commons.*</package-name>
+			<package-name>org.hibernate.validator.*</package-name>
+			<package-name>org.joda.time.*</package-name>
+			<package-name>org.objectweb.asm.*</package-name>
+			<package-name>org.slf4j.*</package-name>
+			<package-name>com.ctc.wstx.*</package-name>
+			<package-name>org.springframework.*</package-name>
+		</prefer-application-packages>
+	</container-descriptor>
+
+	<resource-env-description>
+        <resource-env-ref-name>jdbc/CustomerPriceProfileDS</resource-env-ref-name>
+        <jndi-name>CustomerPriceProfileDS</jndi-name>
+    </resource-env-description>
+    
+     <wl-dispatch-policy>CustomerPriceProfileIntWorkManager</wl-dispatch-policy>
+   
+     <work-manager>
+        <name>CustomerPriceProfileIntWorkManager</name>
+        <max-threads-constraint>
+            <name>CustomerPriceProfileIntMaxThreads</name>
+            <pool-name>CustomerPriceProfileDS</pool-name>
+        </max-threads-constraint>
+    </work-manager>
+    
+</weblogic-web-app>

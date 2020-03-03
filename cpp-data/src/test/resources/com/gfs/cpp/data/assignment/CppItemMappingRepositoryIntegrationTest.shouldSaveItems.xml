@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+
+	<CPP_ITEM_MAPPING
+		CUSTOMER_ITEM_DESC_PRICE_SEQ="-101"
+		ITEM_PRICE_LEVEL_CODE="36"
+		ITEM_PRICE_ID="-1001"
+		CREATE_USER_ID="test user"
+		LAST_UPDATE_USER_ID="test user"
+	/>
+	
+	<CPP_ITEM_MAPPING
+		CUSTOMER_ITEM_DESC_PRICE_SEQ="-102"
+		ITEM_PRICE_LEVEL_CODE="36"
+		ITEM_PRICE_ID="-1002"
+		CREATE_USER_ID="test user"
+		LAST_UPDATE_USER_ID="test user"
+	/>
+
+</dataset>

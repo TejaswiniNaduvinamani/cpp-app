@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+
+	<CONTRACT_PRICE_PROF_SHIP_DC
+		CONTRACT_PRICE_PROFILE_SEQ="-201"
+		SHIP_DC_NBR="-10001234"	
+		CREATE_USER_ID="test user"
+		EFFECTIVE_DATE="9999-01-01"
+		EXPIRATION_DATE="9999-01-01"
+		/>
+				
+</dataset>		

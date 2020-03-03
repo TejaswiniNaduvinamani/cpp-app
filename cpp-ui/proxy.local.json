@@ -1,0 +1,8 @@
+{
+  "/rest": {
+      "target": "http://localhost:9002",
+      "pathRewrite": {"^/rest" : ""},
+      "changeOrigin": true,
+      "secure": false
+  }
+}
