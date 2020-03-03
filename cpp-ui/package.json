@@ -40,7 +40,7 @@
     "font-awesome": "4.7.0",
     "intl": "1.2.5",
     "jquery": "3.2.1",
-    "moment": "2.19.1",
+    "moment": "2.24.0",
     "ngx-toastr": "6.5.0",
     "popper.js": "1.14.3",
     "roboto-fontface": "0.8.0",
