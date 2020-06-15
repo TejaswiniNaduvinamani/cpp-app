@@ -39,7 +39,7 @@
 		<common-codec.version>1.9</common-codec.version>
 		<common-io.version>1.3.2</common-io.version>
 		<poi.version>3.17</poi.version>
-		<commons-collection.version>4.0</commons-collection.version>
+		<commons-collection.version>4.1</commons-collection.version>
 		<cxf.version>3.1.2</cxf.version>
 		<gfs-price-types>5.9.5</gfs-price-types>
 		<gfs-item-common>3.86.0</gfs-item-common>
