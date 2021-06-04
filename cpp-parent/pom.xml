@@ -43,7 +43,7 @@
 		<cxf.version>3.1.2</cxf.version>
 		<gfs-price-types>5.9.5</gfs-price-types>
 		<gfs-item-common>3.86.0</gfs-item-common>
-		<httpclient.version>4.5.2</httpclient.version>
+		<httpclient.version>4.5.13</httpclient.version>
 		<json.version>20170516</json.version>
 		<customer.common.version>6.5.8.1</customer.common.version>
 		<springfox-swagger2.version>2.6.1</springfox-swagger2.version>
